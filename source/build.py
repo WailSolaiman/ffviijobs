@@ -24,7 +24,6 @@ info=ET.Element('ModInfo')
 for key,val in {'ID':'2a737e43-7bcd-4da4-962d-3c87631fca5e','Name':'FFVII Job System','Author':'Willard82',
  'Version':'0.80','ReleaseDate':'2026-11-22','Category':'Gameplay','GameLanguage':'EN',
  'Description':'Choose one of 25 Final Fantasy jobs for each character. Your choices decide which Materia they can equip, with weapon icons showing eligible characters. Configure Mod includes class and accessory guides. For original English FF7 PC.',
- 'ReleaseNotes':'0.8.0: Uses 7th Heaven HEXT patches instead of a DLL declaration, removing the native-library activation prompt. Retains the 25 class choices, Materia/accessory icons, class guides and the human-Gunner preview. Gameplay permissions and saved selections are unchanged.',
  'Link':'https://github.com/WailSolaiman/ffviijobs',
  'DonationLink':'https://ko-fi.com/ffviijobs','PreviewFile':'preview.png'}.items():ET.SubElement(info,key).text=val
 for i,c in enumerate(chars):

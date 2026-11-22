@@ -19,8 +19,7 @@ for tag in ['Gameplay','Jobs','Classes','Materia','Willard82']:ET.SubElement(tag
 version=ET.SubElement(entry,'LatestVersion')
 for k,v in {'Link':'iros://Url/'+download.replace('https://','https$',1),'Version':info.findtext('Version'),
  'ReleaseDate':info.findtext('ReleaseDate'),'CompatibleGameVersions':'Steam',
- 'PreviewImage':image,'DownloadSize':str(math.ceil(iro.stat().st_size/1024)),
- 'ReleaseNotes':info.findtext('ReleaseNotes')}.items():ET.SubElement(version,k).text=v
+ 'PreviewImage':image,'DownloadSize':str(math.ceil(iro.stat().st_size/1024))}.items():ET.SubElement(version,k).text=v
 out=root/'catalog-submission';target=out/'mods/qhimm/FFVII Job System/mod.xml';target.parent.mkdir(parents=True,exist_ok=True)
 ET.indent(entry,space='  ');ET.ElementTree(entry).write(target,encoding='utf-8',xml_declaration=True)
 catalog=ET.Element('Catalog',Name='Willard82 - FFVII Job System');ET.SubElement(catalog,'Mods').append(copy.deepcopy(entry))

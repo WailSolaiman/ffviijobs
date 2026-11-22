@@ -7,7 +7,7 @@ no release assets or catalogue pull request have been published.
    Confirm activation has no native-library prompt and gameplay works.
 2. Create a GitHub release with tag v0.8.0 and title:
    FFVII Job System v0.8.0 - Willard82
-3. Paste RELEASE_NOTES.txt into its description. Attach these release assets
+3. Add a short mod description. Attach these release assets
    using exactly these filenames:
      FFVIIJobSystem-0.8.0.iro
      preview.png

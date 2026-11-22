@@ -22,7 +22,7 @@ assert position==len(raw)
 print('Verified',out.name,len(files),'files',len(raw),'bytes')
 bundle=root.parent/'FFVIIJobSystem-source-0.8.0.zip'
 with zipfile.ZipFile(bundle,'w',zipfile.ZIP_DEFLATED) as z:
- deliverables=paths+[out,root/'README.txt',root/'VALIDATION.txt',root/'CLASS_PERMISSIONS.txt',root/'REFERENCE.md',root/'CLASS_REFERENCE.json',root/'ACCESSORY_PROPOSAL.json',root/'ART_SOURCES.txt',root/'PREVIEW_PROMPT.txt',root/'PREVIEW_EDIT_PROMPT.txt',root/'RELEASE_NOTES.txt',root/'PUBLISHING.txt',root/'PULL_REQUEST.txt']
+ deliverables=paths+[out,root/'README.txt',root/'VALIDATION.txt',root/'CLASS_PERMISSIONS.txt',root/'REFERENCE.md',root/'CLASS_REFERENCE.json',root/'ACCESSORY_PROPOSAL.json',root/'ART_SOURCES.txt',root/'PREVIEW_PROMPT.txt',root/'PREVIEW_EDIT_PROMPT.txt',root/'PUBLISHING.txt',root/'PULL_REQUEST.txt']
  deliverables+=sorted(p for p in (root/'source').iterdir() if p.suffix in ('.c','.h','.py','.json','.cs','.il','.md'))
  for p in deliverables:z.write(p,root.name+'/'+str(p.relative_to(root)))
 print('Created',bundle.name)

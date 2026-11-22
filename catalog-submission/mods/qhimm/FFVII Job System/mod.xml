@@ -23,6 +23,5 @@
     <CompatibleGameVersions>Steam</CompatibleGameVersions>
     <PreviewImage>https://github.com/WailSolaiman/ffviijobs/releases/download/v0.8.0/preview.png</PreviewImage>
     <DownloadSize>7070</DownloadSize>
-    <ReleaseNotes>0.8.0: Uses 7th Heaven HEXT patches instead of a DLL declaration, removing the native-library activation prompt. Retains the 25 class choices, Materia/accessory icons, class guides and the human-Gunner preview. Gameplay permissions and saved selections are unchanged.</ReleaseNotes>
   </LatestVersion>
 </Mod>

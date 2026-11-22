@@ -8,7 +8,6 @@
   <Category>Gameplay</Category>
   <GameLanguage>EN</GameLanguage>
   <Description>Choose one of 25 Final Fantasy jobs for each character. Your choices decide which Materia they can equip, with weapon icons showing eligible characters. Configure Mod includes class and accessory guides. For original English FF7 PC.</Description>
-  <ReleaseNotes>0.8.0: Uses 7th Heaven HEXT patches instead of a DLL declaration, removing the native-library activation prompt. Retains the 25 class choices, Materia/accessory icons, class guides and the human-Gunner preview. Gameplay permissions and saved selections are unchanged.</ReleaseNotes>
   <Link>https://github.com/WailSolaiman/ffviijobs</Link>
   <DonationLink>https://ko-fi.com/ffviijobs</DonationLink>
   <PreviewFile>preview.png</PreviewFile>
