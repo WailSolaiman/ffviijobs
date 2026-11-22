@@ -1,4 +1,4 @@
-FFVII JOB SYSTEM 0.7.2 - CLASSES AND PERMISSIONS
+FFVII JOB SYSTEM 0.8.0 - CLASSES AND PERMISSIONS
 
 Choose one of the same 25 classes for each character in Configure Mod before launching.
 Characters can share classes. Icons show exactly which characters can equip a Materia under your current selections.

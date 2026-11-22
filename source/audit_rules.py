@@ -5,7 +5,7 @@ import json,re
 def audit(root):
  r=json.loads((root/'source/rules.json').read_text(encoding='utf-8'))
  reference=json.loads((root/'CLASS_REFERENCE.json').read_text(encoding='utf-8'))
- assert r['version']=='0.7.2'
+ assert r['version']=='0.8.0'
  assert len(r['classes'])==25 and len(r['characters'])==9
  assert len(r['materia_ids'])==83 and len(set(r['materia_ids'].values()))==83
  assert len(r['accessory_ids'])==32 and list(r['accessory_ids'].values())==list(range(32))

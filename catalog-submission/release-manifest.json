@@ -1,11 +1,11 @@
 {
   "status": "Staged; upload release assets before submitting this entry.",
   "repository": "https://github.com/WailSolaiman/ffviijobs",
-  "tag": "v0.7.2",
-  "iro_url": "https://github.com/WailSolaiman/ffviijobs/releases/download/v0.7.2/FFVIIJobSystem-0.7.2.iro",
-  "preview_url": "https://github.com/WailSolaiman/ffviijobs/releases/download/v0.7.2/preview.png",
+  "tag": "v0.8.0",
+  "iro_url": "https://github.com/WailSolaiman/ffviijobs/releases/download/v0.8.0/FFVIIJobSystem-0.8.0.iro",
+  "preview_url": "https://github.com/WailSolaiman/ffviijobs/releases/download/v0.8.0/preview.png",
   "mod_id": "2a737e43-7bcd-4da4-962d-3c87631fca5e",
-  "version": "0.72",
-  "download_size_kb": 7305,
-  "sha256": "fd8612b96ab2ca36ad1647ece62bc5bf58a203fe27fb5e7ae86295e2c01d76a4"
+  "version": "0.80",
+  "download_size_kb": 7070,
+  "sha256": "617fa3db16252b1c98b3ba2766b81a9dd8470c1a136b0b1b329842be1d96a288"
 }

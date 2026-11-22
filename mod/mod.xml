@@ -3,16 +3,15 @@
   <ID>2a737e43-7bcd-4da4-962d-3c87631fca5e</ID>
   <Name>FFVII Job System</Name>
   <Author>Willard82</Author>
-  <Version>0.72</Version>
+  <Version>0.80</Version>
   <ReleaseDate>2026-11-22</ReleaseDate>
   <Category>Gameplay</Category>
   <GameLanguage>EN</GameLanguage>
   <Description>Choose one of 25 Final Fantasy jobs for each character. Your choices decide which Materia they can equip, with weapon icons showing eligible characters. Configure Mod includes class and accessory guides. For original English FF7 PC.</Description>
-  <ReleaseNotes>0.7.2: Public release preparation credited to Willard82, with Ko-fi support link, project link and mod preview. Retains all 25 selectable classes, class descriptions and the 32-item accessory reference. Gameplay permissions are unchanged; accessory class suggestions remain informational.</ReleaseNotes>
+  <ReleaseNotes>0.8.0: Uses 7th Heaven HEXT patches instead of a DLL declaration, removing the native-library activation prompt. Retains the 25 class choices, Materia/accessory icons, class guides and the human-Gunner preview. Gameplay permissions and saved selections are unchanged.</ReleaseNotes>
   <Link>https://github.com/WailSolaiman/ffviijobs</Link>
   <DonationLink>https://ko-fi.com/ffviijobs</DonationLink>
   <PreviewFile>preview.png</PreviewFile>
-  <LoadLibrary>FFVIIJobs.dll</LoadLibrary>
   <ConfigOption>
     <Name>Cloud</Name>
     <ID>job_v070_cloud</ID>
@@ -565,4 +564,5 @@
     <Option Value="30" Name="Sneak Glove" PreviewFile="previews\accessories\accessory_30.png" />
     <Option Value="31" Name="HypnoCrown" PreviewFile="previews\accessories\accessory_31.png" />
   </ConfigOption>
+  <ModFolder Folder="runtime" />
 </ModInfo>

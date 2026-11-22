@@ -20,25 +20,31 @@ See [the installation guide](README.txt) and [the complete class permissions](CL
 
 Tested with the English Steam FF7 PC 1.02 executable, 7th Heaven 4.6.1, FFNx 1.25.2.0 and Enhanced Stock UI 2.968. Other languages and gameplay overhauls that change Materia IDs or the same executable hooks are unverified.
 
-The mod uses a native DLL and retains 7th Heaven's normal code-trust prompt. The current source release is **0.7.2**, displayed as **0.72** in 7th Heaven. Its gameplay core is unchanged from the tested 0.7.0 version.
+The current source release is **0.8.0**, displayed as **0.80** in 7th Heaven.
+It uses HEXT patches and a freestanding runtime, with no DLL/plugin/program
+declarations and no native-library activation prompt in 7th Heaven 4.6.1.
+7th Heaven's security settings are unchanged. The new loading backend has
+passed private native and installed-7H integration checks and **awaits an
+in-game test before a public packaged release**. Class permissions and saved
+configuration selections are unchanged from 0.7.2.
 
 ## Build from source
 
-Build on Windows with Python 3, Pillow, Windows Segoe UI fonts and Zig 0.17.1:
+Build on Windows with Python 3, Pillow, pefile, Windows Segoe UI fonts and Zig 0.17.1:
 
 ```powershell
-py -m pip install Pillow
+py -m pip install Pillow pefile
 py source/build.py --zig C:/path/to/zig.exe
 py source/package.py
 ```
 
-The build creates the native DLL and configuration previews. Packaging creates the IRO and a source ZIP. Compiled binaries and archives are excluded from Git; packaged downloads belong in Releases.
+The build creates the HEXT entry, flat runtime and configuration previews. Packaging creates the IRO and a source ZIP. Intermediate compiler DLLs and archives are excluded from Git; the generated HEXT and runtime payload are included for review. Packaged downloads belong in Releases. See [runtime format](source/HEXT_RUNTIME.md).
 
 Validation details are in [VALIDATION.txt](VALIDATION.txt). The `source` folder also contains private native, loader, configuration and metadata verification tools, which do not require launching FF7.
 
 ## Publishing
 
-[PUBLISHING.txt](PUBLISHING.txt) describes the prepared `v0.7.2` GitHub release and catalogue submission. The files under `catalog-submission` are staged metadata; their download links become usable after the corresponding release assets are uploaded. This repository alone does not add the mod to 7th Heaven's community catalogue.
+[PUBLISHING.txt](PUBLISHING.txt) describes the prepared `v0.8.0` GitHub release and catalogue submission. The files under `catalog-submission` are staged metadata; their download links become usable after the corresponding release assets are uploaded. This repository alone does not add the mod to 7th Heaven's community catalogue.
 
 ## Feedback and support
 

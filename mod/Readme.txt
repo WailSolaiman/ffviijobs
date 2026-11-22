@@ -1,4 +1,4 @@
-FFVII JOB SYSTEM 0.7.2 (shown as 0.72 in 7th Heaven)
+FFVII JOB SYSTEM 0.8.0 (shown as 0.80 in 7th Heaven)
 Author: Willard82
 Project: https://github.com/WailSolaiman/ffviijobs
 Optional tips: https://ko-fi.com/ffviijobs
@@ -8,7 +8,7 @@ which Materia they can equip, with weapon icons showing eligible characters.
 Configure Mod includes class and accessory guides. For original English FF7 PC.
 
 INSTALL / CONFIGURE
-1. Import FFVIIJobSystem-0.7.2.iro as the update to FFVII Job System.
+1. Import FFVIIJobSystem-0.8.0.iro as the update to FFVII Job System.
 2. Open Configure Mod. Choose one class for each of the nine characters.
 3. The selected class shows its role, full Materia list and accessory suggestions.
 4. Select Accessory reference to browse all 32 items, their effects, suggested
@@ -43,15 +43,21 @@ in their slots but inactive during stat/command calculations until space is
 available. Empty slots and the flashback guest retain their normal behavior.
 
 COMPATIBILITY
-Gameplay core is unchanged from 0.7.0. The 0.7.2 update adds public release metadata, support links and the mod preview. Original English FF7 PC 1.02 with 7th
-Heaven native LoadLibrary support. Configuration previews were verified with
-the installed 7th Heaven 4.6.1 UI code. Prior stock/Enhanced Stock UI behavior
-is retained. The gameplay core reads selections after virtual file hooks are
-ready; it does not rewrite profiles or copy another mod's artwork.
-Other gameplay overhauls that change Materia IDs or the same executable hook
-sites need their own compatibility review. All sixteen hook signatures must
-match before installation; conflicting hooks prevent partial patching.
-This release retains 7th Heaven's existing native-code trust prompt.
+This version uses 7th Heaven HEXT patches and a freestanding runtime instead
+of LoadLibrary. It contains no DLL, EXE, plugin, assembly or external program
+declaration, so it does not trigger the native-library activation prompt in
+7th Heaven 4.6.1. The mod still executes gameplay patches through HEXT; 7th
+Heaven's security settings and warning logic are unchanged.
+
+The supported target is the original English Steam FF7 PC 1.02 executable.
+Private checks use installed 7th Heaven 4.6.1 and Enhanced Stock UI 2.968.
+The new startup backend needs an in-game test before a public release.
+Class permissions, icons, accessory rules and configuration IDs are retained.
+The early entry runs after 7H file overrides are ready and before font setup.
+Other gameplay overhauls that change Materia IDs or executable hook sites
+need their own compatibility review. All sixteen gameplay hook signatures
+must match before installation. The entry additionally uses the supported
+executable's WinMain call and verified unused executable padding.
 
 No import, activation, mod-order change or game launch was performed.
 
@@ -62,15 +68,22 @@ ACCESSORY_PROPOSAL.json contains informational class assignments and effects.
 CLASS_REFERENCE.json records the exact approved research Materia pools.
 REFERENCE.md retains the original character accessory rules.
 
-Build requires Python 3, Pillow, Windows Segoe UI fonts and Zig 0.17.1:
+Build requires Python 3, Pillow, pefile, Windows Segoe UI fonts and Zig 0.17.1:
+  py -m pip install Pillow pefile
   py source/build.py --zig C:/path/to/zig.exe
-An information-only rebuild can reuse an already built native DLL:
-  py source/build.py --skip-native
-Package:
   py source/package.py
+To reuse the existing runtime while regenerating configuration guides:
+  py source/build.py --skip-runtime
+To build and run the private native fixture:
+  py source/build.py --zig C:/path/to/zig.exe --test-output work/jobs-tests
 
-source/test_configure.cs exercises the actual installed Configure Mod view
-model in a private STA host, without opening or controlling the application.
-source/test_loader.cs checks the installed 7H archive/configuration/native path.
-Their runtimeconfig.json examples are included. Tests must use a private work
-folder; no test or build should import the mod, save profiles, or launch FF7.
+source/build_hext.py produces the flat runtime and HEXT entry; intermediate
+compiler DLLs remain in the private build directory and are not packaged.
+source/test_loader.cs exercises the installed 7H HEXT parser, memory page
+permissions, configuration evaluator, IRO mapping and virtual file reads.
+source/test_configure.cs exercises the installed Configure Mod view model.
+Both run in private x86 .NET 10 hosts. Runtime configuration examples are
+included. No tests import a mod, save a profile or launch FF7.
+
+See VALIDATION.txt for results and source/HEXT_RUNTIME.md for the format.
+See PUBLISHING.txt for the separate public catalogue submission process.

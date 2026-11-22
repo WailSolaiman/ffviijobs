@@ -1,4 +1,4 @@
-"""Build native FFVII Job System. Python 3 + Zig 0.17.1; no managed bridge.
+"""Build HEXT FFVII Job System. Python 3 + Zig 0.17.1; no managed bridge.
 Usage: py source/build.py --zig C:/path/to/zig.exe --test-output work/jobs-tests
 """
 import argparse,json,subprocess,struct,xml.etree.ElementTree as ET
@@ -6,7 +6,7 @@ from pathlib import Path
 from audit_rules import audit
 from configure_guide import generate,accessory_key,class_accessories
 root=Path(__file__).resolve().parent.parent;src=root/'source';mod=root/'mod';mod.mkdir(exist_ok=True)
-p=argparse.ArgumentParser();p.add_argument('--zig',default='zig');p.add_argument('--test-output');p.add_argument('--skip-native',action='store_true',help='Reuse an already built native DLL for information-only releases');args=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--zig',default='zig');p.add_argument('--test-output');p.add_argument('--skip-runtime','--skip-native',dest='skip_runtime',action='store_true');p.add_argument('--runtime-work',default='work/ffvii-jobs-runtime');p.add_argument('--python-tools');args=p.parse_args()
 r=audit(root);chars=r['characters'];classes=r['classes'];mids=r['materia_ids'];aids=r['accessory_ids']
 descriptions,proposal,previews=generate(root,r)
 defaults=[next(i for i,j in enumerate(classes) if j['key']==c['default_class']) for c in chars]
@@ -22,12 +22,11 @@ header+='static const unsigned short ACCESSORY_OWNERS[32]={'+','.join(map(str,ow
 (src/'rules.generated.h').write_text(header,encoding='utf-8')
 info=ET.Element('ModInfo')
 for key,val in {'ID':'2a737e43-7bcd-4da4-962d-3c87631fca5e','Name':'FFVII Job System','Author':'Willard82',
- 'Version':'0.72','ReleaseDate':'2026-11-22','Category':'Gameplay','GameLanguage':'EN',
+ 'Version':'0.80','ReleaseDate':'2026-11-22','Category':'Gameplay','GameLanguage':'EN',
  'Description':'Choose one of 25 Final Fantasy jobs for each character. Your choices decide which Materia they can equip, with weapon icons showing eligible characters. Configure Mod includes class and accessory guides. For original English FF7 PC.',
- 'ReleaseNotes':'0.7.2: Public release preparation credited to Willard82, with Ko-fi support link, project link and mod preview. Retains all 25 selectable classes, class descriptions and the 32-item accessory reference. Gameplay permissions are unchanged; accessory class suggestions remain informational.',
+ 'ReleaseNotes':'0.8.0: Uses 7th Heaven HEXT patches instead of a DLL declaration, removing the native-library activation prompt. Retains the 25 class choices, Materia/accessory icons, class guides and the human-Gunner preview. Gameplay permissions and saved selections are unchanged.',
  'Link':'https://github.com/WailSolaiman/ffviijobs',
- 'DonationLink':'https://ko-fi.com/ffviijobs','PreviewFile':'preview.png',
- 'LoadLibrary':'FFVIIJobs.dll'}.items():ET.SubElement(info,key).text=val
+ 'DonationLink':'https://ko-fi.com/ffviijobs','PreviewFile':'preview.png'}.items():ET.SubElement(info,key).text=val
 for i,c in enumerate(chars):
  cfg=ET.SubElement(info,'ConfigOption');option_id='job_v070_'+c['key']
  for k,v in {'Name':c['name'],'ID':option_id,'Type':'List','Default':str(defaults[i]),
@@ -43,8 +42,9 @@ for k,v in {'Name':'Accessory reference','ID':'accessory_reference_v071','Type':
  'Description':'Select an accessory to read its effect and suggested classes. Reference only: these class assignments are not active. Accessories still follow the existing character rules.'}.items():ET.SubElement(reference,k).text=v
 for a in sorted(proposal['accessories'],key=lambda a:aids[a['name']]):
  ET.SubElement(reference,'Option',Value=str(aids[a['name']]),Name=a['name'],PreviewFile='previews\\accessories\\'+accessory_key(r,a['name'])+'.png')
+ET.SubElement(info,'ModFolder',Folder='runtime')
 ET.indent(info,space='  ');ET.ElementTree(info).write(mod/'mod.xml',encoding='utf-8',xml_declaration=True)
-details=['FFVII JOB SYSTEM 0.7.2 - CLASSES AND PERMISSIONS','',
+details=['FFVII JOB SYSTEM 0.8.0 - CLASSES AND PERMISSIONS','',
  'Choose one of the same 25 classes for each character in Configure Mod before launching.',
  'Characters can share classes. Icons show exactly which characters can equip a Materia under your current selections.',
  'A Materia with no eligible character remains visible, without icons, and cannot be equipped.',
@@ -66,15 +66,11 @@ for a in sorted(proposal['accessories'],key=lambda a:aids[a['name']]):
  details+=['',a['name']+' - '+a['effect'],'  Suggested classes: '+', '.join(a['classes']),'  Reason: '+a['rationale']]
 (root/'CLASS_PERMISSIONS.txt').write_text('\n'.join(details)+'\n',encoding='utf-8')
 (mod/'CLASS_PERMISSIONS.txt').write_bytes((root/'CLASS_PERMISSIONS.txt').read_bytes())
-if args.skip_native:
- assert (mod/'FFVIIJobs.dll').is_file(),'--skip-native requires a previously built DLL'
+from build_hext import build as build_runtime,test as test_runtime
+if args.skip_runtime:
+ assert (mod/'runtime/ffvii-jobs-v080.bin').is_file() and (mod/'hext/FFVIIJobs.txt').is_file()
 else:
- subprocess.run([args.zig,'cc','-target','x86-windows-gnu','-mstackrealign','-O2','-Wall','-Wextra','-shared',str(src/'ffvii_jobs.c'),'-o',str(mod/'FFVIIJobs.dll')],check=True)
-print('Built nine class dropdowns and one accessory reference, with',len(previews),'selection-dependent information previews.')
+ build_runtime(root,args.zig,args.runtime_work,args.python_tools)
+print('Built DLL-free HEXT package with nine class dropdowns, accessory reference and 57 guide previews.')
 if args.test_output:
- td=Path(args.test_output).resolve();td.mkdir(parents=True,exist_ok=True);exe=td/'test_native.exe'
- subprocess.run([args.zig,'cc','-target','x86-windows-gnu','-mstackrealign','-O2','-Wall','-Wextra','-DCMK_TEST_BUILD',
-  '-Wl,--image-base=0x400000','-Wl,--stack=1048576',str(src/'ffvii_jobs.c'),str(src/'test_native.c'),'-o',str(exe)],check=True)
- image=bytearray(exe.read_bytes());off=struct.unpack_from('<I',image,0x3c)[0]+24+70
- struct.pack_into('<H',image,off,struct.unpack_from('<H',image,off)[0]&~0x40);exe.write_bytes(image)
- for extra in ([],['conflict'],['ui-conflict'],['accessory-conflict'],['accessory-ui-conflict']):subprocess.run([str(exe)]+extra,cwd=td,check=True)
+ test_runtime(root,args.zig,Path(args.runtime_work).resolve(),args.test_output)

@@ -1,32 +1,37 @@
-FFVII JOB SYSTEM 0.7.2 - PUBLIC RELEASE PREPARATION
-2026-11-22
+FFVII Job System 0.8.0 - private verification, 22 November 2026
 
-Author: Willard82
-Project: https://github.com/WailSolaiman/ffviijobs
-Optional support: https://ko-fi.com/ffviijobs
-Release tag staged for manual upload: v0.7.2
+No FF7 launch, mod import/activation, profile or mod-order changes performed.
+The installed library and both profile hashes match the pre-work snapshot.
+The author must test this new startup backend in-game before public release.
 
-PASS Native DLL, C source and generated permissions header are byte-identical
-to 0.7.1 / the tested 0.7.0 gameplay core. No gameplay permissions changed.
-PASS Existing class setting IDs, values, defaults, options, all 225 folders
-and accessory reference ID remain unchanged, preserving saved class choices.
-PASS 25-class roster preview visually checked: all class labels present and
-human Gunner in row 3/column 1. Preview is included in the IRO and as a separate
-release asset. Original artwork references and generation/edit prompts included.
-PASS 15 checks through installed 7H metadata importer and catalogue XML
-serializer, including author, donation link, project link, mod ID, version,
-tested Steam edition, KB download size and embedded preview bytes. Metadata
-parser used only a private fixture; no actual library import was performed.
-PASS 1,729 installed Configure Mod view-model checks covering all 257 choices.
-PASS 148,025 installed 7H archive/configuration/native checks, 477 marker reads.
-PASS IRO directory and all 287 payloads verified byte-for-byte after packaging.
-PASS Installed library.xml and both profile XML hashes remain unchanged.
+PASS 175,836 native x86 fixture checks executing the actual relocated flat
+runtime and HEXT entry. Covers all classes/characters, equip restrictions,
+AP preservation, full inventory, icons, stock/ESUI layouts and accessory rules.
+PASS four conflict modes, 40 checks each, retaining all sixteen hook guards.
+PASS missing, corrupt and truncated runtime cases, 39 checks each. Entry call
+is restored and gameplay hooks remain unchanged on these startup failures.
+PASS 175,850 checks with the exact installed ESUI startup routine in a private
+fixture. Its guarded execute-permission repair runs before font setup.
 
-Staged catalogue entry targets English/Steam, the tested edition. Remote URLs
-point to planned release assets and are NOT yet verified live. After manually
-uploading the IRO and preview to v0.7.2, run source/prepare_catalog.py --verify.
-It downloads and compares both public assets to the local files. Community
-catalogue acceptance requires upstream automated checks and maintainer review.
+PASS 2,927 installed-7H integration checks: actual ModInfo/IrosArc, HEXT
+discovery/application, exact patch bytes and executable page permissions,
+51 class configurations and 510 reads through actual virtual file handlers.
+LoadLibraries/LoadPlugins/LoadAssemblies/LoadPrograms are all empty. These are
+the four collections checked by installed CheckAllowedActivate before its
+warning dialog. The IRO contains no DLL or EXE payload.
+PASS 1,729 installed Configure Mod view-model checks: 225 class selections,
+32 accessory references and 57 decoded guide images.
 
-No repository push, release upload, pull request, mod activation, order change,
-FF7 launch or desktop capture was performed.
+PASS approved 25-class/83-Materia pools, nine defaults and original 32
+accessory permissions; values are unchanged from 0.7.2.
+PASS installed game kernel Materia/accessory IDs, character IDs, all sixteen
+guard signatures, 18 original weapon-renderer cases and 192 accessory paths.
+PASS installed ESUI 2.968 full startup fingerprint and isolated execution.
+PASS 6,571 static HEXT write ranges across other installed mods, with no
+overlap with the new early entry or executable padding; no unresolved lines.
+PASS actual English executable early-call bytes and zero-filled executable
+padding. This is specific to the tested executable, not other languages.
+
+Package and metadata checks: byte-for-byte IRO round trip; stable mod GUID,
+author/support links, 0.80 package/catalogue version, Steam/EN target and
+download size in KB. Catalogue URLs are staged, not published or live-verified.

@@ -7,12 +7,13 @@ Configure Mod includes class descriptions and an accessory reference.
 Accessory class assignments are currently informational.
 
 Author: Willard82
-Version: 0.72 (release tag v0.7.2)
+Version: 0.80 (release tag v0.8.0)
 Project: https://github.com/WailSolaiman/ffviijobs
 Optional support: https://ko-fi.com/ffviijobs
 
 Validation: private native/configuration/archive checks; tested locally with
-7th Heaven 4.6.1, FFNx 1.25.2.0 and Enhanced Stock UI 2.968. Uses native code.
+7th Heaven 4.6.1, FFNx 1.25.2.0 and Enhanced Stock UI 2.968. Uses HEXT patches and a freestanding runtime; no DLL declaration.
+The new startup backend still needs an in-game test before submission.
 
 Before submitting: upload the release assets and run the included public
 asset verification. Add the successful download-check result here.

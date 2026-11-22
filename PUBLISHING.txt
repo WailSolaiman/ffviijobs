@@ -1,15 +1,15 @@
-PUBLISH FFVII JOB SYSTEM v0.7.2
+PUBLISH FFVII JOB SYSTEM v0.8.0
 
-Everything here is staged locally. Nothing has been uploaded or submitted.
+Source is available on GitHub. The packaged release and catalogue entry are staged;
+no release assets or catalogue pull request have been published.
 
-1. Initialize https://github.com/WailSolaiman/ffviijobs with a first commit.
-   Upload README.txt from this folder as a starting project README. Keep
-   source files in the repository if you choose to publish the source.
-2. Create a GitHub release with tag v0.7.2 and title:
-   FFVII Job System v0.7.2 - Willard82
+1. Test the 0.8.0 HEXT build in-game with your selected classes and UI mods.
+   Confirm activation has no native-library prompt and gameplay works.
+2. Create a GitHub release with tag v0.8.0 and title:
+   FFVII Job System v0.8.0 - Willard82
 3. Paste RELEASE_NOTES.txt into its description. Attach these release assets
    using exactly these filenames:
-     FFVIIJobSystem-0.7.2.iro
+     FFVIIJobSystem-0.8.0.iro
      preview.png
      SHA256SUMS.txt
    The source ZIP is optional. Publish the release yourself.
@@ -24,7 +24,7 @@ Everything here is staged locally. Nothing has been uploaded or submitted.
    Await automated checks and maintainer review; acceptance is not guaranteed.
 
 The entry targets the tested Steam edition and English language. It preserves
-mod ID 2a737e43-7bcd-4da4-962d-3c87631fca5e and specifies version 0.72.
+mod ID 2a737e43-7bcd-4da4-962d-3c87631fca5e and specifies version 0.80.
 Its URLs are prefilled for your repository and release tag; they will work
 only after step 3. Changing the tag or filenames requires updating the entry.
 

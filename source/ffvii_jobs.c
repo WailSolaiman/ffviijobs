@@ -1,4 +1,4 @@
-/* FFVII Job System 0.7.0 - English FF7 PC 1.02, 7th Heaven LoadLibrary.
+/* FFVII Job System 0.8.0 - English FF7 PC 1.02, freestanding 7th Heaven HEXT runtime.
  * Original implementation. No Square Enix executable or assets are distributed.
  * Fixed addresses were verified against the user's English Steam executable.
  */
@@ -10,6 +10,7 @@
 #include "rules.generated.h"
 
 #define API __declspec(dllexport)
+#include "hext_api.h"
 #define CLOUD ((uint32_t *)0xDBFDCC)
 #define INVENTORY ((uint32_t *)0xDC04B4)
 #define EMPTY 0xFFFFFFFFu
@@ -530,18 +531,11 @@ API int cmk_install(void) {
     for(unsigned i=PATCH_COUNT;i>0;--i) {DWORD ignored; VirtualProtect((void *)patches[i-1].address,patches[i-1].size,patches[i-1].old_protect,&ignored);}
     FlushInstructionCache(GetCurrentProcess(),NULL,0); installed=1;
     jobs_esui_compat();
-    log_line("ACTIVE: FFVII Job System 0.7.0; sixteen verified hooks installed; 25 selectable classes.\r\n");
+    log_line("ACTIVE: FFVII Job System 0.8.0; sixteen verified hooks installed; 25 selectable classes.\r\n");
     return 1;
 }
-BOOL WINAPI DllMain(HINSTANCE module,DWORD reason,LPVOID reserved) {
-    (void)reserved;
-    if(reason==DLL_PROCESS_ATTACH) {
-        DisableThreadLibraryCalls(module);
-#ifndef CMK_TEST_BUILD
-        jobs_configure(DEFAULT_JOBS);
-        settings_pending=1;
-        cmk_install();
-#endif
-    }
-    return TRUE;
+API int jobs_hext_entry(void){
+    if(!hext_resolve_api())return 0;
+    if(!jobs_read_settings(NULL))return 0;
+    return cmk_install();
 }
