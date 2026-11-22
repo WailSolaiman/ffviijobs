@@ -357,12 +357,16 @@ int main(int argc,char **argv) {
           CHECK(text_calls==1);CHECK(last_text_x==x);CHECK(last_text_y==y);
           CHECK(sprite_calls==number);CHECK(drawn_owner_mask()==((1u<<number)-1));
           if(number){
-            int compact=number>(layout?6:7);
+            int compact=number>5;
             int size=low?(compact?4:8):(compact?8:16);
             CHECK(last_icon_x+size==edge-(low?8:16));CHECK(drawn_x[0]>x+15);
             CHECK(last_icon_y==y+(low?2:4));CHECK(last_palette==1);
             float *v=low?lo_vertices:hi_vertices;
             CHECK(v[16]-v[0]==size);CHECK(v[9]-v[1]==size);
+            if(number>1){
+              int step=low?(compact?4:9):(compact?9:18);
+              for(unsigned i=1;i<number;++i){CHECK(drawn_x[i]-drawn_x[i-1]==step);CHECK(drawn_x[i]>=drawn_x[i-1]+size);}
+            }
             CHECK(last_depth>0.199f && last_depth<0.201f);CHECK(v[2]==last_depth);
           }
           for(unsigned c=0;c<9;++c){
@@ -410,17 +414,17 @@ int main(int argc,char **argv) {
         CHECK(sprite_calls==5);CHECK(drawn_owner_mask()==cmk_owner_mask(0));CHECK(text_calls==1);
         float *v=low?lo_vertices:hi_vertices;
         CHECK(v[16]-v[0]==(low?8:16));CHECK(v[9]-v[1]==(low?8:16));
-        CHECK(drawn_x[1]-drawn_x[0]==(low?10:20));
+        CHECK(drawn_x[1]-drawn_x[0]==(low?9:18));
       }
     }
-    /* Nine normal icons also fit when a UI gives the list a wider row. */
+    /* Six or more owners stay compact even when a UI gives a wider row. */
     for(unsigned c=0;c<9;++c)options[c]=black;CHECK(jobs_configure(options));INV[12]=49;
     for(unsigned site=0;site<4;++site){
       int low=site&1;NameArgs args={low?150:300,low?102:204,test_name,7,0.2f};
       sprite_calls=text_calls=0;jobs_render_name(frame,&args,site>=2,low);
       CHECK(sprite_calls==9);CHECK(text_calls==1);
       float *v=low?lo_vertices:hi_vertices;
-      CHECK(v[16]-v[0]==(low?8:16));CHECK(drawn_x[1]-drawn_x[0]==(low?10:20));
+      CHECK(v[16]-v[0]==(low?4:8));CHECK(drawn_x[1]-drawn_x[0]==(low?4:9));
       CHECK(drawn_x[0]>args.x+(low?16:32));
     }
     const uint8_t wide_name[]={0x26,0x49,0x52,0x45,0x26,0x49,0x52,0x45,0x26,0x49,0x52,0x45,0x26,0x49,0x52,255};
@@ -428,13 +432,17 @@ int main(int argc,char **argv) {
     font_object[0x70/4]=(uint32_t)glyph_vertices;
     U32(0xDC100C)=U32(0xDC1010)=U32(0xDC1048)=(uint32_t)font_object;U32(0xDC105C)=7;
     INV[12]=49;
-    for(unsigned low=0;low<2;++low){
-      NameArgs args={low?222:444,low?102:204,wide_name,7,0.2f};sprite_calls=text_calls=glyph_calls=0;
-      jobs_render_name(frame,&args,0,low);
-      CHECK(sprite_calls==9);CHECK(glyph_calls==15);CHECK(text_calls==0);
-      CHECK(glyph_vertices[16]<(float)(drawn_x[0]+(low?7:0)));
-      CHECK(glyph_vertices[6]==0.25f);
+    for(unsigned number=1;number<=9;++number){
+      for(unsigned c=0;c<9;++c)options[c]=c<number?black:monk;CHECK(jobs_configure(options));
+      for(unsigned site=0;site<4;++site){
+        int low=site&1;NameArgs args={low?222:444,low?102:204,wide_name,7,0.2f};sprite_calls=text_calls=glyph_calls=0;
+        jobs_render_name(frame,&args,site>=2,low);
+        CHECK(sprite_calls==number);CHECK(glyph_calls==15);CHECK(text_calls==0);
+        CHECK(glyph_vertices[16]<(float)(drawn_x[0]+(low?7:0)));
+        CHECK(glyph_vertices[6]==0.25f);
+      }
     }
+    for(unsigned c=0;c<9;++c)options[c]=black;CHECK(jobs_configure(options));
     U32(0xDB958C)=0;
     /* Graphics pointers can be unavailable temporarily without crashing. */
     U32(0xDC0FC8+8)=0;sprite_calls=text_calls=0;
@@ -464,7 +472,7 @@ int main(int argc,char **argv) {
           CHECK(text_calls==1);CHECK(last_text_x==x);CHECK(last_text_y==(low?55:110));
           CHECK(sprite_calls==number);CHECK(drawn_owner_mask()==owners);CHECK(last_palette==1);
           CHECK(last_icon_x+(low?8:16)==edge-(low?8:16));
-          CHECK(drawn_x[0]==last_icon_x-(int)(number-1)*(low?10:20));
+          CHECK(drawn_x[0]==last_icon_x-(int)(number-1)*(low?9:18));
           CHECK(last_icon_y==(low?57:114));
           /* Weapon/armor labels and unknown/empty accessory IDs stay untouched. */
           if(view==0)U32(0xDCA5C4)=1;
