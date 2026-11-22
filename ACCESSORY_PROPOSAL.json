@@ -1,0 +1,488 @@
+{
+  "status": "Informational reference in Configure Mod. Proposed class assignments are not active; existing character accessory permissions remain in use.",
+  "date": "2026-11-21",
+  "basis": "Original FFVII item effects checked against outside guides. Proposed class restrictions are a thematic mod adaptation, not canonical FFVII restrictions.",
+  "owner_rule": "Character ownership follows the selected class. With no eligible selected character: visible, no icons, unusable.",
+  "groups": {
+    "physical": [
+      "Warrior",
+      "Knight",
+      "Paladin",
+      "Dark Knight",
+      "Mystic Knight",
+      "Monk",
+      "Samurai",
+      "Dragoon",
+      "Thief",
+      "Ninja",
+      "Ranger",
+      "Gunner",
+      "Beastmaster"
+    ],
+    "magic": [
+      "White Mage",
+      "Black Mage",
+      "Red Mage",
+      "Blue Mage",
+      "Time Mage",
+      "Summoner",
+      "Mystic / Oracle",
+      "Sage",
+      "Mystic Knight",
+      "Paladin"
+    ],
+    "armored": [
+      "Knight",
+      "Paladin",
+      "Warrior",
+      "Dark Knight",
+      "Mystic Knight",
+      "Dragoon",
+      "Samurai"
+    ],
+    "elemental": [
+      "Black Mage",
+      "Red Mage",
+      "Blue Mage",
+      "Mystic Knight",
+      "Summoner",
+      "Sage"
+    ]
+  },
+  "accessories": [
+    {
+      "name": "Power Wrist",
+      "effect": "Strength +10",
+      "classes": [
+        "Warrior",
+        "Knight",
+        "Paladin",
+        "Dark Knight",
+        "Mystic Knight",
+        "Monk",
+        "Samurai",
+        "Dragoon",
+        "Thief",
+        "Ninja",
+        "Ranger",
+        "Gunner",
+        "Beastmaster"
+      ],
+      "rationale": "Strength supports weapon attacks and physical combat."
+    },
+    {
+      "name": "Protect Vest",
+      "effect": "Vitality +10",
+      "classes": [
+        "Knight",
+        "Paladin",
+        "Warrior",
+        "Dark Knight",
+        "Mystic Knight",
+        "Dragoon",
+        "Samurai"
+      ],
+      "rationale": "Vitality supports armored classes and frontline defense."
+    },
+    {
+      "name": "Earring",
+      "effect": "Magic +10",
+      "classes": [
+        "White Mage",
+        "Black Mage",
+        "Red Mage",
+        "Blue Mage",
+        "Time Mage",
+        "Summoner",
+        "Mystic / Oracle",
+        "Sage",
+        "Mystic Knight",
+        "Paladin"
+      ],
+      "rationale": "Magic power supports spellcasting and hybrid combat."
+    },
+    {
+      "name": "Talisman",
+      "effect": "Spirit +10",
+      "classes": [
+        "White Mage",
+        "Black Mage",
+        "Red Mage",
+        "Blue Mage",
+        "Time Mage",
+        "Summoner",
+        "Mystic / Oracle",
+        "Sage",
+        "Mystic Knight",
+        "Paladin",
+        "Monk",
+        "Scholar"
+      ],
+      "rationale": "Spirit supports magic defense, spiritual discipline and support roles."
+    },
+    {
+      "name": "Choco Feather",
+      "effect": "Dexterity +10",
+      "classes": [
+        "Thief",
+        "Ninja",
+        "Ranger",
+        "Gunner",
+        "Beastmaster"
+      ],
+      "rationale": "Agility suits fast fighters, scouts and animal handlers."
+    },
+    {
+      "name": "Amulet",
+      "effect": "Luck +10",
+      "classes": [
+        "Gambler",
+        "Thief"
+      ],
+      "rationale": "Luck is central to gambling and opportunistic thievery."
+    },
+    {
+      "name": "Champion Belt",
+      "effect": "Strength +30; Vitality +30",
+      "classes": [
+        "Monk",
+        "Warrior"
+      ],
+      "rationale": "Strength and toughness suit dedicated martial fighters."
+    },
+    {
+      "name": "Poison Ring",
+      "effect": "Absorbs Poison damage; prevents Poison status",
+      "classes": [
+        "Black Mage",
+        "Blue Mage",
+        "Ninja",
+        "Chemist / Alchemist",
+        "Mystic / Oracle",
+        "Sage"
+      ],
+      "rationale": "Poison, monster techniques, chemistry and status magic"
+    },
+    {
+      "name": "Tough Ring",
+      "effect": "Vitality +50; Spirit +50",
+      "classes": [
+        "Knight",
+        "Paladin",
+        "Warrior",
+        "Dark Knight"
+      ],
+      "rationale": "Strong physical and magical defense suits dedicated frontline fighters."
+    },
+    {
+      "name": "Circlet",
+      "effect": "Magic +30; Spirit +30",
+      "classes": [
+        "White Mage",
+        "Black Mage",
+        "Red Mage",
+        "Blue Mage",
+        "Time Mage",
+        "Summoner",
+        "Mystic / Oracle",
+        "Sage",
+        "Mystic Knight",
+        "Paladin"
+      ],
+      "rationale": "Magic and Spirit suit advanced spellcasting equipment."
+    },
+    {
+      "name": "Star Pendant",
+      "effect": "Prevents Poison",
+      "classes": [
+        "White Mage",
+        "Chemist / Alchemist",
+        "Monk",
+        "Ranger",
+        "Beastmaster"
+      ],
+      "rationale": "Healing, conditioning and wilderness survival"
+    },
+    {
+      "name": "Silver Glasses",
+      "effect": "Prevents Darkness (Blind)",
+      "classes": [
+        "Warrior",
+        "Knight",
+        "Paladin",
+        "Dark Knight",
+        "Mystic Knight",
+        "Monk",
+        "Samurai",
+        "Dragoon",
+        "Thief",
+        "Ninja",
+        "Ranger",
+        "Gunner",
+        "Beastmaster"
+      ],
+      "rationale": "Protects the accuracy of weapon-focused fighters."
+    },
+    {
+      "name": "Headband",
+      "effect": "Prevents Sleep",
+      "classes": [
+        "Monk",
+        "Samurai",
+        "Ninja",
+        "Gunner",
+        "Ranger",
+        "Scholar",
+        "Mime",
+        "Mystic / Oracle"
+      ],
+      "rationale": "Focus and vigilance"
+    },
+    {
+      "name": "Fairy Ring",
+      "effect": "Prevents Poison and Darkness",
+      "classes": [
+        "White Mage",
+        "Chemist / Alchemist",
+        "Ranger",
+        "Beastmaster",
+        "Paladin",
+        "Monk"
+      ],
+      "rationale": "Healing, survival and protection"
+    },
+    {
+      "name": "Jem Ring",
+      "effect": "Prevents Paralysis, Petrify and Slow-numb",
+      "classes": [
+        "Knight",
+        "Paladin",
+        "Warrior",
+        "Dragoon",
+        "Dark Knight"
+      ],
+      "rationale": "Helps frontline fighters resist paralysis and petrification."
+    },
+    {
+      "name": "White Cape",
+      "effect": "Prevents Frog and Small (Mini)",
+      "classes": [
+        "White Mage",
+        "Red Mage",
+        "Blue Mage",
+        "Monk",
+        "Chemist / Alchemist",
+        "Paladin",
+        "Scholar",
+        "Sage"
+      ],
+      "rationale": "Helps healers, protectors and status specialists resist transformations."
+    },
+    {
+      "name": "Sprint Shoes",
+      "effect": "Starts battle with Haste",
+      "classes": [
+        "Time Mage",
+        "Thief",
+        "Ninja",
+        "Ranger",
+        "Gunner"
+      ],
+      "rationale": "Haste suits time manipulation and fast combat roles."
+    },
+    {
+      "name": "Peace Ring",
+      "effect": "Prevents Berserk, Fury, Sadness and Confusion",
+      "classes": [
+        "Monk",
+        "Samurai",
+        "White Mage",
+        "Scholar",
+        "Mystic / Oracle"
+      ],
+      "rationale": "Mental composure suits disciplined fighters and support roles."
+    },
+    {
+      "name": "Ribbon",
+      "effect": "Broad status protection",
+      "classes": [
+        "White Mage",
+        "Chemist / Alchemist",
+        "Scholar",
+        "Sage"
+      ],
+      "rationale": "Broad status resistance helps support characters keep acting."
+    },
+    {
+      "name": "Fire Ring",
+      "effect": "Nullifies Fire damage",
+      "classes": [
+        "Black Mage",
+        "Red Mage",
+        "Blue Mage",
+        "Mystic Knight",
+        "Summoner",
+        "Sage"
+      ],
+      "rationale": "Elemental expertise"
+    },
+    {
+      "name": "Ice Ring",
+      "effect": "Nullifies Ice damage",
+      "classes": [
+        "Black Mage",
+        "Red Mage",
+        "Blue Mage",
+        "Mystic Knight",
+        "Summoner",
+        "Sage"
+      ],
+      "rationale": "Elemental expertise"
+    },
+    {
+      "name": "Bolt Ring",
+      "effect": "Nullifies Lightning damage",
+      "classes": [
+        "Black Mage",
+        "Red Mage",
+        "Blue Mage",
+        "Mystic Knight",
+        "Summoner",
+        "Sage"
+      ],
+      "rationale": "Elemental expertise"
+    },
+    {
+      "name": "Tetra Elemental",
+      "effect": "Absorbs Fire, Ice, Lightning and Earth damage",
+      "classes": [
+        "Black Mage",
+        "Red Mage",
+        "Blue Mage",
+        "Mystic Knight",
+        "Summoner",
+        "Sage"
+      ],
+      "rationale": "Advanced elemental protection"
+    },
+    {
+      "name": "Safety Bit",
+      "effect": "Prevents Death, Death-sentence, Petrify and Slow-numb",
+      "classes": [
+        "White Mage",
+        "Paladin",
+        "Dark Knight",
+        "Scholar",
+        "Summoner",
+        "Sage"
+      ],
+      "rationale": "Life/death magic, protection and survival"
+    },
+    {
+      "name": "Fury Ring",
+      "effect": "Starts battle with Berserk",
+      "classes": [
+        "Warrior"
+      ],
+      "rationale": "Berserk suits an aggressive physical fighter."
+    },
+    {
+      "name": "Curse Ring",
+      "effect": "Multiple stat bonuses; starts battle with Death Sentence",
+      "classes": [
+        "Dark Knight",
+        "Gambler"
+      ],
+      "rationale": "Power with a dangerous countdown suits dark or risk-taking roles."
+    },
+    {
+      "name": "Protect Ring",
+      "effect": "Starts battle with Barrier and MBarrier",
+      "classes": [
+        "Knight",
+        "Paladin",
+        "White Mage",
+        "Mystic Knight",
+        "Sage"
+      ],
+      "rationale": "Defensive and barrier-oriented roles"
+    },
+    {
+      "name": "Cat's Bell",
+      "effect": "Restores HP while walking",
+      "classes": [
+        "Monk",
+        "Ranger",
+        "Beastmaster",
+        "Chemist / Alchemist"
+      ],
+      "rationale": "Passive recovery suits endurance, exploration and self-sufficiency."
+    },
+    {
+      "name": "Reflect Ring",
+      "effect": "Starts battle with Reflect",
+      "classes": [
+        "White Mage",
+        "Time Mage",
+        "Mystic Knight",
+        "Paladin",
+        "Sage"
+      ],
+      "rationale": "Protective and anti-magic roles"
+    },
+    {
+      "name": "Water Ring",
+      "effect": "Absorbs Water damage",
+      "classes": [
+        "Blue Mage",
+        "Summoner",
+        "Ninja"
+      ],
+      "rationale": "Links to aquatic enemy skills, Leviathan and water ninjutsu."
+    },
+    {
+      "name": "Sneak Glove",
+      "effect": "Improves Steal success",
+      "classes": [
+        "Thief",
+        "Mime"
+      ],
+      "rationale": "Thief uses Steal; Mime gains it through Master Command."
+    },
+    {
+      "name": "HypnoCrown",
+      "effect": "Improves Manipulate success",
+      "classes": [
+        "Beastmaster",
+        "Mime"
+      ],
+      "rationale": "Beastmaster uses Manipulate; Mime gains it through Master Command."
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://guides.gamercorner.net/ffvii/tables/accessories",
+      "purpose": "Stat bonuses and status protections"
+    },
+    {
+      "url": "https://jegged.com/Games/Final-Fantasy-VII/Accessories/",
+      "purpose": "Accessory effects, elemental properties and command bonuses; avoid its inaccurate all-status/Instant Death Ribbon wording"
+    },
+    {
+      "url": "https://strategywiki.org/wiki/Final_Fantasy_VII/Command_Materia",
+      "purpose": "Master Command includes Steal and Manipulate"
+    },
+    {
+      "url": "https://na.finalfantasyxiv.com/jobguide/paladin/",
+      "purpose": "Protective job identity"
+    },
+    {
+      "url": "https://na.finalfantasyxiv.com/jobguide/monk/",
+      "purpose": "Physical prowess and chakra identity"
+    },
+    {
+      "url": "https://na.finalfantasyxiv.com/jobguide/ninja/",
+      "purpose": "Ninja elemental ninjutsu including Suiton"
+    }
+  ]
+}

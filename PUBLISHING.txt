@@ -1,0 +1,38 @@
+PUBLISH FFVII JOB SYSTEM v0.7.2
+
+Everything here is staged locally. Nothing has been uploaded or submitted.
+
+1. Initialize https://github.com/WailSolaiman/ffviijobs with a first commit.
+   Upload README.txt from this folder as a starting project README. Keep
+   source files in the repository if you choose to publish the source.
+2. Create a GitHub release with tag v0.7.2 and title:
+   FFVII Job System v0.7.2 - Willard82
+3. Paste RELEASE_NOTES.txt into its description. Attach these release assets
+   using exactly these filenames:
+     FFVIIJobSystem-0.7.2.iro
+     preview.png
+     SHA256SUMS.txt
+   The source ZIP is optional. Publish the release yourself.
+4. Verify both public assets. From this release folder run:
+     py source/prepare_catalog.py --verify
+   This only downloads and compares the published IRO/preview against the
+   local files. It performs no upload. Verification must pass before submission.
+5. Fork https://github.com/tsunamods-codes/7th-Heaven-Catalogs
+   Add catalog-submission/mods/qhimm/FFVII Job System/mod.xml under the matching
+   mods/qhimm/FFVII Job System/ folder in your fork.
+   Open a pull request. Suggested title/body are in PULL_REQUEST.txt.
+   Await automated checks and maintainer review; acceptance is not guaranteed.
+
+The entry targets the tested Steam edition and English language. It preserves
+mod ID 2a737e43-7bcd-4da4-962d-3c87631fca5e and specifies version 0.72.
+Its URLs are prefilled for your repository and release tag; they will work
+only after step 3. Changing the tag or filenames requires updating the entry.
+
+catalog-submission/ffviijobs-catalog.xml is an OPTIONAL standalone catalogue.
+It is not the file to submit to the community repository. If you host it,
+users can add its subscription manually. It uses the same public assets.
+
+Official submission instructions:
+https://github.com/tsunamods-codes/7th-Heaven-Catalogs#how-to-submit-your-mod
+Official catalogue format:
+https://github.com/tsunamods-codes/7th-Heaven/blob/master/docs/CATALOG.md

@@ -1,0 +1,229 @@
+{
+  "White Mage": [
+    "Restore",
+    "Heal",
+    "Revive",
+    "Full Cure",
+    "Barrier",
+    "Shield",
+    "Sense",
+    "All",
+    "MP Plus",
+    "Magic Plus"
+  ],
+  "Black Mage": [
+    "Fire",
+    "Ice",
+    "Lightning",
+    "Earth",
+    "Poison",
+    "Contain",
+    "Ultima",
+    "Destruct",
+    "All",
+    "MP Plus",
+    "Magic Plus",
+    "MP Turbo",
+    "Quadra Magic",
+    "Magic Counter"
+  ],
+  "Red Mage": [
+    "Fire",
+    "Ice",
+    "Lightning",
+    "Restore",
+    "Heal",
+    "Revive",
+    "Seal",
+    "Transform",
+    "W-Magic",
+    "Mega All",
+    "All",
+    "MP Plus",
+    "Magic Plus",
+    "Magic Counter"
+  ],
+  "Blue Mage": [
+    "Enemy Skill",
+    "MP Plus",
+    "Magic Plus"
+  ],
+  "Time Mage": [
+    "Time",
+    "Gravity",
+    "Comet",
+    "Exit",
+    "Underwater",
+    "All",
+    "MP Plus",
+    "Magic Plus"
+  ],
+  "Summoner": [
+    "Choco/Mog",
+    "Shiva",
+    "Ifrit",
+    "Ramuh",
+    "Titan",
+    "Odin",
+    "Leviathan",
+    "Bahamut",
+    "Kjata",
+    "Alexander",
+    "Phoenix",
+    "Neo Bahamut",
+    "Hades",
+    "Typhoon",
+    "Bahamut ZERO",
+    "Knights of Round",
+    "Master Summon",
+    "W-Summon",
+    "Final Attack",
+    "HP↔MP",
+    "MP Turbo",
+    "Quadra Magic",
+    "Magic Counter",
+    "MP Plus",
+    "Magic Plus"
+  ],
+  "Mystic Knight": [
+    "Fire",
+    "Ice",
+    "Lightning",
+    "Elemental",
+    "Added Effect",
+    "Added Cut",
+    "Magic Counter",
+    "MP Plus",
+    "Magic Plus"
+  ],
+  "Monk": [
+    "Deathblow",
+    "Double Cut",
+    "Counter Attack",
+    "HP Plus"
+  ],
+  "Gambler": [
+    "Gil Plus",
+    "Luck Plus"
+  ],
+  "Ranger": [
+    "Long Range",
+    "Pre-Emptive",
+    "Sense"
+  ],
+  "Gunner": [
+    "Long Range",
+    "Slash-All",
+    "EXP Plus",
+    "Sense"
+  ],
+  "Beastmaster": [
+    "Manipulate",
+    "Chocobo Lure",
+    "Enemy Lure"
+  ],
+  "Scholar": [
+    "Sense"
+  ],
+  "Mime": [
+    "Mime",
+    "Master Command",
+    "Counter"
+  ],
+  "Chemist / Alchemist": [
+    "W-Item",
+    "Morph"
+  ],
+  "Mystic / Oracle": [
+    "Mystify",
+    "All",
+    "MP Plus",
+    "Magic Plus"
+  ],
+  "Sage": [
+    "Barrier",
+    "Comet",
+    "Contain",
+    "Destruct",
+    "Earth",
+    "Exit",
+    "Fire",
+    "Full Cure",
+    "Gravity",
+    "Heal",
+    "Ice",
+    "Lightning",
+    "Master Magic",
+    "Mystify",
+    "Poison",
+    "Restore",
+    "Revive",
+    "Seal",
+    "Shield",
+    "Time",
+    "Transform",
+    "Ultima",
+    "W-Magic",
+    "All",
+    "MP Plus",
+    "Magic Plus",
+    "MP Turbo",
+    "Quadra Magic",
+    "Magic Counter"
+  ],
+  "Knight": [
+    "Cover",
+    "HP Plus"
+  ],
+  "Paladin": [
+    "Cover",
+    "HP Plus",
+    "Restore",
+    "Heal",
+    "Barrier",
+    "Shield"
+  ],
+  "Warrior": [
+    "Slash-All",
+    "Deathblow",
+    "Double Cut",
+    "HP Plus"
+  ],
+  "Samurai": [
+    "Slash-All",
+    "Deathblow",
+    "Double Cut"
+  ],
+  "Thief": [
+    "Steal",
+    "Steal as Well",
+    "Sneak Attack",
+    "Speed Plus",
+    "Pre-Emptive",
+    "Enemy Away",
+    "Gil Plus",
+    "Luck Plus"
+  ],
+  "Ninja": [
+    "Throw",
+    "Double Cut",
+    "Poison",
+    "Added Effect",
+    "Sneak Attack",
+    "Speed Plus",
+    "Pre-Emptive",
+    "Enemy Away"
+  ],
+  "Dragoon": [
+    "Long Range",
+    "HP Absorb",
+    "MP Absorb",
+    "HP Plus"
+  ],
+  "Dark Knight": [
+    "Destruct",
+    "HP Absorb",
+    "MP Absorb",
+    "HP Plus"
+  ]
+}

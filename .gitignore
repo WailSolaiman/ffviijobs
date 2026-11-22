@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.dll
+*.pdb
+*.lib
+*.exp
+*.iro
+*.irop
+*.zip
+*.log
+.venv/
+.vs/
+work/

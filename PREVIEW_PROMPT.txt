@@ -1,0 +1,18 @@
+Built-in image generation, using four downloaded web images as visual references.
+Final image: preview.png
+The poster is a newly generated illustration, not a direct collage of source assets.
+
+Create a polished promotional preview poster for the independent FFVII Job System mod by Willard82. Use the supplied internet artwork as visual references for classic Final Fantasy job costumes and silhouettes, and redraw the characters in ONE cohesive charming, detailed JRPG illustration style. Reference 1 shows FFV job costumes; reference 2 is the official Tactics Time Mage; reference 3 is the official Tactics Chemist; reference 4 is the Tactics A2 moogle Gunner. Do not reproduce the source pages, Japanese writing, borders or old layouts.
+
+Landscape 4:3 composition, ideally 2048x1536. Background very dark charcoal/teal with restrained Mako lighting. A professional clear header at the top reads exactly "FFVII JOB SYSTEM". Below it, a small subtitle reads exactly "25 classes. 9 characters. Your party." At the bottom a quiet credit reads exactly "by Willard82 | Free mod for 7th Heaven".
+
+The main design is a clean, ordered 5 by 5 roster: EXACTLY 25 different illustrated character representatives, one per class, evenly spaced, complete figures with readable faces, costumes and props. Each representative has its exact class name centered underneath in highly legible light typography. Keep labels separate from figures; no duplicated classes, no omitted classes, no extra portraits. Balance male and female human characters, with the Gunner a charming moogle inspired by reference 4. Make every figure distinctive while keeping coherent linework and rendering.
+
+Use precisely this row order and these EXACT labels:
+ROW 1: "White Mage" (white hood with red triangular trim, healing staff); "Black Mage" (blue robe, broad yellow pointed hat, glowing eyes in shadow); "Red Mage" (red feathered hat, red cape, rapier); "Blue Mage" (blue masked monster-magic mage with blue cape); "Time Mage" (tall red conical star hat and purple robe, from reference 2).
+ROW 2: "Summoner" (green robe and small horn headpiece, magical staff); "Mystic Knight" (ornate turban, green/purple garments, glowing curved spellblade); "Monk" (martial artist in orange/brown fighting clothes, wrapped fists); "Gambler" (silver-haired elegant card player with cards and dice); "Ranger" (green-clad archer with bow).
+ROW 3: "Gunner" (orange-hatted moogle with pompom and fantasy pistol, reference 4); "Beastmaster" (animal-themed hood, whip, confident handler); "Scholar" (scholarly cap, spectacles, large open book); "Mime" (colorful masked mimic performer with expressive cape); "Chemist / Alchemist" (earth/green clothing, potion bottle and supply satchel, reference 3).
+ROW 4: "Mystic / Oracle" (muted robes, tall ritual hat, paper talisman); "Sage" (wise elderly mage, ornate wide hat and staff); "Knight" (blue/silver armor, sword and shield); "Paladin" (white/gold armor, luminous holy sword and shield); "Warrior" (red/orange armor, robust large sword).
+ROW 5: "Samurai" (traditional samurai armor and katana); "Thief" (nimble green/brown rogue, dagger and pouch); "Ninja" (dark stealth outfit, face wrap and two short blades); "Dragoon" (blue/purple dragon-shaped helmet and long spear); "Dark Knight" (black/purple armor and dark greatsword).
+
+The composition must be immediately understandable as a class-selection roster. Characters and class names are the focus. Stylish restrained fantasy art, not photorealism, not a screenshot, not a crowded battle. No Materia permission lists, no UI settings, no donation button, no fake official logo, no watermark. Keep the exact 25 labels and title spelled correctly.

@@ -1,0 +1,7 @@
+{
+  "version": "0.7.2",
+  "basis": "User-approved researched 25-class catalogue in CLASS_REFERENCE.json replaces all previous character Materia lists.",
+  "unowned_materia": "visible, no icons, unusable",
+  "accessories": "Original character permissions unchanged.",
+  "release_notes": "Public release metadata only: Willard82, project/support URLs and preview. Native gameplay core unchanged."
+}

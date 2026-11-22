@@ -1,0 +1,27 @@
+FFVII Job System v0.7.2 - by Willard82
+
+A free job-system mod for original English Final Fantasy VII on PC.
+Choose one of 25 Final Fantasy classes for each of the nine characters in
+7th Heaven. Materia permissions follow your choices, and character weapon
+icons show who can equip each Materia. Classes can be shared.
+
+Includes class descriptions, full Materia lists and a 32-item accessory
+reference in Configure Mod. Accessory class suggestions are informational;
+active accessory permissions remain character-based.
+
+Install: download FFVIIJobSystem-0.7.2.iro, import it in 7th Heaven, activate
+FFVII Job System, open Configure Mod and choose your classes before launch.
+Materia with no eligible selected character remain visible but unusable.
+Existing class selections from 0.7.0 and 0.7.1 are preserved.
+
+This release adds Willard82 author credit, the Ko-fi link, the project URL and
+a new 25-class preview. The tested native gameplay DLL remains unchanged.
+
+Tested setup: English Steam FF7 PC 1.02 executable, 7th Heaven 4.6.1,
+FFNx 1.25.2.0 and Enhanced Stock UI 2.968. Other languages and gameplay
+overhauls that change Materia IDs or the same executable hooks are unverified.
+Uses a native DLL, so 7th Heaven displays its normal code-trust prompt.
+
+Project: https://github.com/WailSolaiman/ffviijobs
+Optional support: https://ko-fi.com/ffviijobs
+The mod is free. Tips are always optional.

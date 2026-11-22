@@ -1,0 +1,32 @@
+FFVII JOB SYSTEM 0.7.2 - PUBLIC RELEASE PREPARATION
+2026-11-22
+
+Author: Willard82
+Project: https://github.com/WailSolaiman/ffviijobs
+Optional support: https://ko-fi.com/ffviijobs
+Release tag staged for manual upload: v0.7.2
+
+PASS Native DLL, C source and generated permissions header are byte-identical
+to 0.7.1 / the tested 0.7.0 gameplay core. No gameplay permissions changed.
+PASS Existing class setting IDs, values, defaults, options, all 225 folders
+and accessory reference ID remain unchanged, preserving saved class choices.
+PASS 25-class roster preview visually checked: all class labels present and
+human Gunner in row 3/column 1. Preview is included in the IRO and as a separate
+release asset. Original artwork references and generation/edit prompts included.
+PASS 15 checks through installed 7H metadata importer and catalogue XML
+serializer, including author, donation link, project link, mod ID, version,
+tested Steam edition, KB download size and embedded preview bytes. Metadata
+parser used only a private fixture; no actual library import was performed.
+PASS 1,729 installed Configure Mod view-model checks covering all 257 choices.
+PASS 148,025 installed 7H archive/configuration/native checks, 477 marker reads.
+PASS IRO directory and all 287 payloads verified byte-for-byte after packaging.
+PASS Installed library.xml and both profile XML hashes remain unchanged.
+
+Staged catalogue entry targets English/Steam, the tested edition. Remote URLs
+point to planned release assets and are NOT yet verified live. After manually
+uploading the IRO and preview to v0.7.2, run source/prepare_catalog.py --verify.
+It downloads and compares both public assets to the local files. Community
+catalogue acceptance requires upstream automated checks and maintainer review.
+
+No repository push, release upload, pull request, mod activation, order change,
+FF7 launch or desktop capture was performed.

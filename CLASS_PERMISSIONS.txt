@@ -1,0 +1,288 @@
+FFVII JOB SYSTEM 0.7.2 - CLASSES AND PERMISSIONS
+
+Choose one of the same 25 classes for each character in Configure Mod before launching.
+Characters can share classes. Icons show exactly which characters can equip a Materia under your current selections.
+A Materia with no eligible character remains visible, without icons, and cannot be equipped.
+The defaults do not activate every class; some Materia will therefore have no icons until you choose a suitable class.
+Original English FF7 names are used: HP/MP Up = HP/MP Plus; Assess = Sense; Binding = Seal; Transformations = Transform.
+Counter (blue support) and Counter Attack (purple) are different Materia. Monk has Counter Attack only.
+Configure Mod now shows the selected class's role, Materia and suggested accessories.
+Accessory suggestions are INFORMATION ONLY. Actual accessories still use the existing character permissions.
+DEFAULTS
+  Cloud: Mystic Knight
+  Barret: Gunner
+  Tifa: Monk
+  Aerith: White Mage
+  Red XIII: Blue Mage
+  Yuffie: Thief
+  Cait Sith: Summoner
+  Vincent: Black Mage
+  Cid: Dragoon
+
+25 SHARED CLASSES
+
+White Mage
+  Role: A healer and protector who restores HP, cures ailments and revives allies.
+  Materia: Restore, Heal, Revive, Full Cure, Barrier, Shield, Sense, All, MP Plus, Magic Plus
+  Accessory suggestions (not active): Earring, Talisman, Circlet, Star Pendant, Fairy Ring, White Cape, Peace Ring, Ribbon, Safety Bit, Protect Ring, Reflect Ring
+
+Black Mage
+  Role: An offensive caster focused on elemental damage, destructive magic and powerful spells.
+  Materia: Fire, Ice, Lightning, Earth, Poison, Contain, Ultima, Destruct, All, MP Plus, Magic Plus, MP Turbo, Quadra Magic, Magic Counter
+  Accessory suggestions (not active): Earring, Talisman, Poison Ring, Circlet, Fire Ring, Ice Ring, Bolt Ring, Tetra Elemental
+
+Red Mage
+  Role: A versatile caster combining healing, elemental spells and status magic.
+  Materia: Fire, Ice, Lightning, Restore, Heal, Revive, Seal, Transform, W-Magic, Mega All, All, MP Plus, Magic Plus, Magic Counter
+  Accessory suggestions (not active): Earring, Talisman, Circlet, White Cape, Fire Ring, Ice Ring, Bolt Ring, Tetra Elemental
+
+Blue Mage
+  Role: Uses Enemy Skill to learn monster techniques, including unusual attacks, healing and utility.
+  Materia: Enemy Skill, MP Plus, Magic Plus
+  Accessory suggestions (not active): Earring, Talisman, Poison Ring, Circlet, White Cape, Fire Ring, Ice Ring, Bolt Ring, Tetra Elemental, Water Ring
+
+Time Mage
+  Role: Controls battle tempo and gravity, with space-themed magic and travel utility.
+  Materia: Time, Gravity, Comet, Exit, Underwater, All, MP Plus, Magic Plus
+  Accessory suggestions (not active): Earring, Talisman, Circlet, Sprint Shoes, Reflect Ring
+
+Summoner
+  Role: Calls creatures for damage, support and revival. Specializes in Summon Materia and W-Summon.
+  Materia: Choco/Mog, Shiva, Ifrit, Ramuh, Titan, Odin, Leviathan, Bahamut, Kjata, Alexander, Phoenix, Neo Bahamut, Hades, Typhoon, Bahamut ZERO, Knights of Round, Master Summon, W-Summon, Final Attack, HP↔MP, MP Turbo, Quadra Magic, Magic Counter, MP Plus, Magic Plus
+  Accessory suggestions (not active): Earring, Talisman, Circlet, Fire Ring, Ice Ring, Bolt Ring, Tetra Elemental, Safety Bit, Water Ring
+
+Mystic Knight
+  Role: Combines magic with physical combat. Links elemental and status effects to weapon or armor slots.
+  Materia: Fire, Ice, Lightning, Elemental, Added Effect, Added Cut, Magic Counter, MP Plus, Magic Plus
+  Accessory suggestions (not active): Power Wrist, Protect Vest, Earring, Talisman, Circlet, Silver Glasses, Fire Ring, Ice Ring, Bolt Ring, Tetra Elemental, Protect Ring, Reflect Ring
+
+Monk
+  Role: A martial fighter focused on powerful physical strikes, counterattacks and endurance.
+  Materia: Deathblow, Double Cut, Counter Attack, HP Plus
+  Accessory suggestions (not active): Power Wrist, Talisman, Champion Belt, Star Pendant, Silver Glasses, Headband, Fairy Ring, White Cape, Peace Ring, Cat's Bell
+
+Gambler
+  Role: A luck-and-rewards specialist represented by Luck Plus and Gil Plus.
+  Materia: Gil Plus, Luck Plus
+  Accessory suggestions (not active): Amulet, Curse Ring
+
+Ranger
+  Role: A ranged scout using distance, awareness and pre-emptive attacks.
+  Materia: Long Range, Pre-Emptive, Sense
+  Accessory suggestions (not active): Power Wrist, Choco Feather, Star Pendant, Silver Glasses, Headband, Fairy Ring, Sprint Shoes, Cat's Bell
+
+Gunner
+  Role: A ranged attacker focused on reach, sweeping attacks, enemy analysis and experience rewards.
+  Materia: Long Range, Slash-All, EXP Plus, Sense
+  Accessory suggestions (not active): Power Wrist, Choco Feather, Silver Glasses, Headband, Sprint Shoes
+
+Beastmaster
+  Role: Controls enemies with Manipulate and influences encounters with lure Materia.
+  Materia: Manipulate, Chocobo Lure, Enemy Lure
+  Accessory suggestions (not active): Power Wrist, Choco Feather, Star Pendant, Silver Glasses, Fairy Ring, Cat's Bell, HypnoCrown
+
+Scholar
+  Role: An enemy analyst whose current Materia specialty is Sense.
+  Materia: Sense
+  Accessory suggestions (not active): Talisman, Headband, White Cape, Peace Ring, Ribbon, Safety Bit
+
+Mime
+  Role: Repeats allies' actions and gains broad command access through Master Command.
+  Materia: Mime, Master Command, Counter
+  Accessory suggestions (not active): Headband, Sneak Glove, HypnoCrown
+
+Chemist / Alchemist
+  Role: An item specialist using W-Item and Morph for supplies and battlefield utility.
+  Materia: W-Item, Morph
+  Accessory suggestions (not active): Poison Ring, Star Pendant, Fairy Ring, White Cape, Ribbon, Cat's Bell
+
+Mystic / Oracle
+  Role: Disrupts enemies with Mystify and supports status-magic strategies.
+  Materia: Mystify, All, MP Plus, Magic Plus
+  Accessory suggestions (not active): Earring, Talisman, Poison Ring, Circlet, Headband, Peace Ring
+
+Sage
+  Role: A master caster with the full Magic Materia catalogue and advanced casting support.
+  Materia: Barrier, Comet, Contain, Destruct, Earth, Exit, Fire, Full Cure, Gravity, Heal, Ice, Lightning, Master Magic, Mystify, Poison, Restore, Revive, Seal, Shield, Time, Transform, Ultima, W-Magic, All, MP Plus, Magic Plus, MP Turbo, Quadra Magic, Magic Counter
+  Accessory suggestions (not active): Earring, Talisman, Poison Ring, Circlet, White Cape, Ribbon, Fire Ring, Ice Ring, Bolt Ring, Tetra Elemental, Safety Bit, Protect Ring, Reflect Ring
+
+Knight
+  Role: Protects allies with Cover and reinforces survival with HP Plus.
+  Materia: Cover, HP Plus
+  Accessory suggestions (not active): Power Wrist, Protect Vest, Tough Ring, Silver Glasses, Jem Ring, Protect Ring
+
+Paladin
+  Role: A protective fighter blending Cover and endurance with healing and defensive magic.
+  Materia: Cover, HP Plus, Restore, Heal, Barrier, Shield
+  Accessory suggestions (not active): Power Wrist, Protect Vest, Earring, Talisman, Tough Ring, Circlet, Silver Glasses, Fairy Ring, Jem Ring, White Cape, Safety Bit, Protect Ring, Reflect Ring
+
+Warrior
+  Role: A physical attacker using strong strikes, multi-hit attacks and extra HP.
+  Materia: Slash-All, Deathblow, Double Cut, HP Plus
+  Accessory suggestions (not active): Power Wrist, Protect Vest, Champion Belt, Tough Ring, Silver Glasses, Jem Ring, Fury Ring
+
+Samurai
+  Role: A precise fighter focused on Deathblow, Double Cut and Slash-All.
+  Materia: Slash-All, Deathblow, Double Cut
+  Accessory suggestions (not active): Power Wrist, Protect Vest, Silver Glasses, Headband, Peace Ring
+
+Thief
+  Role: Steals items, strikes opportunistically and improves speed, luck and gil rewards.
+  Materia: Steal, Steal as Well, Sneak Attack, Speed Plus, Pre-Emptive, Enemy Away, Gil Plus, Luck Plus
+  Accessory suggestions (not active): Power Wrist, Choco Feather, Amulet, Silver Glasses, Sprint Shoes, Sneak Glove
+
+Ninja
+  Role: A fast attacker using Throw, Double Cut, Poison and surprise-oriented support.
+  Materia: Throw, Double Cut, Poison, Added Effect, Sneak Attack, Speed Plus, Pre-Emptive, Enemy Away
+  Accessory suggestions (not active): Power Wrist, Choco Feather, Poison Ring, Silver Glasses, Headband, Sprint Shoes, Water Ring
+
+Dragoon
+  Role: A fighter represented here by long reach, HP and MP absorption, and endurance.
+  Materia: Long Range, HP Absorb, MP Absorb, HP Plus
+  Accessory suggestions (not active): Power Wrist, Protect Vest, Silver Glasses, Jem Ring
+
+Dark Knight
+  Role: A dark fighter combining Destruct with HP and MP absorption and extra HP.
+  Materia: Destruct, HP Absorb, MP Absorb, HP Plus
+  Accessory suggestions (not active): Power Wrist, Protect Vest, Tough Ring, Silver Glasses, Jem Ring, Safety Bit, Curse Ring
+
+ACCESSORIES (existing character permissions, independent of selected class)
+  Cloud: Curse Ring, Fire Ring, Ice Ring, Bolt Ring, Tetra Elemental
+  Barret: Protect Vest, Tough Ring, Protect Ring, Jem Ring, Sprint Shoes
+  Tifa: Power Wrist, Champion Belt, Silver Glasses, Star Pendant, Fairy Ring, Headband, Fury Ring, Talisman
+  Aerith: Earring, Circlet, White Cape, Fairy Ring, Ribbon, Sprint Shoes
+  Red XIII: Talisman, Cat's Bell, Tetra Elemental, Power Wrist, Earring
+  Yuffie: Choco Feather, Sprint Shoes, Amulet, Water Ring, Poison Ring, Sneak Glove
+  Cait Sith: HypnoCrown, Talisman, Earring, Circlet, Safety Bit, Ribbon
+  Vincent: Earring, Circlet, Reflect Ring
+  Cid: Fire Ring, Bolt Ring, Ice Ring, Jem Ring, Peace Ring, Fairy Ring, White Cape, Power Wrist, Safety Bit
+
+ACCESSORY REFERENCE (proposed classes; not active)
+
+Power Wrist - Strength +10
+  Suggested classes: Warrior, Knight, Paladin, Dark Knight, Mystic Knight, Monk, Samurai, Dragoon, Thief, Ninja, Ranger, Gunner, Beastmaster
+  Reason: Strength supports weapon attacks and physical combat.
+
+Protect Vest - Vitality +10
+  Suggested classes: Knight, Paladin, Warrior, Dark Knight, Mystic Knight, Dragoon, Samurai
+  Reason: Vitality supports armored classes and frontline defense.
+
+Earring - Magic +10
+  Suggested classes: White Mage, Black Mage, Red Mage, Blue Mage, Time Mage, Summoner, Mystic / Oracle, Sage, Mystic Knight, Paladin
+  Reason: Magic power supports spellcasting and hybrid combat.
+
+Talisman - Spirit +10
+  Suggested classes: White Mage, Black Mage, Red Mage, Blue Mage, Time Mage, Summoner, Mystic / Oracle, Sage, Mystic Knight, Paladin, Monk, Scholar
+  Reason: Spirit supports magic defense, spiritual discipline and support roles.
+
+Choco Feather - Dexterity +10
+  Suggested classes: Thief, Ninja, Ranger, Gunner, Beastmaster
+  Reason: Agility suits fast fighters, scouts and animal handlers.
+
+Amulet - Luck +10
+  Suggested classes: Gambler, Thief
+  Reason: Luck is central to gambling and opportunistic thievery.
+
+Champion Belt - Strength +30; Vitality +30
+  Suggested classes: Monk, Warrior
+  Reason: Strength and toughness suit dedicated martial fighters.
+
+Poison Ring - Absorbs Poison damage; prevents Poison status
+  Suggested classes: Black Mage, Blue Mage, Ninja, Chemist / Alchemist, Mystic / Oracle, Sage
+  Reason: Poison, monster techniques, chemistry and status magic
+
+Tough Ring - Vitality +50; Spirit +50
+  Suggested classes: Knight, Paladin, Warrior, Dark Knight
+  Reason: Strong physical and magical defense suits dedicated frontline fighters.
+
+Circlet - Magic +30; Spirit +30
+  Suggested classes: White Mage, Black Mage, Red Mage, Blue Mage, Time Mage, Summoner, Mystic / Oracle, Sage, Mystic Knight, Paladin
+  Reason: Magic and Spirit suit advanced spellcasting equipment.
+
+Star Pendant - Prevents Poison
+  Suggested classes: White Mage, Chemist / Alchemist, Monk, Ranger, Beastmaster
+  Reason: Healing, conditioning and wilderness survival
+
+Silver Glasses - Prevents Darkness (Blind)
+  Suggested classes: Warrior, Knight, Paladin, Dark Knight, Mystic Knight, Monk, Samurai, Dragoon, Thief, Ninja, Ranger, Gunner, Beastmaster
+  Reason: Protects the accuracy of weapon-focused fighters.
+
+Headband - Prevents Sleep
+  Suggested classes: Monk, Samurai, Ninja, Gunner, Ranger, Scholar, Mime, Mystic / Oracle
+  Reason: Focus and vigilance
+
+Fairy Ring - Prevents Poison and Darkness
+  Suggested classes: White Mage, Chemist / Alchemist, Ranger, Beastmaster, Paladin, Monk
+  Reason: Healing, survival and protection
+
+Jem Ring - Prevents Paralysis, Petrify and Slow-numb
+  Suggested classes: Knight, Paladin, Warrior, Dragoon, Dark Knight
+  Reason: Helps frontline fighters resist paralysis and petrification.
+
+White Cape - Prevents Frog and Small (Mini)
+  Suggested classes: White Mage, Red Mage, Blue Mage, Monk, Chemist / Alchemist, Paladin, Scholar, Sage
+  Reason: Helps healers, protectors and status specialists resist transformations.
+
+Sprint Shoes - Starts battle with Haste
+  Suggested classes: Time Mage, Thief, Ninja, Ranger, Gunner
+  Reason: Haste suits time manipulation and fast combat roles.
+
+Peace Ring - Prevents Berserk, Fury, Sadness and Confusion
+  Suggested classes: Monk, Samurai, White Mage, Scholar, Mystic / Oracle
+  Reason: Mental composure suits disciplined fighters and support roles.
+
+Ribbon - Broad status protection
+  Suggested classes: White Mage, Chemist / Alchemist, Scholar, Sage
+  Reason: Broad status resistance helps support characters keep acting.
+
+Fire Ring - Nullifies Fire damage
+  Suggested classes: Black Mage, Red Mage, Blue Mage, Mystic Knight, Summoner, Sage
+  Reason: Elemental expertise
+
+Ice Ring - Nullifies Ice damage
+  Suggested classes: Black Mage, Red Mage, Blue Mage, Mystic Knight, Summoner, Sage
+  Reason: Elemental expertise
+
+Bolt Ring - Nullifies Lightning damage
+  Suggested classes: Black Mage, Red Mage, Blue Mage, Mystic Knight, Summoner, Sage
+  Reason: Elemental expertise
+
+Tetra Elemental - Absorbs Fire, Ice, Lightning and Earth damage
+  Suggested classes: Black Mage, Red Mage, Blue Mage, Mystic Knight, Summoner, Sage
+  Reason: Advanced elemental protection
+
+Safety Bit - Prevents Death, Death-sentence, Petrify and Slow-numb
+  Suggested classes: White Mage, Paladin, Dark Knight, Scholar, Summoner, Sage
+  Reason: Life/death magic, protection and survival
+
+Fury Ring - Starts battle with Berserk
+  Suggested classes: Warrior
+  Reason: Berserk suits an aggressive physical fighter.
+
+Curse Ring - Multiple stat bonuses; starts battle with Death Sentence
+  Suggested classes: Dark Knight, Gambler
+  Reason: Power with a dangerous countdown suits dark or risk-taking roles.
+
+Protect Ring - Starts battle with Barrier and MBarrier
+  Suggested classes: Knight, Paladin, White Mage, Mystic Knight, Sage
+  Reason: Defensive and barrier-oriented roles
+
+Cat's Bell - Restores HP while walking
+  Suggested classes: Monk, Ranger, Beastmaster, Chemist / Alchemist
+  Reason: Passive recovery suits endurance, exploration and self-sufficiency.
+
+Reflect Ring - Starts battle with Reflect
+  Suggested classes: White Mage, Time Mage, Mystic Knight, Paladin, Sage
+  Reason: Protective and anti-magic roles
+
+Water Ring - Absorbs Water damage
+  Suggested classes: Blue Mage, Summoner, Ninja
+  Reason: Links to aquatic enemy skills, Leviathan and water ninjutsu.
+
+Sneak Glove - Improves Steal success
+  Suggested classes: Thief, Mime
+  Reason: Thief uses Steal; Mime gains it through Master Command.
+
+HypnoCrown - Improves Manipulate success
+  Suggested classes: Beastmaster, Mime
+  Reason: Beastmaster uses Manipulate; Mime gains it through Master Command.

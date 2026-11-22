@@ -1,0 +1,568 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ModInfo>
+  <ID>2a737e43-7bcd-4da4-962d-3c87631fca5e</ID>
+  <Name>FFVII Job System</Name>
+  <Author>Willard82</Author>
+  <Version>0.72</Version>
+  <ReleaseDate>2026-11-22</ReleaseDate>
+  <Category>Gameplay</Category>
+  <GameLanguage>EN</GameLanguage>
+  <Description>Choose one of 25 Final Fantasy jobs for each character. Your choices decide which Materia they can equip, with weapon icons showing eligible characters. Configure Mod includes class and accessory guides. For original English FF7 PC.</Description>
+  <ReleaseNotes>0.7.2: Public release preparation credited to Willard82, with Ko-fi support link, project link and mod preview. Retains all 25 selectable classes, class descriptions and the 32-item accessory reference. Gameplay permissions are unchanged; accessory class suggestions remain informational.</ReleaseNotes>
+  <Link>https://github.com/WailSolaiman/ffviijobs</Link>
+  <DonationLink>https://ko-fi.com/ffviijobs</DonationLink>
+  <PreviewFile>preview.png</PreviewFile>
+  <LoadLibrary>FFVIIJobs.dll</LoadLibrary>
+  <ConfigOption>
+    <Name>Cloud</Name>
+    <ID>job_v070_cloud</ID>
+    <Type>List</Type>
+    <Default>6</Default>
+    <Description>Choose Cloud's class. Default: Mystic Knight. Details below follow your selection. Classes can be shared; changes apply next launch.</Description>
+    <Option Value="0" Name="White Mage" PreviewFile="previews\classes\white_mage.png" />
+    <Option Value="1" Name="Black Mage" PreviewFile="previews\classes\black_mage.png" />
+    <Option Value="2" Name="Red Mage" PreviewFile="previews\classes\red_mage.png" />
+    <Option Value="3" Name="Blue Mage" PreviewFile="previews\classes\blue_mage.png" />
+    <Option Value="4" Name="Time Mage" PreviewFile="previews\classes\time_mage.png" />
+    <Option Value="5" Name="Summoner" PreviewFile="previews\classes\summoner.png" />
+    <Option Value="6" Name="Mystic Knight" PreviewFile="previews\classes\mystic_knight.png" />
+    <Option Value="7" Name="Monk" PreviewFile="previews\classes\monk.png" />
+    <Option Value="8" Name="Gambler" PreviewFile="previews\classes\gambler.png" />
+    <Option Value="9" Name="Ranger" PreviewFile="previews\classes\ranger.png" />
+    <Option Value="10" Name="Gunner" PreviewFile="previews\classes\gunner.png" />
+    <Option Value="11" Name="Beastmaster" PreviewFile="previews\classes\beastmaster.png" />
+    <Option Value="12" Name="Scholar" PreviewFile="previews\classes\scholar.png" />
+    <Option Value="13" Name="Mime" PreviewFile="previews\classes\mime.png" />
+    <Option Value="14" Name="Chemist / Alchemist" PreviewFile="previews\classes\chemist_alchemist.png" />
+    <Option Value="15" Name="Mystic / Oracle" PreviewFile="previews\classes\mystic_oracle.png" />
+    <Option Value="16" Name="Sage" PreviewFile="previews\classes\sage.png" />
+    <Option Value="17" Name="Knight" PreviewFile="previews\classes\knight.png" />
+    <Option Value="18" Name="Paladin" PreviewFile="previews\classes\paladin.png" />
+    <Option Value="19" Name="Warrior" PreviewFile="previews\classes\warrior.png" />
+    <Option Value="20" Name="Samurai" PreviewFile="previews\classes\samurai.png" />
+    <Option Value="21" Name="Thief" PreviewFile="previews\classes\thief.png" />
+    <Option Value="22" Name="Ninja" PreviewFile="previews\classes\ninja.png" />
+    <Option Value="23" Name="Dragoon" PreviewFile="previews\classes\dragoon.png" />
+    <Option Value="24" Name="Dark Knight" PreviewFile="previews\classes\dark_knight.png" />
+  </ConfigOption>
+  <ModFolder Folder="choices\cloud\white_mage" ActiveWhen="job_v070_cloud = 0" />
+  <ModFolder Folder="choices\cloud\black_mage" ActiveWhen="job_v070_cloud = 1" />
+  <ModFolder Folder="choices\cloud\red_mage" ActiveWhen="job_v070_cloud = 2" />
+  <ModFolder Folder="choices\cloud\blue_mage" ActiveWhen="job_v070_cloud = 3" />
+  <ModFolder Folder="choices\cloud\time_mage" ActiveWhen="job_v070_cloud = 4" />
+  <ModFolder Folder="choices\cloud\summoner" ActiveWhen="job_v070_cloud = 5" />
+  <ModFolder Folder="choices\cloud\mystic_knight" ActiveWhen="job_v070_cloud = 6" />
+  <ModFolder Folder="choices\cloud\monk" ActiveWhen="job_v070_cloud = 7" />
+  <ModFolder Folder="choices\cloud\gambler" ActiveWhen="job_v070_cloud = 8" />
+  <ModFolder Folder="choices\cloud\ranger" ActiveWhen="job_v070_cloud = 9" />
+  <ModFolder Folder="choices\cloud\gunner" ActiveWhen="job_v070_cloud = 10" />
+  <ModFolder Folder="choices\cloud\beastmaster" ActiveWhen="job_v070_cloud = 11" />
+  <ModFolder Folder="choices\cloud\scholar" ActiveWhen="job_v070_cloud = 12" />
+  <ModFolder Folder="choices\cloud\mime" ActiveWhen="job_v070_cloud = 13" />
+  <ModFolder Folder="choices\cloud\chemist_alchemist" ActiveWhen="job_v070_cloud = 14" />
+  <ModFolder Folder="choices\cloud\mystic_oracle" ActiveWhen="job_v070_cloud = 15" />
+  <ModFolder Folder="choices\cloud\sage" ActiveWhen="job_v070_cloud = 16" />
+  <ModFolder Folder="choices\cloud\knight" ActiveWhen="job_v070_cloud = 17" />
+  <ModFolder Folder="choices\cloud\paladin" ActiveWhen="job_v070_cloud = 18" />
+  <ModFolder Folder="choices\cloud\warrior" ActiveWhen="job_v070_cloud = 19" />
+  <ModFolder Folder="choices\cloud\samurai" ActiveWhen="job_v070_cloud = 20" />
+  <ModFolder Folder="choices\cloud\thief" ActiveWhen="job_v070_cloud = 21" />
+  <ModFolder Folder="choices\cloud\ninja" ActiveWhen="job_v070_cloud = 22" />
+  <ModFolder Folder="choices\cloud\dragoon" ActiveWhen="job_v070_cloud = 23" />
+  <ModFolder Folder="choices\cloud\dark_knight" ActiveWhen="job_v070_cloud = 24" />
+  <ConfigOption>
+    <Name>Barret</Name>
+    <ID>job_v070_barret</ID>
+    <Type>List</Type>
+    <Default>10</Default>
+    <Description>Choose Barret's class. Default: Gunner. Details below follow your selection. Classes can be shared; changes apply next launch.</Description>
+    <Option Value="0" Name="White Mage" PreviewFile="previews\classes\white_mage.png" />
+    <Option Value="1" Name="Black Mage" PreviewFile="previews\classes\black_mage.png" />
+    <Option Value="2" Name="Red Mage" PreviewFile="previews\classes\red_mage.png" />
+    <Option Value="3" Name="Blue Mage" PreviewFile="previews\classes\blue_mage.png" />
+    <Option Value="4" Name="Time Mage" PreviewFile="previews\classes\time_mage.png" />
+    <Option Value="5" Name="Summoner" PreviewFile="previews\classes\summoner.png" />
+    <Option Value="6" Name="Mystic Knight" PreviewFile="previews\classes\mystic_knight.png" />
+    <Option Value="7" Name="Monk" PreviewFile="previews\classes\monk.png" />
+    <Option Value="8" Name="Gambler" PreviewFile="previews\classes\gambler.png" />
+    <Option Value="9" Name="Ranger" PreviewFile="previews\classes\ranger.png" />
+    <Option Value="10" Name="Gunner" PreviewFile="previews\classes\gunner.png" />
+    <Option Value="11" Name="Beastmaster" PreviewFile="previews\classes\beastmaster.png" />
+    <Option Value="12" Name="Scholar" PreviewFile="previews\classes\scholar.png" />
+    <Option Value="13" Name="Mime" PreviewFile="previews\classes\mime.png" />
+    <Option Value="14" Name="Chemist / Alchemist" PreviewFile="previews\classes\chemist_alchemist.png" />
+    <Option Value="15" Name="Mystic / Oracle" PreviewFile="previews\classes\mystic_oracle.png" />
+    <Option Value="16" Name="Sage" PreviewFile="previews\classes\sage.png" />
+    <Option Value="17" Name="Knight" PreviewFile="previews\classes\knight.png" />
+    <Option Value="18" Name="Paladin" PreviewFile="previews\classes\paladin.png" />
+    <Option Value="19" Name="Warrior" PreviewFile="previews\classes\warrior.png" />
+    <Option Value="20" Name="Samurai" PreviewFile="previews\classes\samurai.png" />
+    <Option Value="21" Name="Thief" PreviewFile="previews\classes\thief.png" />
+    <Option Value="22" Name="Ninja" PreviewFile="previews\classes\ninja.png" />
+    <Option Value="23" Name="Dragoon" PreviewFile="previews\classes\dragoon.png" />
+    <Option Value="24" Name="Dark Knight" PreviewFile="previews\classes\dark_knight.png" />
+  </ConfigOption>
+  <ModFolder Folder="choices\barret\white_mage" ActiveWhen="job_v070_barret = 0" />
+  <ModFolder Folder="choices\barret\black_mage" ActiveWhen="job_v070_barret = 1" />
+  <ModFolder Folder="choices\barret\red_mage" ActiveWhen="job_v070_barret = 2" />
+  <ModFolder Folder="choices\barret\blue_mage" ActiveWhen="job_v070_barret = 3" />
+  <ModFolder Folder="choices\barret\time_mage" ActiveWhen="job_v070_barret = 4" />
+  <ModFolder Folder="choices\barret\summoner" ActiveWhen="job_v070_barret = 5" />
+  <ModFolder Folder="choices\barret\mystic_knight" ActiveWhen="job_v070_barret = 6" />
+  <ModFolder Folder="choices\barret\monk" ActiveWhen="job_v070_barret = 7" />
+  <ModFolder Folder="choices\barret\gambler" ActiveWhen="job_v070_barret = 8" />
+  <ModFolder Folder="choices\barret\ranger" ActiveWhen="job_v070_barret = 9" />
+  <ModFolder Folder="choices\barret\gunner" ActiveWhen="job_v070_barret = 10" />
+  <ModFolder Folder="choices\barret\beastmaster" ActiveWhen="job_v070_barret = 11" />
+  <ModFolder Folder="choices\barret\scholar" ActiveWhen="job_v070_barret = 12" />
+  <ModFolder Folder="choices\barret\mime" ActiveWhen="job_v070_barret = 13" />
+  <ModFolder Folder="choices\barret\chemist_alchemist" ActiveWhen="job_v070_barret = 14" />
+  <ModFolder Folder="choices\barret\mystic_oracle" ActiveWhen="job_v070_barret = 15" />
+  <ModFolder Folder="choices\barret\sage" ActiveWhen="job_v070_barret = 16" />
+  <ModFolder Folder="choices\barret\knight" ActiveWhen="job_v070_barret = 17" />
+  <ModFolder Folder="choices\barret\paladin" ActiveWhen="job_v070_barret = 18" />
+  <ModFolder Folder="choices\barret\warrior" ActiveWhen="job_v070_barret = 19" />
+  <ModFolder Folder="choices\barret\samurai" ActiveWhen="job_v070_barret = 20" />
+  <ModFolder Folder="choices\barret\thief" ActiveWhen="job_v070_barret = 21" />
+  <ModFolder Folder="choices\barret\ninja" ActiveWhen="job_v070_barret = 22" />
+  <ModFolder Folder="choices\barret\dragoon" ActiveWhen="job_v070_barret = 23" />
+  <ModFolder Folder="choices\barret\dark_knight" ActiveWhen="job_v070_barret = 24" />
+  <ConfigOption>
+    <Name>Tifa</Name>
+    <ID>job_v070_tifa</ID>
+    <Type>List</Type>
+    <Default>7</Default>
+    <Description>Choose Tifa's class. Default: Monk. Details below follow your selection. Classes can be shared; changes apply next launch.</Description>
+    <Option Value="0" Name="White Mage" PreviewFile="previews\classes\white_mage.png" />
+    <Option Value="1" Name="Black Mage" PreviewFile="previews\classes\black_mage.png" />
+    <Option Value="2" Name="Red Mage" PreviewFile="previews\classes\red_mage.png" />
+    <Option Value="3" Name="Blue Mage" PreviewFile="previews\classes\blue_mage.png" />
+    <Option Value="4" Name="Time Mage" PreviewFile="previews\classes\time_mage.png" />
+    <Option Value="5" Name="Summoner" PreviewFile="previews\classes\summoner.png" />
+    <Option Value="6" Name="Mystic Knight" PreviewFile="previews\classes\mystic_knight.png" />
+    <Option Value="7" Name="Monk" PreviewFile="previews\classes\monk.png" />
+    <Option Value="8" Name="Gambler" PreviewFile="previews\classes\gambler.png" />
+    <Option Value="9" Name="Ranger" PreviewFile="previews\classes\ranger.png" />
+    <Option Value="10" Name="Gunner" PreviewFile="previews\classes\gunner.png" />
+    <Option Value="11" Name="Beastmaster" PreviewFile="previews\classes\beastmaster.png" />
+    <Option Value="12" Name="Scholar" PreviewFile="previews\classes\scholar.png" />
+    <Option Value="13" Name="Mime" PreviewFile="previews\classes\mime.png" />
+    <Option Value="14" Name="Chemist / Alchemist" PreviewFile="previews\classes\chemist_alchemist.png" />
+    <Option Value="15" Name="Mystic / Oracle" PreviewFile="previews\classes\mystic_oracle.png" />
+    <Option Value="16" Name="Sage" PreviewFile="previews\classes\sage.png" />
+    <Option Value="17" Name="Knight" PreviewFile="previews\classes\knight.png" />
+    <Option Value="18" Name="Paladin" PreviewFile="previews\classes\paladin.png" />
+    <Option Value="19" Name="Warrior" PreviewFile="previews\classes\warrior.png" />
+    <Option Value="20" Name="Samurai" PreviewFile="previews\classes\samurai.png" />
+    <Option Value="21" Name="Thief" PreviewFile="previews\classes\thief.png" />
+    <Option Value="22" Name="Ninja" PreviewFile="previews\classes\ninja.png" />
+    <Option Value="23" Name="Dragoon" PreviewFile="previews\classes\dragoon.png" />
+    <Option Value="24" Name="Dark Knight" PreviewFile="previews\classes\dark_knight.png" />
+  </ConfigOption>
+  <ModFolder Folder="choices\tifa\white_mage" ActiveWhen="job_v070_tifa = 0" />
+  <ModFolder Folder="choices\tifa\black_mage" ActiveWhen="job_v070_tifa = 1" />
+  <ModFolder Folder="choices\tifa\red_mage" ActiveWhen="job_v070_tifa = 2" />
+  <ModFolder Folder="choices\tifa\blue_mage" ActiveWhen="job_v070_tifa = 3" />
+  <ModFolder Folder="choices\tifa\time_mage" ActiveWhen="job_v070_tifa = 4" />
+  <ModFolder Folder="choices\tifa\summoner" ActiveWhen="job_v070_tifa = 5" />
+  <ModFolder Folder="choices\tifa\mystic_knight" ActiveWhen="job_v070_tifa = 6" />
+  <ModFolder Folder="choices\tifa\monk" ActiveWhen="job_v070_tifa = 7" />
+  <ModFolder Folder="choices\tifa\gambler" ActiveWhen="job_v070_tifa = 8" />
+  <ModFolder Folder="choices\tifa\ranger" ActiveWhen="job_v070_tifa = 9" />
+  <ModFolder Folder="choices\tifa\gunner" ActiveWhen="job_v070_tifa = 10" />
+  <ModFolder Folder="choices\tifa\beastmaster" ActiveWhen="job_v070_tifa = 11" />
+  <ModFolder Folder="choices\tifa\scholar" ActiveWhen="job_v070_tifa = 12" />
+  <ModFolder Folder="choices\tifa\mime" ActiveWhen="job_v070_tifa = 13" />
+  <ModFolder Folder="choices\tifa\chemist_alchemist" ActiveWhen="job_v070_tifa = 14" />
+  <ModFolder Folder="choices\tifa\mystic_oracle" ActiveWhen="job_v070_tifa = 15" />
+  <ModFolder Folder="choices\tifa\sage" ActiveWhen="job_v070_tifa = 16" />
+  <ModFolder Folder="choices\tifa\knight" ActiveWhen="job_v070_tifa = 17" />
+  <ModFolder Folder="choices\tifa\paladin" ActiveWhen="job_v070_tifa = 18" />
+  <ModFolder Folder="choices\tifa\warrior" ActiveWhen="job_v070_tifa = 19" />
+  <ModFolder Folder="choices\tifa\samurai" ActiveWhen="job_v070_tifa = 20" />
+  <ModFolder Folder="choices\tifa\thief" ActiveWhen="job_v070_tifa = 21" />
+  <ModFolder Folder="choices\tifa\ninja" ActiveWhen="job_v070_tifa = 22" />
+  <ModFolder Folder="choices\tifa\dragoon" ActiveWhen="job_v070_tifa = 23" />
+  <ModFolder Folder="choices\tifa\dark_knight" ActiveWhen="job_v070_tifa = 24" />
+  <ConfigOption>
+    <Name>Aerith</Name>
+    <ID>job_v070_aerith</ID>
+    <Type>List</Type>
+    <Default>0</Default>
+    <Description>Choose Aerith's class. Default: White Mage. Details below follow your selection. Classes can be shared; changes apply next launch.</Description>
+    <Option Value="0" Name="White Mage" PreviewFile="previews\classes\white_mage.png" />
+    <Option Value="1" Name="Black Mage" PreviewFile="previews\classes\black_mage.png" />
+    <Option Value="2" Name="Red Mage" PreviewFile="previews\classes\red_mage.png" />
+    <Option Value="3" Name="Blue Mage" PreviewFile="previews\classes\blue_mage.png" />
+    <Option Value="4" Name="Time Mage" PreviewFile="previews\classes\time_mage.png" />
+    <Option Value="5" Name="Summoner" PreviewFile="previews\classes\summoner.png" />
+    <Option Value="6" Name="Mystic Knight" PreviewFile="previews\classes\mystic_knight.png" />
+    <Option Value="7" Name="Monk" PreviewFile="previews\classes\monk.png" />
+    <Option Value="8" Name="Gambler" PreviewFile="previews\classes\gambler.png" />
+    <Option Value="9" Name="Ranger" PreviewFile="previews\classes\ranger.png" />
+    <Option Value="10" Name="Gunner" PreviewFile="previews\classes\gunner.png" />
+    <Option Value="11" Name="Beastmaster" PreviewFile="previews\classes\beastmaster.png" />
+    <Option Value="12" Name="Scholar" PreviewFile="previews\classes\scholar.png" />
+    <Option Value="13" Name="Mime" PreviewFile="previews\classes\mime.png" />
+    <Option Value="14" Name="Chemist / Alchemist" PreviewFile="previews\classes\chemist_alchemist.png" />
+    <Option Value="15" Name="Mystic / Oracle" PreviewFile="previews\classes\mystic_oracle.png" />
+    <Option Value="16" Name="Sage" PreviewFile="previews\classes\sage.png" />
+    <Option Value="17" Name="Knight" PreviewFile="previews\classes\knight.png" />
+    <Option Value="18" Name="Paladin" PreviewFile="previews\classes\paladin.png" />
+    <Option Value="19" Name="Warrior" PreviewFile="previews\classes\warrior.png" />
+    <Option Value="20" Name="Samurai" PreviewFile="previews\classes\samurai.png" />
+    <Option Value="21" Name="Thief" PreviewFile="previews\classes\thief.png" />
+    <Option Value="22" Name="Ninja" PreviewFile="previews\classes\ninja.png" />
+    <Option Value="23" Name="Dragoon" PreviewFile="previews\classes\dragoon.png" />
+    <Option Value="24" Name="Dark Knight" PreviewFile="previews\classes\dark_knight.png" />
+  </ConfigOption>
+  <ModFolder Folder="choices\aerith\white_mage" ActiveWhen="job_v070_aerith = 0" />
+  <ModFolder Folder="choices\aerith\black_mage" ActiveWhen="job_v070_aerith = 1" />
+  <ModFolder Folder="choices\aerith\red_mage" ActiveWhen="job_v070_aerith = 2" />
+  <ModFolder Folder="choices\aerith\blue_mage" ActiveWhen="job_v070_aerith = 3" />
+  <ModFolder Folder="choices\aerith\time_mage" ActiveWhen="job_v070_aerith = 4" />
+  <ModFolder Folder="choices\aerith\summoner" ActiveWhen="job_v070_aerith = 5" />
+  <ModFolder Folder="choices\aerith\mystic_knight" ActiveWhen="job_v070_aerith = 6" />
+  <ModFolder Folder="choices\aerith\monk" ActiveWhen="job_v070_aerith = 7" />
+  <ModFolder Folder="choices\aerith\gambler" ActiveWhen="job_v070_aerith = 8" />
+  <ModFolder Folder="choices\aerith\ranger" ActiveWhen="job_v070_aerith = 9" />
+  <ModFolder Folder="choices\aerith\gunner" ActiveWhen="job_v070_aerith = 10" />
+  <ModFolder Folder="choices\aerith\beastmaster" ActiveWhen="job_v070_aerith = 11" />
+  <ModFolder Folder="choices\aerith\scholar" ActiveWhen="job_v070_aerith = 12" />
+  <ModFolder Folder="choices\aerith\mime" ActiveWhen="job_v070_aerith = 13" />
+  <ModFolder Folder="choices\aerith\chemist_alchemist" ActiveWhen="job_v070_aerith = 14" />
+  <ModFolder Folder="choices\aerith\mystic_oracle" ActiveWhen="job_v070_aerith = 15" />
+  <ModFolder Folder="choices\aerith\sage" ActiveWhen="job_v070_aerith = 16" />
+  <ModFolder Folder="choices\aerith\knight" ActiveWhen="job_v070_aerith = 17" />
+  <ModFolder Folder="choices\aerith\paladin" ActiveWhen="job_v070_aerith = 18" />
+  <ModFolder Folder="choices\aerith\warrior" ActiveWhen="job_v070_aerith = 19" />
+  <ModFolder Folder="choices\aerith\samurai" ActiveWhen="job_v070_aerith = 20" />
+  <ModFolder Folder="choices\aerith\thief" ActiveWhen="job_v070_aerith = 21" />
+  <ModFolder Folder="choices\aerith\ninja" ActiveWhen="job_v070_aerith = 22" />
+  <ModFolder Folder="choices\aerith\dragoon" ActiveWhen="job_v070_aerith = 23" />
+  <ModFolder Folder="choices\aerith\dark_knight" ActiveWhen="job_v070_aerith = 24" />
+  <ConfigOption>
+    <Name>Red XIII</Name>
+    <ID>job_v070_red_xiii</ID>
+    <Type>List</Type>
+    <Default>3</Default>
+    <Description>Choose Red XIII's class. Default: Blue Mage. Details below follow your selection. Classes can be shared; changes apply next launch.</Description>
+    <Option Value="0" Name="White Mage" PreviewFile="previews\classes\white_mage.png" />
+    <Option Value="1" Name="Black Mage" PreviewFile="previews\classes\black_mage.png" />
+    <Option Value="2" Name="Red Mage" PreviewFile="previews\classes\red_mage.png" />
+    <Option Value="3" Name="Blue Mage" PreviewFile="previews\classes\blue_mage.png" />
+    <Option Value="4" Name="Time Mage" PreviewFile="previews\classes\time_mage.png" />
+    <Option Value="5" Name="Summoner" PreviewFile="previews\classes\summoner.png" />
+    <Option Value="6" Name="Mystic Knight" PreviewFile="previews\classes\mystic_knight.png" />
+    <Option Value="7" Name="Monk" PreviewFile="previews\classes\monk.png" />
+    <Option Value="8" Name="Gambler" PreviewFile="previews\classes\gambler.png" />
+    <Option Value="9" Name="Ranger" PreviewFile="previews\classes\ranger.png" />
+    <Option Value="10" Name="Gunner" PreviewFile="previews\classes\gunner.png" />
+    <Option Value="11" Name="Beastmaster" PreviewFile="previews\classes\beastmaster.png" />
+    <Option Value="12" Name="Scholar" PreviewFile="previews\classes\scholar.png" />
+    <Option Value="13" Name="Mime" PreviewFile="previews\classes\mime.png" />
+    <Option Value="14" Name="Chemist / Alchemist" PreviewFile="previews\classes\chemist_alchemist.png" />
+    <Option Value="15" Name="Mystic / Oracle" PreviewFile="previews\classes\mystic_oracle.png" />
+    <Option Value="16" Name="Sage" PreviewFile="previews\classes\sage.png" />
+    <Option Value="17" Name="Knight" PreviewFile="previews\classes\knight.png" />
+    <Option Value="18" Name="Paladin" PreviewFile="previews\classes\paladin.png" />
+    <Option Value="19" Name="Warrior" PreviewFile="previews\classes\warrior.png" />
+    <Option Value="20" Name="Samurai" PreviewFile="previews\classes\samurai.png" />
+    <Option Value="21" Name="Thief" PreviewFile="previews\classes\thief.png" />
+    <Option Value="22" Name="Ninja" PreviewFile="previews\classes\ninja.png" />
+    <Option Value="23" Name="Dragoon" PreviewFile="previews\classes\dragoon.png" />
+    <Option Value="24" Name="Dark Knight" PreviewFile="previews\classes\dark_knight.png" />
+  </ConfigOption>
+  <ModFolder Folder="choices\red_xiii\white_mage" ActiveWhen="job_v070_red_xiii = 0" />
+  <ModFolder Folder="choices\red_xiii\black_mage" ActiveWhen="job_v070_red_xiii = 1" />
+  <ModFolder Folder="choices\red_xiii\red_mage" ActiveWhen="job_v070_red_xiii = 2" />
+  <ModFolder Folder="choices\red_xiii\blue_mage" ActiveWhen="job_v070_red_xiii = 3" />
+  <ModFolder Folder="choices\red_xiii\time_mage" ActiveWhen="job_v070_red_xiii = 4" />
+  <ModFolder Folder="choices\red_xiii\summoner" ActiveWhen="job_v070_red_xiii = 5" />
+  <ModFolder Folder="choices\red_xiii\mystic_knight" ActiveWhen="job_v070_red_xiii = 6" />
+  <ModFolder Folder="choices\red_xiii\monk" ActiveWhen="job_v070_red_xiii = 7" />
+  <ModFolder Folder="choices\red_xiii\gambler" ActiveWhen="job_v070_red_xiii = 8" />
+  <ModFolder Folder="choices\red_xiii\ranger" ActiveWhen="job_v070_red_xiii = 9" />
+  <ModFolder Folder="choices\red_xiii\gunner" ActiveWhen="job_v070_red_xiii = 10" />
+  <ModFolder Folder="choices\red_xiii\beastmaster" ActiveWhen="job_v070_red_xiii = 11" />
+  <ModFolder Folder="choices\red_xiii\scholar" ActiveWhen="job_v070_red_xiii = 12" />
+  <ModFolder Folder="choices\red_xiii\mime" ActiveWhen="job_v070_red_xiii = 13" />
+  <ModFolder Folder="choices\red_xiii\chemist_alchemist" ActiveWhen="job_v070_red_xiii = 14" />
+  <ModFolder Folder="choices\red_xiii\mystic_oracle" ActiveWhen="job_v070_red_xiii = 15" />
+  <ModFolder Folder="choices\red_xiii\sage" ActiveWhen="job_v070_red_xiii = 16" />
+  <ModFolder Folder="choices\red_xiii\knight" ActiveWhen="job_v070_red_xiii = 17" />
+  <ModFolder Folder="choices\red_xiii\paladin" ActiveWhen="job_v070_red_xiii = 18" />
+  <ModFolder Folder="choices\red_xiii\warrior" ActiveWhen="job_v070_red_xiii = 19" />
+  <ModFolder Folder="choices\red_xiii\samurai" ActiveWhen="job_v070_red_xiii = 20" />
+  <ModFolder Folder="choices\red_xiii\thief" ActiveWhen="job_v070_red_xiii = 21" />
+  <ModFolder Folder="choices\red_xiii\ninja" ActiveWhen="job_v070_red_xiii = 22" />
+  <ModFolder Folder="choices\red_xiii\dragoon" ActiveWhen="job_v070_red_xiii = 23" />
+  <ModFolder Folder="choices\red_xiii\dark_knight" ActiveWhen="job_v070_red_xiii = 24" />
+  <ConfigOption>
+    <Name>Yuffie</Name>
+    <ID>job_v070_yuffie</ID>
+    <Type>List</Type>
+    <Default>21</Default>
+    <Description>Choose Yuffie's class. Default: Thief. Details below follow your selection. Classes can be shared; changes apply next launch.</Description>
+    <Option Value="0" Name="White Mage" PreviewFile="previews\classes\white_mage.png" />
+    <Option Value="1" Name="Black Mage" PreviewFile="previews\classes\black_mage.png" />
+    <Option Value="2" Name="Red Mage" PreviewFile="previews\classes\red_mage.png" />
+    <Option Value="3" Name="Blue Mage" PreviewFile="previews\classes\blue_mage.png" />
+    <Option Value="4" Name="Time Mage" PreviewFile="previews\classes\time_mage.png" />
+    <Option Value="5" Name="Summoner" PreviewFile="previews\classes\summoner.png" />
+    <Option Value="6" Name="Mystic Knight" PreviewFile="previews\classes\mystic_knight.png" />
+    <Option Value="7" Name="Monk" PreviewFile="previews\classes\monk.png" />
+    <Option Value="8" Name="Gambler" PreviewFile="previews\classes\gambler.png" />
+    <Option Value="9" Name="Ranger" PreviewFile="previews\classes\ranger.png" />
+    <Option Value="10" Name="Gunner" PreviewFile="previews\classes\gunner.png" />
+    <Option Value="11" Name="Beastmaster" PreviewFile="previews\classes\beastmaster.png" />
+    <Option Value="12" Name="Scholar" PreviewFile="previews\classes\scholar.png" />
+    <Option Value="13" Name="Mime" PreviewFile="previews\classes\mime.png" />
+    <Option Value="14" Name="Chemist / Alchemist" PreviewFile="previews\classes\chemist_alchemist.png" />
+    <Option Value="15" Name="Mystic / Oracle" PreviewFile="previews\classes\mystic_oracle.png" />
+    <Option Value="16" Name="Sage" PreviewFile="previews\classes\sage.png" />
+    <Option Value="17" Name="Knight" PreviewFile="previews\classes\knight.png" />
+    <Option Value="18" Name="Paladin" PreviewFile="previews\classes\paladin.png" />
+    <Option Value="19" Name="Warrior" PreviewFile="previews\classes\warrior.png" />
+    <Option Value="20" Name="Samurai" PreviewFile="previews\classes\samurai.png" />
+    <Option Value="21" Name="Thief" PreviewFile="previews\classes\thief.png" />
+    <Option Value="22" Name="Ninja" PreviewFile="previews\classes\ninja.png" />
+    <Option Value="23" Name="Dragoon" PreviewFile="previews\classes\dragoon.png" />
+    <Option Value="24" Name="Dark Knight" PreviewFile="previews\classes\dark_knight.png" />
+  </ConfigOption>
+  <ModFolder Folder="choices\yuffie\white_mage" ActiveWhen="job_v070_yuffie = 0" />
+  <ModFolder Folder="choices\yuffie\black_mage" ActiveWhen="job_v070_yuffie = 1" />
+  <ModFolder Folder="choices\yuffie\red_mage" ActiveWhen="job_v070_yuffie = 2" />
+  <ModFolder Folder="choices\yuffie\blue_mage" ActiveWhen="job_v070_yuffie = 3" />
+  <ModFolder Folder="choices\yuffie\time_mage" ActiveWhen="job_v070_yuffie = 4" />
+  <ModFolder Folder="choices\yuffie\summoner" ActiveWhen="job_v070_yuffie = 5" />
+  <ModFolder Folder="choices\yuffie\mystic_knight" ActiveWhen="job_v070_yuffie = 6" />
+  <ModFolder Folder="choices\yuffie\monk" ActiveWhen="job_v070_yuffie = 7" />
+  <ModFolder Folder="choices\yuffie\gambler" ActiveWhen="job_v070_yuffie = 8" />
+  <ModFolder Folder="choices\yuffie\ranger" ActiveWhen="job_v070_yuffie = 9" />
+  <ModFolder Folder="choices\yuffie\gunner" ActiveWhen="job_v070_yuffie = 10" />
+  <ModFolder Folder="choices\yuffie\beastmaster" ActiveWhen="job_v070_yuffie = 11" />
+  <ModFolder Folder="choices\yuffie\scholar" ActiveWhen="job_v070_yuffie = 12" />
+  <ModFolder Folder="choices\yuffie\mime" ActiveWhen="job_v070_yuffie = 13" />
+  <ModFolder Folder="choices\yuffie\chemist_alchemist" ActiveWhen="job_v070_yuffie = 14" />
+  <ModFolder Folder="choices\yuffie\mystic_oracle" ActiveWhen="job_v070_yuffie = 15" />
+  <ModFolder Folder="choices\yuffie\sage" ActiveWhen="job_v070_yuffie = 16" />
+  <ModFolder Folder="choices\yuffie\knight" ActiveWhen="job_v070_yuffie = 17" />
+  <ModFolder Folder="choices\yuffie\paladin" ActiveWhen="job_v070_yuffie = 18" />
+  <ModFolder Folder="choices\yuffie\warrior" ActiveWhen="job_v070_yuffie = 19" />
+  <ModFolder Folder="choices\yuffie\samurai" ActiveWhen="job_v070_yuffie = 20" />
+  <ModFolder Folder="choices\yuffie\thief" ActiveWhen="job_v070_yuffie = 21" />
+  <ModFolder Folder="choices\yuffie\ninja" ActiveWhen="job_v070_yuffie = 22" />
+  <ModFolder Folder="choices\yuffie\dragoon" ActiveWhen="job_v070_yuffie = 23" />
+  <ModFolder Folder="choices\yuffie\dark_knight" ActiveWhen="job_v070_yuffie = 24" />
+  <ConfigOption>
+    <Name>Cait Sith</Name>
+    <ID>job_v070_cait_sith</ID>
+    <Type>List</Type>
+    <Default>5</Default>
+    <Description>Choose Cait Sith's class. Default: Summoner. Details below follow your selection. Classes can be shared; changes apply next launch.</Description>
+    <Option Value="0" Name="White Mage" PreviewFile="previews\classes\white_mage.png" />
+    <Option Value="1" Name="Black Mage" PreviewFile="previews\classes\black_mage.png" />
+    <Option Value="2" Name="Red Mage" PreviewFile="previews\classes\red_mage.png" />
+    <Option Value="3" Name="Blue Mage" PreviewFile="previews\classes\blue_mage.png" />
+    <Option Value="4" Name="Time Mage" PreviewFile="previews\classes\time_mage.png" />
+    <Option Value="5" Name="Summoner" PreviewFile="previews\classes\summoner.png" />
+    <Option Value="6" Name="Mystic Knight" PreviewFile="previews\classes\mystic_knight.png" />
+    <Option Value="7" Name="Monk" PreviewFile="previews\classes\monk.png" />
+    <Option Value="8" Name="Gambler" PreviewFile="previews\classes\gambler.png" />
+    <Option Value="9" Name="Ranger" PreviewFile="previews\classes\ranger.png" />
+    <Option Value="10" Name="Gunner" PreviewFile="previews\classes\gunner.png" />
+    <Option Value="11" Name="Beastmaster" PreviewFile="previews\classes\beastmaster.png" />
+    <Option Value="12" Name="Scholar" PreviewFile="previews\classes\scholar.png" />
+    <Option Value="13" Name="Mime" PreviewFile="previews\classes\mime.png" />
+    <Option Value="14" Name="Chemist / Alchemist" PreviewFile="previews\classes\chemist_alchemist.png" />
+    <Option Value="15" Name="Mystic / Oracle" PreviewFile="previews\classes\mystic_oracle.png" />
+    <Option Value="16" Name="Sage" PreviewFile="previews\classes\sage.png" />
+    <Option Value="17" Name="Knight" PreviewFile="previews\classes\knight.png" />
+    <Option Value="18" Name="Paladin" PreviewFile="previews\classes\paladin.png" />
+    <Option Value="19" Name="Warrior" PreviewFile="previews\classes\warrior.png" />
+    <Option Value="20" Name="Samurai" PreviewFile="previews\classes\samurai.png" />
+    <Option Value="21" Name="Thief" PreviewFile="previews\classes\thief.png" />
+    <Option Value="22" Name="Ninja" PreviewFile="previews\classes\ninja.png" />
+    <Option Value="23" Name="Dragoon" PreviewFile="previews\classes\dragoon.png" />
+    <Option Value="24" Name="Dark Knight" PreviewFile="previews\classes\dark_knight.png" />
+  </ConfigOption>
+  <ModFolder Folder="choices\cait_sith\white_mage" ActiveWhen="job_v070_cait_sith = 0" />
+  <ModFolder Folder="choices\cait_sith\black_mage" ActiveWhen="job_v070_cait_sith = 1" />
+  <ModFolder Folder="choices\cait_sith\red_mage" ActiveWhen="job_v070_cait_sith = 2" />
+  <ModFolder Folder="choices\cait_sith\blue_mage" ActiveWhen="job_v070_cait_sith = 3" />
+  <ModFolder Folder="choices\cait_sith\time_mage" ActiveWhen="job_v070_cait_sith = 4" />
+  <ModFolder Folder="choices\cait_sith\summoner" ActiveWhen="job_v070_cait_sith = 5" />
+  <ModFolder Folder="choices\cait_sith\mystic_knight" ActiveWhen="job_v070_cait_sith = 6" />
+  <ModFolder Folder="choices\cait_sith\monk" ActiveWhen="job_v070_cait_sith = 7" />
+  <ModFolder Folder="choices\cait_sith\gambler" ActiveWhen="job_v070_cait_sith = 8" />
+  <ModFolder Folder="choices\cait_sith\ranger" ActiveWhen="job_v070_cait_sith = 9" />
+  <ModFolder Folder="choices\cait_sith\gunner" ActiveWhen="job_v070_cait_sith = 10" />
+  <ModFolder Folder="choices\cait_sith\beastmaster" ActiveWhen="job_v070_cait_sith = 11" />
+  <ModFolder Folder="choices\cait_sith\scholar" ActiveWhen="job_v070_cait_sith = 12" />
+  <ModFolder Folder="choices\cait_sith\mime" ActiveWhen="job_v070_cait_sith = 13" />
+  <ModFolder Folder="choices\cait_sith\chemist_alchemist" ActiveWhen="job_v070_cait_sith = 14" />
+  <ModFolder Folder="choices\cait_sith\mystic_oracle" ActiveWhen="job_v070_cait_sith = 15" />
+  <ModFolder Folder="choices\cait_sith\sage" ActiveWhen="job_v070_cait_sith = 16" />
+  <ModFolder Folder="choices\cait_sith\knight" ActiveWhen="job_v070_cait_sith = 17" />
+  <ModFolder Folder="choices\cait_sith\paladin" ActiveWhen="job_v070_cait_sith = 18" />
+  <ModFolder Folder="choices\cait_sith\warrior" ActiveWhen="job_v070_cait_sith = 19" />
+  <ModFolder Folder="choices\cait_sith\samurai" ActiveWhen="job_v070_cait_sith = 20" />
+  <ModFolder Folder="choices\cait_sith\thief" ActiveWhen="job_v070_cait_sith = 21" />
+  <ModFolder Folder="choices\cait_sith\ninja" ActiveWhen="job_v070_cait_sith = 22" />
+  <ModFolder Folder="choices\cait_sith\dragoon" ActiveWhen="job_v070_cait_sith = 23" />
+  <ModFolder Folder="choices\cait_sith\dark_knight" ActiveWhen="job_v070_cait_sith = 24" />
+  <ConfigOption>
+    <Name>Vincent</Name>
+    <ID>job_v070_vincent</ID>
+    <Type>List</Type>
+    <Default>1</Default>
+    <Description>Choose Vincent's class. Default: Black Mage. Details below follow your selection. Classes can be shared; changes apply next launch.</Description>
+    <Option Value="0" Name="White Mage" PreviewFile="previews\classes\white_mage.png" />
+    <Option Value="1" Name="Black Mage" PreviewFile="previews\classes\black_mage.png" />
+    <Option Value="2" Name="Red Mage" PreviewFile="previews\classes\red_mage.png" />
+    <Option Value="3" Name="Blue Mage" PreviewFile="previews\classes\blue_mage.png" />
+    <Option Value="4" Name="Time Mage" PreviewFile="previews\classes\time_mage.png" />
+    <Option Value="5" Name="Summoner" PreviewFile="previews\classes\summoner.png" />
+    <Option Value="6" Name="Mystic Knight" PreviewFile="previews\classes\mystic_knight.png" />
+    <Option Value="7" Name="Monk" PreviewFile="previews\classes\monk.png" />
+    <Option Value="8" Name="Gambler" PreviewFile="previews\classes\gambler.png" />
+    <Option Value="9" Name="Ranger" PreviewFile="previews\classes\ranger.png" />
+    <Option Value="10" Name="Gunner" PreviewFile="previews\classes\gunner.png" />
+    <Option Value="11" Name="Beastmaster" PreviewFile="previews\classes\beastmaster.png" />
+    <Option Value="12" Name="Scholar" PreviewFile="previews\classes\scholar.png" />
+    <Option Value="13" Name="Mime" PreviewFile="previews\classes\mime.png" />
+    <Option Value="14" Name="Chemist / Alchemist" PreviewFile="previews\classes\chemist_alchemist.png" />
+    <Option Value="15" Name="Mystic / Oracle" PreviewFile="previews\classes\mystic_oracle.png" />
+    <Option Value="16" Name="Sage" PreviewFile="previews\classes\sage.png" />
+    <Option Value="17" Name="Knight" PreviewFile="previews\classes\knight.png" />
+    <Option Value="18" Name="Paladin" PreviewFile="previews\classes\paladin.png" />
+    <Option Value="19" Name="Warrior" PreviewFile="previews\classes\warrior.png" />
+    <Option Value="20" Name="Samurai" PreviewFile="previews\classes\samurai.png" />
+    <Option Value="21" Name="Thief" PreviewFile="previews\classes\thief.png" />
+    <Option Value="22" Name="Ninja" PreviewFile="previews\classes\ninja.png" />
+    <Option Value="23" Name="Dragoon" PreviewFile="previews\classes\dragoon.png" />
+    <Option Value="24" Name="Dark Knight" PreviewFile="previews\classes\dark_knight.png" />
+  </ConfigOption>
+  <ModFolder Folder="choices\vincent\white_mage" ActiveWhen="job_v070_vincent = 0" />
+  <ModFolder Folder="choices\vincent\black_mage" ActiveWhen="job_v070_vincent = 1" />
+  <ModFolder Folder="choices\vincent\red_mage" ActiveWhen="job_v070_vincent = 2" />
+  <ModFolder Folder="choices\vincent\blue_mage" ActiveWhen="job_v070_vincent = 3" />
+  <ModFolder Folder="choices\vincent\time_mage" ActiveWhen="job_v070_vincent = 4" />
+  <ModFolder Folder="choices\vincent\summoner" ActiveWhen="job_v070_vincent = 5" />
+  <ModFolder Folder="choices\vincent\mystic_knight" ActiveWhen="job_v070_vincent = 6" />
+  <ModFolder Folder="choices\vincent\monk" ActiveWhen="job_v070_vincent = 7" />
+  <ModFolder Folder="choices\vincent\gambler" ActiveWhen="job_v070_vincent = 8" />
+  <ModFolder Folder="choices\vincent\ranger" ActiveWhen="job_v070_vincent = 9" />
+  <ModFolder Folder="choices\vincent\gunner" ActiveWhen="job_v070_vincent = 10" />
+  <ModFolder Folder="choices\vincent\beastmaster" ActiveWhen="job_v070_vincent = 11" />
+  <ModFolder Folder="choices\vincent\scholar" ActiveWhen="job_v070_vincent = 12" />
+  <ModFolder Folder="choices\vincent\mime" ActiveWhen="job_v070_vincent = 13" />
+  <ModFolder Folder="choices\vincent\chemist_alchemist" ActiveWhen="job_v070_vincent = 14" />
+  <ModFolder Folder="choices\vincent\mystic_oracle" ActiveWhen="job_v070_vincent = 15" />
+  <ModFolder Folder="choices\vincent\sage" ActiveWhen="job_v070_vincent = 16" />
+  <ModFolder Folder="choices\vincent\knight" ActiveWhen="job_v070_vincent = 17" />
+  <ModFolder Folder="choices\vincent\paladin" ActiveWhen="job_v070_vincent = 18" />
+  <ModFolder Folder="choices\vincent\warrior" ActiveWhen="job_v070_vincent = 19" />
+  <ModFolder Folder="choices\vincent\samurai" ActiveWhen="job_v070_vincent = 20" />
+  <ModFolder Folder="choices\vincent\thief" ActiveWhen="job_v070_vincent = 21" />
+  <ModFolder Folder="choices\vincent\ninja" ActiveWhen="job_v070_vincent = 22" />
+  <ModFolder Folder="choices\vincent\dragoon" ActiveWhen="job_v070_vincent = 23" />
+  <ModFolder Folder="choices\vincent\dark_knight" ActiveWhen="job_v070_vincent = 24" />
+  <ConfigOption>
+    <Name>Cid</Name>
+    <ID>job_v070_cid</ID>
+    <Type>List</Type>
+    <Default>23</Default>
+    <Description>Choose Cid's class. Default: Dragoon. Details below follow your selection. Classes can be shared; changes apply next launch.</Description>
+    <Option Value="0" Name="White Mage" PreviewFile="previews\classes\white_mage.png" />
+    <Option Value="1" Name="Black Mage" PreviewFile="previews\classes\black_mage.png" />
+    <Option Value="2" Name="Red Mage" PreviewFile="previews\classes\red_mage.png" />
+    <Option Value="3" Name="Blue Mage" PreviewFile="previews\classes\blue_mage.png" />
+    <Option Value="4" Name="Time Mage" PreviewFile="previews\classes\time_mage.png" />
+    <Option Value="5" Name="Summoner" PreviewFile="previews\classes\summoner.png" />
+    <Option Value="6" Name="Mystic Knight" PreviewFile="previews\classes\mystic_knight.png" />
+    <Option Value="7" Name="Monk" PreviewFile="previews\classes\monk.png" />
+    <Option Value="8" Name="Gambler" PreviewFile="previews\classes\gambler.png" />
+    <Option Value="9" Name="Ranger" PreviewFile="previews\classes\ranger.png" />
+    <Option Value="10" Name="Gunner" PreviewFile="previews\classes\gunner.png" />
+    <Option Value="11" Name="Beastmaster" PreviewFile="previews\classes\beastmaster.png" />
+    <Option Value="12" Name="Scholar" PreviewFile="previews\classes\scholar.png" />
+    <Option Value="13" Name="Mime" PreviewFile="previews\classes\mime.png" />
+    <Option Value="14" Name="Chemist / Alchemist" PreviewFile="previews\classes\chemist_alchemist.png" />
+    <Option Value="15" Name="Mystic / Oracle" PreviewFile="previews\classes\mystic_oracle.png" />
+    <Option Value="16" Name="Sage" PreviewFile="previews\classes\sage.png" />
+    <Option Value="17" Name="Knight" PreviewFile="previews\classes\knight.png" />
+    <Option Value="18" Name="Paladin" PreviewFile="previews\classes\paladin.png" />
+    <Option Value="19" Name="Warrior" PreviewFile="previews\classes\warrior.png" />
+    <Option Value="20" Name="Samurai" PreviewFile="previews\classes\samurai.png" />
+    <Option Value="21" Name="Thief" PreviewFile="previews\classes\thief.png" />
+    <Option Value="22" Name="Ninja" PreviewFile="previews\classes\ninja.png" />
+    <Option Value="23" Name="Dragoon" PreviewFile="previews\classes\dragoon.png" />
+    <Option Value="24" Name="Dark Knight" PreviewFile="previews\classes\dark_knight.png" />
+  </ConfigOption>
+  <ModFolder Folder="choices\cid\white_mage" ActiveWhen="job_v070_cid = 0" />
+  <ModFolder Folder="choices\cid\black_mage" ActiveWhen="job_v070_cid = 1" />
+  <ModFolder Folder="choices\cid\red_mage" ActiveWhen="job_v070_cid = 2" />
+  <ModFolder Folder="choices\cid\blue_mage" ActiveWhen="job_v070_cid = 3" />
+  <ModFolder Folder="choices\cid\time_mage" ActiveWhen="job_v070_cid = 4" />
+  <ModFolder Folder="choices\cid\summoner" ActiveWhen="job_v070_cid = 5" />
+  <ModFolder Folder="choices\cid\mystic_knight" ActiveWhen="job_v070_cid = 6" />
+  <ModFolder Folder="choices\cid\monk" ActiveWhen="job_v070_cid = 7" />
+  <ModFolder Folder="choices\cid\gambler" ActiveWhen="job_v070_cid = 8" />
+  <ModFolder Folder="choices\cid\ranger" ActiveWhen="job_v070_cid = 9" />
+  <ModFolder Folder="choices\cid\gunner" ActiveWhen="job_v070_cid = 10" />
+  <ModFolder Folder="choices\cid\beastmaster" ActiveWhen="job_v070_cid = 11" />
+  <ModFolder Folder="choices\cid\scholar" ActiveWhen="job_v070_cid = 12" />
+  <ModFolder Folder="choices\cid\mime" ActiveWhen="job_v070_cid = 13" />
+  <ModFolder Folder="choices\cid\chemist_alchemist" ActiveWhen="job_v070_cid = 14" />
+  <ModFolder Folder="choices\cid\mystic_oracle" ActiveWhen="job_v070_cid = 15" />
+  <ModFolder Folder="choices\cid\sage" ActiveWhen="job_v070_cid = 16" />
+  <ModFolder Folder="choices\cid\knight" ActiveWhen="job_v070_cid = 17" />
+  <ModFolder Folder="choices\cid\paladin" ActiveWhen="job_v070_cid = 18" />
+  <ModFolder Folder="choices\cid\warrior" ActiveWhen="job_v070_cid = 19" />
+  <ModFolder Folder="choices\cid\samurai" ActiveWhen="job_v070_cid = 20" />
+  <ModFolder Folder="choices\cid\thief" ActiveWhen="job_v070_cid = 21" />
+  <ModFolder Folder="choices\cid\ninja" ActiveWhen="job_v070_cid = 22" />
+  <ModFolder Folder="choices\cid\dragoon" ActiveWhen="job_v070_cid = 23" />
+  <ModFolder Folder="choices\cid\dark_knight" ActiveWhen="job_v070_cid = 24" />
+  <ConfigOption>
+    <Name>Accessory reference</Name>
+    <ID>accessory_reference_v071</ID>
+    <Type>List</Type>
+    <Default>0</Default>
+    <Description>Select an accessory to read its effect and suggested classes. Reference only: these class assignments are not active. Accessories still follow the existing character rules.</Description>
+    <Option Value="0" Name="Power Wrist" PreviewFile="previews\accessories\accessory_00.png" />
+    <Option Value="1" Name="Protect Vest" PreviewFile="previews\accessories\accessory_01.png" />
+    <Option Value="2" Name="Earring" PreviewFile="previews\accessories\accessory_02.png" />
+    <Option Value="3" Name="Talisman" PreviewFile="previews\accessories\accessory_03.png" />
+    <Option Value="4" Name="Choco Feather" PreviewFile="previews\accessories\accessory_04.png" />
+    <Option Value="5" Name="Amulet" PreviewFile="previews\accessories\accessory_05.png" />
+    <Option Value="6" Name="Champion Belt" PreviewFile="previews\accessories\accessory_06.png" />
+    <Option Value="7" Name="Poison Ring" PreviewFile="previews\accessories\accessory_07.png" />
+    <Option Value="8" Name="Tough Ring" PreviewFile="previews\accessories\accessory_08.png" />
+    <Option Value="9" Name="Circlet" PreviewFile="previews\accessories\accessory_09.png" />
+    <Option Value="10" Name="Star Pendant" PreviewFile="previews\accessories\accessory_10.png" />
+    <Option Value="11" Name="Silver Glasses" PreviewFile="previews\accessories\accessory_11.png" />
+    <Option Value="12" Name="Headband" PreviewFile="previews\accessories\accessory_12.png" />
+    <Option Value="13" Name="Fairy Ring" PreviewFile="previews\accessories\accessory_13.png" />
+    <Option Value="14" Name="Jem Ring" PreviewFile="previews\accessories\accessory_14.png" />
+    <Option Value="15" Name="White Cape" PreviewFile="previews\accessories\accessory_15.png" />
+    <Option Value="16" Name="Sprint Shoes" PreviewFile="previews\accessories\accessory_16.png" />
+    <Option Value="17" Name="Peace Ring" PreviewFile="previews\accessories\accessory_17.png" />
+    <Option Value="18" Name="Ribbon" PreviewFile="previews\accessories\accessory_18.png" />
+    <Option Value="19" Name="Fire Ring" PreviewFile="previews\accessories\accessory_19.png" />
+    <Option Value="20" Name="Ice Ring" PreviewFile="previews\accessories\accessory_20.png" />
+    <Option Value="21" Name="Bolt Ring" PreviewFile="previews\accessories\accessory_21.png" />
+    <Option Value="22" Name="Tetra Elemental" PreviewFile="previews\accessories\accessory_22.png" />
+    <Option Value="23" Name="Safety Bit" PreviewFile="previews\accessories\accessory_23.png" />
+    <Option Value="24" Name="Fury Ring" PreviewFile="previews\accessories\accessory_24.png" />
+    <Option Value="25" Name="Curse Ring" PreviewFile="previews\accessories\accessory_25.png" />
+    <Option Value="26" Name="Protect Ring" PreviewFile="previews\accessories\accessory_26.png" />
+    <Option Value="27" Name="Cat's Bell" PreviewFile="previews\accessories\accessory_27.png" />
+    <Option Value="28" Name="Reflect Ring" PreviewFile="previews\accessories\accessory_28.png" />
+    <Option Value="29" Name="Water Ring" PreviewFile="previews\accessories\accessory_29.png" />
+    <Option Value="30" Name="Sneak Glove" PreviewFile="previews\accessories\accessory_30.png" />
+    <Option Value="31" Name="HypnoCrown" PreviewFile="previews\accessories\accessory_31.png" />
+  </ConfigOption>
+</ModInfo>

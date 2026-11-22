@@ -1,0 +1,24 @@
+FFVII Job System preview - visual references
+2026-11-22
+
+The preview was created with built-in image generation using these internet
+images as costume and silhouette references. The 25-character poster is a new
+illustration; it is not an official Square Enix image or a direct asset collage.
+The downloaded source images are not included in the release.
+
+Final Fantasy V job designs, reproduced in RPG Site's job guide:
+https://www.rpgsite.net/feature/11941-final-fantasy-v-job-guide-best-jobs-to-master-unlocks-and-skills
+Reference image:
+https://images.rpgsite.net/image/da49c9a1/106694/original/ff5_jobs_guide_best_jobs_to_master_skills_abilities_list_canon.jpg
+
+Final Fantasy Tactics Time Mage and Chemist - Square Enix job gallery:
+https://dlgames.square-enix.com/fft/jp/jobs.html
+https://dlgames.square-enix.com/fft/img/jobs/c08.png
+https://dlgames.square-enix.com/fft/img/jobs/c02.png
+
+Final Fantasy Tactics A2 Gunner - concept art reproduced by Neoseeker:
+https://img.neoseeker.com/v_concept_art.php?caid=5011
+https://cdn.staticneo.com/ca/final_fantasy_tactics_a2_conceptart_NsIuy.jpg
+
+Final Fantasy characters and original job designs belong to their respective
+rights holders. Mod author credit: Willard82.

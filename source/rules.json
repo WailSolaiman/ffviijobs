@@ -1,0 +1,578 @@
+{
+  "version": "0.7.2",
+  "materia_ids": {
+    "MP Plus": 0,
+    "HP Plus": 1,
+    "Speed Plus": 2,
+    "Magic Plus": 3,
+    "Luck Plus": 4,
+    "EXP Plus": 5,
+    "Gil Plus": 6,
+    "Enemy Away": 7,
+    "Enemy Lure": 8,
+    "Chocobo Lure": 9,
+    "Pre-Emptive": 10,
+    "Long Range": 11,
+    "Mega All": 12,
+    "Counter Attack": 13,
+    "Slash-All": 14,
+    "Double Cut": 15,
+    "Cover": 16,
+    "Underwater": 17,
+    "HP↔MP": 18,
+    "W-Magic": 19,
+    "W-Summon": 20,
+    "W-Item": 21,
+    "All": 23,
+    "Counter": 24,
+    "Magic Counter": 25,
+    "MP Turbo": 26,
+    "MP Absorb": 27,
+    "HP Absorb": 28,
+    "Elemental": 29,
+    "Added Effect": 30,
+    "Sneak Attack": 31,
+    "Final Attack": 32,
+    "Added Cut": 33,
+    "Steal as Well": 34,
+    "Quadra Magic": 35,
+    "Steal": 36,
+    "Sense": 37,
+    "Throw": 39,
+    "Morph": 40,
+    "Deathblow": 41,
+    "Manipulate": 42,
+    "Mime": 43,
+    "Enemy Skill": 44,
+    "Master Command": 48,
+    "Fire": 49,
+    "Ice": 50,
+    "Earth": 51,
+    "Lightning": 52,
+    "Restore": 53,
+    "Heal": 54,
+    "Revive": 55,
+    "Seal": 56,
+    "Mystify": 57,
+    "Transform": 58,
+    "Exit": 59,
+    "Poison": 60,
+    "Gravity": 61,
+    "Barrier": 62,
+    "Comet": 64,
+    "Time": 65,
+    "Destruct": 68,
+    "Contain": 69,
+    "Full Cure": 70,
+    "Shield": 71,
+    "Ultima": 72,
+    "Master Magic": 73,
+    "Choco/Mog": 74,
+    "Shiva": 75,
+    "Ifrit": 76,
+    "Ramuh": 77,
+    "Titan": 78,
+    "Odin": 79,
+    "Leviathan": 80,
+    "Bahamut": 81,
+    "Kjata": 82,
+    "Alexander": 83,
+    "Phoenix": 84,
+    "Neo Bahamut": 85,
+    "Hades": 86,
+    "Typhoon": 87,
+    "Bahamut ZERO": 88,
+    "Knights of Round": 89,
+    "Master Summon": 90
+  },
+  "accessory_ids": {
+    "Power Wrist": 0,
+    "Protect Vest": 1,
+    "Earring": 2,
+    "Talisman": 3,
+    "Choco Feather": 4,
+    "Amulet": 5,
+    "Champion Belt": 6,
+    "Poison Ring": 7,
+    "Tough Ring": 8,
+    "Circlet": 9,
+    "Star Pendant": 10,
+    "Silver Glasses": 11,
+    "Headband": 12,
+    "Fairy Ring": 13,
+    "Jem Ring": 14,
+    "White Cape": 15,
+    "Sprint Shoes": 16,
+    "Peace Ring": 17,
+    "Ribbon": 18,
+    "Fire Ring": 19,
+    "Ice Ring": 20,
+    "Bolt Ring": 21,
+    "Tetra Elemental": 22,
+    "Safety Bit": 23,
+    "Fury Ring": 24,
+    "Curse Ring": 25,
+    "Protect Ring": 26,
+    "Cat's Bell": 27,
+    "Reflect Ring": 28,
+    "Water Ring": 29,
+    "Sneak Glove": 30,
+    "HypnoCrown": 31
+  },
+  "characters": [
+    {
+      "name": "Cloud",
+      "key": "cloud",
+      "accessories": [
+        "Curse Ring",
+        "Fire Ring",
+        "Ice Ring",
+        "Bolt Ring",
+        "Tetra Elemental"
+      ],
+      "game_character_id": 0,
+      "default_class": "mystic_knight"
+    },
+    {
+      "name": "Barret",
+      "key": "barret",
+      "accessories": [
+        "Protect Vest",
+        "Tough Ring",
+        "Protect Ring",
+        "Jem Ring",
+        "Sprint Shoes"
+      ],
+      "game_character_id": 1,
+      "default_class": "gunner"
+    },
+    {
+      "name": "Tifa",
+      "key": "tifa",
+      "accessories": [
+        "Power Wrist",
+        "Champion Belt",
+        "Silver Glasses",
+        "Star Pendant",
+        "Fairy Ring",
+        "Headband",
+        "Fury Ring",
+        "Talisman"
+      ],
+      "game_character_id": 2,
+      "default_class": "monk"
+    },
+    {
+      "name": "Aerith",
+      "key": "aerith",
+      "accessories": [
+        "Earring",
+        "Circlet",
+        "White Cape",
+        "Fairy Ring",
+        "Ribbon",
+        "Sprint Shoes"
+      ],
+      "game_character_id": 3,
+      "default_class": "white_mage"
+    },
+    {
+      "name": "Red XIII",
+      "key": "red_xiii",
+      "accessories": [
+        "Talisman",
+        "Cat's Bell",
+        "Tetra Elemental",
+        "Power Wrist",
+        "Earring"
+      ],
+      "game_character_id": 4,
+      "default_class": "blue_mage"
+    },
+    {
+      "name": "Yuffie",
+      "key": "yuffie",
+      "accessories": [
+        "Choco Feather",
+        "Sprint Shoes",
+        "Amulet",
+        "Water Ring",
+        "Poison Ring",
+        "Sneak Glove"
+      ],
+      "game_character_id": 5,
+      "default_class": "thief"
+    },
+    {
+      "name": "Cait Sith",
+      "key": "cait_sith",
+      "accessories": [
+        "HypnoCrown",
+        "Talisman",
+        "Earring",
+        "Circlet",
+        "Safety Bit",
+        "Ribbon"
+      ],
+      "game_character_id": 6,
+      "default_class": "summoner"
+    },
+    {
+      "name": "Vincent",
+      "key": "vincent",
+      "accessories": [
+        "Earring",
+        "Circlet",
+        "Reflect Ring"
+      ],
+      "game_character_id": 7,
+      "default_class": "black_mage"
+    },
+    {
+      "name": "Cid",
+      "key": "cid",
+      "accessories": [
+        "Fire Ring",
+        "Bolt Ring",
+        "Ice Ring",
+        "Jem Ring",
+        "Peace Ring",
+        "Fairy Ring",
+        "White Cape",
+        "Power Wrist",
+        "Safety Bit"
+      ],
+      "game_character_id": 8,
+      "default_class": "dragoon"
+    }
+  ],
+  "classes": [
+    {
+      "key": "white_mage",
+      "name": "White Mage",
+      "materia": [
+        "Restore",
+        "Heal",
+        "Revive",
+        "Full Cure",
+        "Barrier",
+        "Shield",
+        "Sense",
+        "All",
+        "MP Plus",
+        "Magic Plus"
+      ]
+    },
+    {
+      "key": "black_mage",
+      "name": "Black Mage",
+      "materia": [
+        "Fire",
+        "Ice",
+        "Lightning",
+        "Earth",
+        "Poison",
+        "Contain",
+        "Ultima",
+        "Destruct",
+        "All",
+        "MP Plus",
+        "Magic Plus",
+        "MP Turbo",
+        "Quadra Magic",
+        "Magic Counter"
+      ]
+    },
+    {
+      "key": "red_mage",
+      "name": "Red Mage",
+      "materia": [
+        "Fire",
+        "Ice",
+        "Lightning",
+        "Restore",
+        "Heal",
+        "Revive",
+        "Seal",
+        "Transform",
+        "W-Magic",
+        "Mega All",
+        "All",
+        "MP Plus",
+        "Magic Plus",
+        "Magic Counter"
+      ]
+    },
+    {
+      "key": "blue_mage",
+      "name": "Blue Mage",
+      "materia": [
+        "Enemy Skill",
+        "MP Plus",
+        "Magic Plus"
+      ]
+    },
+    {
+      "key": "time_mage",
+      "name": "Time Mage",
+      "materia": [
+        "Time",
+        "Gravity",
+        "Comet",
+        "Exit",
+        "Underwater",
+        "All",
+        "MP Plus",
+        "Magic Plus"
+      ]
+    },
+    {
+      "key": "summoner",
+      "name": "Summoner",
+      "materia": [
+        "Choco/Mog",
+        "Shiva",
+        "Ifrit",
+        "Ramuh",
+        "Titan",
+        "Odin",
+        "Leviathan",
+        "Bahamut",
+        "Kjata",
+        "Alexander",
+        "Phoenix",
+        "Neo Bahamut",
+        "Hades",
+        "Typhoon",
+        "Bahamut ZERO",
+        "Knights of Round",
+        "Master Summon",
+        "W-Summon",
+        "Final Attack",
+        "HP↔MP",
+        "MP Turbo",
+        "Quadra Magic",
+        "Magic Counter",
+        "MP Plus",
+        "Magic Plus"
+      ]
+    },
+    {
+      "key": "mystic_knight",
+      "name": "Mystic Knight",
+      "materia": [
+        "Fire",
+        "Ice",
+        "Lightning",
+        "Elemental",
+        "Added Effect",
+        "Added Cut",
+        "Magic Counter",
+        "MP Plus",
+        "Magic Plus"
+      ]
+    },
+    {
+      "key": "monk",
+      "name": "Monk",
+      "materia": [
+        "Deathblow",
+        "Double Cut",
+        "Counter Attack",
+        "HP Plus"
+      ]
+    },
+    {
+      "key": "gambler",
+      "name": "Gambler",
+      "materia": [
+        "Gil Plus",
+        "Luck Plus"
+      ]
+    },
+    {
+      "key": "ranger",
+      "name": "Ranger",
+      "materia": [
+        "Long Range",
+        "Pre-Emptive",
+        "Sense"
+      ]
+    },
+    {
+      "key": "gunner",
+      "name": "Gunner",
+      "materia": [
+        "Long Range",
+        "Slash-All",
+        "EXP Plus",
+        "Sense"
+      ]
+    },
+    {
+      "key": "beastmaster",
+      "name": "Beastmaster",
+      "materia": [
+        "Manipulate",
+        "Chocobo Lure",
+        "Enemy Lure"
+      ]
+    },
+    {
+      "key": "scholar",
+      "name": "Scholar",
+      "materia": [
+        "Sense"
+      ]
+    },
+    {
+      "key": "mime",
+      "name": "Mime",
+      "materia": [
+        "Mime",
+        "Master Command",
+        "Counter"
+      ]
+    },
+    {
+      "key": "chemist_alchemist",
+      "name": "Chemist / Alchemist",
+      "materia": [
+        "W-Item",
+        "Morph"
+      ]
+    },
+    {
+      "key": "mystic_oracle",
+      "name": "Mystic / Oracle",
+      "materia": [
+        "Mystify",
+        "All",
+        "MP Plus",
+        "Magic Plus"
+      ]
+    },
+    {
+      "key": "sage",
+      "name": "Sage",
+      "materia": [
+        "Barrier",
+        "Comet",
+        "Contain",
+        "Destruct",
+        "Earth",
+        "Exit",
+        "Fire",
+        "Full Cure",
+        "Gravity",
+        "Heal",
+        "Ice",
+        "Lightning",
+        "Master Magic",
+        "Mystify",
+        "Poison",
+        "Restore",
+        "Revive",
+        "Seal",
+        "Shield",
+        "Time",
+        "Transform",
+        "Ultima",
+        "W-Magic",
+        "All",
+        "MP Plus",
+        "Magic Plus",
+        "MP Turbo",
+        "Quadra Magic",
+        "Magic Counter"
+      ]
+    },
+    {
+      "key": "knight",
+      "name": "Knight",
+      "materia": [
+        "Cover",
+        "HP Plus"
+      ]
+    },
+    {
+      "key": "paladin",
+      "name": "Paladin",
+      "materia": [
+        "Cover",
+        "HP Plus",
+        "Restore",
+        "Heal",
+        "Barrier",
+        "Shield"
+      ]
+    },
+    {
+      "key": "warrior",
+      "name": "Warrior",
+      "materia": [
+        "Slash-All",
+        "Deathblow",
+        "Double Cut",
+        "HP Plus"
+      ]
+    },
+    {
+      "key": "samurai",
+      "name": "Samurai",
+      "materia": [
+        "Slash-All",
+        "Deathblow",
+        "Double Cut"
+      ]
+    },
+    {
+      "key": "thief",
+      "name": "Thief",
+      "materia": [
+        "Steal",
+        "Steal as Well",
+        "Sneak Attack",
+        "Speed Plus",
+        "Pre-Emptive",
+        "Enemy Away",
+        "Gil Plus",
+        "Luck Plus"
+      ]
+    },
+    {
+      "key": "ninja",
+      "name": "Ninja",
+      "materia": [
+        "Throw",
+        "Double Cut",
+        "Poison",
+        "Added Effect",
+        "Sneak Attack",
+        "Speed Plus",
+        "Pre-Emptive",
+        "Enemy Away"
+      ]
+    },
+    {
+      "key": "dragoon",
+      "name": "Dragoon",
+      "materia": [
+        "Long Range",
+        "HP Absorb",
+        "MP Absorb",
+        "HP Plus"
+      ]
+    },
+    {
+      "key": "dark_knight",
+      "name": "Dark Knight",
+      "materia": [
+        "Destruct",
+        "HP Absorb",
+        "MP Absorb",
+        "HP Plus"
+      ]
+    }
+  ]
+}
