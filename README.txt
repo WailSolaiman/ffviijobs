@@ -30,8 +30,9 @@ permissions, all class descriptions and the complete accessory proposal.
 
 MATERIA RULES
 Materia permissions and weapon icons follow the selected classes. Icons
-identify characters using the active Items menu weapon artwork. When five
-to nine characters can equip a Materia, smaller icons keep them all visible.
+identify characters using the active Items menu weapon artwork. Icons use
+normal size whenever the row has room. Compact icons are used only when
+needed to keep the icon row clear of the Materia name column.
 Materia with no eligible selected character remain visible, without icons,
 and cannot be equipped. This is expected with the defaults because nine
 selected classes do not cover every Materia in the 25-class catalogue.

@@ -357,7 +357,8 @@ int main(int argc,char **argv) {
           CHECK(text_calls==1);CHECK(last_text_x==x);CHECK(last_text_y==y);
           CHECK(sprite_calls==number);CHECK(drawn_owner_mask()==((1u<<number)-1));
           if(number){
-            int size=low?(number>4?4:8):(number>4?8:16);
+            int compact=number>(layout?6:7);
+            int size=low?(compact?4:8):(compact?8:16);
             CHECK(last_icon_x+size==edge-(low?8:16));CHECK(drawn_x[0]>x+15);
             CHECK(last_icon_y==y+(low?2:4));CHECK(last_palette==1);
             float *v=low?lo_vertices:hi_vertices;
@@ -394,6 +395,34 @@ int main(int argc,char **argv) {
     void jobs_render_name(const uint8_t *,const NameArgs *,int,int);
     uint8_t frame_space[160]={0},*frame=frame_space+128;
     *(int *)(frame-8)=2;*(int *)(frame-12)=15;*(int *)(frame-20)=15;
+    /* Regression: MP Plus has five owners with the defaults, but all five
+       normal icons fit. Check actual rendered sizes in every list/layout. */
+    const uint8_t mp_plus_name[]={0x2D,0x30,0,0x30,0x4C,0x55,0x53,255};
+    memcpy(options,DEFAULT_JOBS,sizeof(options));CHECK(jobs_configure(options));
+    CHECK(cmk_owner_mask(0)==((1u<<0)|(1u<<3)|(1u<<4)|(1u<<6)|(1u<<7)));
+    for(unsigned layout=0;layout<2;++layout){
+      *(uint16_t *)0x70C84D=*(uint16_t *)0x70F3C5=layout?623:618;
+      *(uint16_t *)0x70CA15=*(uint16_t *)0x70FCA9=layout?311:309;
+      for(unsigned site=0;site<4;++site){
+        int low=site&1;INV[12]=0;
+        NameArgs args={low?(layout?222:214):(layout?444:427),low?102:204,mp_plus_name,7,0.2f};
+        sprite_calls=text_calls=0;jobs_render_name(frame,&args,site>=2,low);
+        CHECK(sprite_calls==5);CHECK(drawn_owner_mask()==cmk_owner_mask(0));CHECK(text_calls==1);
+        float *v=low?lo_vertices:hi_vertices;
+        CHECK(v[16]-v[0]==(low?8:16));CHECK(v[9]-v[1]==(low?8:16));
+        CHECK(drawn_x[1]-drawn_x[0]==(low?10:20));
+      }
+    }
+    /* Nine normal icons also fit when a UI gives the list a wider row. */
+    for(unsigned c=0;c<9;++c)options[c]=black;CHECK(jobs_configure(options));INV[12]=49;
+    for(unsigned site=0;site<4;++site){
+      int low=site&1;NameArgs args={low?150:300,low?102:204,test_name,7,0.2f};
+      sprite_calls=text_calls=0;jobs_render_name(frame,&args,site>=2,low);
+      CHECK(sprite_calls==9);CHECK(text_calls==1);
+      float *v=low?lo_vertices:hi_vertices;
+      CHECK(v[16]-v[0]==(low?8:16));CHECK(drawn_x[1]-drawn_x[0]==(low?10:20));
+      CHECK(drawn_x[0]>args.x+(low?16:32));
+    }
     const uint8_t wide_name[]={0x26,0x49,0x52,0x45,0x26,0x49,0x52,0x45,0x26,0x49,0x52,0x45,0x26,0x49,0x52,255};
     memset(font_metrics,10,sizeof(font_metrics));U32(0xDB958C)=(uint32_t)font_metrics;
     font_object[0x70/4]=(uint32_t)glyph_vertices;

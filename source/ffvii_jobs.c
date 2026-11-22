@@ -299,11 +299,16 @@ static int icon_right(const NameArgs *args,int exchange,int low){
 static unsigned owner_count(unsigned owners){
     unsigned number=0;for(unsigned c=0;c<9;++c)if(owners&(1u<<c))++number;return number;
 }
-/* Five to nine owners use smaller icons, keeping all icons on the same row
- * and reserving enough space for the Materia name in stock UI and ESUI. */
-static int owner_first_x(unsigned owners,int right,int low){
+/* Prefer normal icons regardless of owner count. Compact them only when the
+ * normal row would crowd the name column; long labels already condense to fit.
+ * The minimum label space is 32 high / 16 low pixels, plus the usual gap. */
+static int small_owner_icons(const NameArgs *args,unsigned owners,int right,int low){
     unsigned number=owner_count(owners);
-    int small=number>4,step=low?(small?5:10):(small?10:20);
+    return number>4 && right-(int)(number-1)*(low?10:20)-(low?3:6)-args->x<(low?16:32);
+}
+static int owner_first_x(const NameArgs *args,unsigned owners,int right,int low){
+    unsigned number=owner_count(owners);
+    int small=small_owner_icons(args,owners,right,low),step=low?(small?5:10):(small?10:20);
     return right+(small?(low?4:8):0)-(number?(int)(number-1)*step:0);
 }
 static void draw_owner_icons(const NameArgs *args,unsigned owners,int right,int low){
@@ -315,9 +320,9 @@ static void draw_owner_icons(const NameArgs *args,unsigned owners,int right,int 
     static const uint8_t uv[9][2]={{112,112},{96,128},{112,128},{96,144},
         {112,144},{96,160},{112,160},{96,176},{112,176}};
     static const unsigned weapon[9]={0x80,0xA0,0x90,0xBE,0xB0,0xD7,0xE5,0xF2,0xC9};
-    int small=owner_count(owners)>4;
+    int small=small_owner_icons(args,owners,right,low);
     int step=low?(small?5:10):(small?10:20);
-    int x=owner_first_x(owners,right,low),y=args->y+(low?2:4);
+    int x=owner_first_x(args,owners,right,low),y=args->y+(low?2:4);
     for(unsigned c=0;c<9;++c)if(owners&(1u<<c)) {
         /* Use the Items menu renderer, so the active UI mod supplies its art. */
         ((void (__cdecl *)(int,int,int,int,float))(low?0x7177A8:0x717691))
@@ -359,7 +364,7 @@ static void render_owned_text(const NameArgs *args,unsigned owners,int right,int
             width+=((metric>>5)+(metric&31))*(low?1:2);
         }
     }
-    int boundary=number?owner_first_x(owners,right,low)-(low?3:6):right+(low?8:16);
+    int boundary=number?owner_first_x(args,owners,right,low)-(low?3:6):right+(low?8:16);
     unsigned available=(unsigned)(boundary>args->x?boundary-args->x:1);
     if(!font || !length || length>=64 || args->text[length]!=255 || width<=available){
         ((void (__cdecl *)(int,int,const uint8_t *,int,float))(low?0x6FAB2F:0x6F5B03))

@@ -1,16 +1,16 @@
 FFVII Job System 0.8.0 - private verification, 22 November 2026
 
 No FF7 launch, mod import/activation, profile or mod-order changes performed.
-The installed library and both profile hashes match the pre-work snapshot.
+No installed mods or profiles were edited.
 The author must test this new startup backend in-game before public release.
 
-PASS 175,836 native x86 fixture checks executing the actual relocated flat
+PASS 175,907 native x86 fixture checks executing the actual relocated flat
 runtime and HEXT entry. Covers all classes/characters, equip restrictions,
 AP preservation, full inventory, icons, stock/ESUI layouts and accessory rules.
 PASS four conflict modes, 40 checks each, retaining all sixteen hook guards.
 PASS missing, corrupt and truncated runtime cases, 39 checks each. Entry call
 is restored and gameplay hooks remain unchanged on these startup failures.
-PASS 175,850 checks with the exact installed ESUI startup routine in a private
+PASS 175,921 checks with the exact installed ESUI startup routine in a private
 fixture. Its guarded execute-permission repair runs before font setup.
 
 PASS 2,927 installed-7H integration checks: actual ModInfo/IrosArc, HEXT
@@ -35,3 +35,8 @@ padding. This is specific to the tested executable, not other languages.
 Package and metadata checks: byte-for-byte IRO round trip; stable mod GUID,
 author/support links, 0.80 package/catalogue version, Steam/EN target and
 download size in KB. Catalogue URLs are staged, not published or live-verified.
+
+PASS normal-size MP Plus icons for all five default owners in stock/ESUI,
+normal/Exchange and high/low resolution menus. Nine icons also retain normal
+size on wider rows. Tight rows retain compact icons and long-name fitting.
+Version remains 0.8.0 (0.80); package and catalogue contain no release notes.
