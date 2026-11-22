@@ -1,6 +1,6 @@
 /* Generated from rules.json. Do not edit. */
 #define CLASS_COUNT 25
-#define DEFAULT_JOB_VALUES {6,10,7,0,3,21,5,1,23}
+#define DEFAULT_JOB_VALUES {6,18,7,0,3,21,5,1,23}
 static const int DEFAULT_JOBS[9]=DEFAULT_JOB_VALUES;
 static const char *CHARACTER_NAMES[9]={"Cloud","Barret","Tifa","Aerith","Red XIII","Yuffie","Cait Sith","Vincent","Cid"};
 static const char *CHARACTER_KEYS[9]={"cloud","barret","tifa","aerith","red_xiii","yuffie","cait_sith","vincent","cid"};

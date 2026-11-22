@@ -3,5 +3,5 @@
   "basis": "User-approved researched 25-class catalogue in CLASS_REFERENCE.json replaces all previous character Materia lists.",
   "unowned_materia": "visible, no icons, unusable",
   "accessories": "Original character permissions unchanged.",
-  "release_notes": "HEXT runtime backend replaces LoadLibrary. Gameplay permissions and saved class settings remain unchanged."
+  "default_classes": {"Barret": "Paladin"}
 }

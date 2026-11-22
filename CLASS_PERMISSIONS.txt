@@ -10,7 +10,7 @@ Configure Mod now shows the selected class's role, Materia and suggested accesso
 Accessory suggestions are INFORMATION ONLY. Actual accessories still use the existing character permissions.
 DEFAULTS
   Cloud: Mystic Knight
-  Barret: Gunner
+  Barret: Paladin
   Tifa: Monk
   Aerith: White Mage
   Red XIII: Blue Mage

@@ -23,7 +23,8 @@ PASS 1,729 installed Configure Mod view-model checks: 225 class selections,
 32 accessory references and 57 decoded guide images.
 
 PASS approved 25-class/83-Materia pools, nine defaults and original 32
-accessory permissions; values are unchanged from 0.7.2.
+accessory permissions. Class pools and accessory permissions are unchanged;
+Barret now defaults to Paladin. All other character defaults are retained.
 PASS installed game kernel Materia/accessory IDs, character IDs, all sixteen
 guard signatures, 18 original weapon-renderer cases and 192 accessory paths.
 PASS installed ESUI 2.968 full startup fingerprint and isolated execution.

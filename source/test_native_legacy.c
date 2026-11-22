@@ -249,14 +249,14 @@ int main(int argc,char **argv) {
     CHECK(cmk_owner_mask(65)==0);CHECK(cmk_owner_mask(61)==0); /* no Time Mage selected */
     CHECK(cmk_owner_mask(44)==(1u<<4)); /* Blue Mage Red XIII */
     CHECK(cmk_owner_mask(49)==((1u<<0)|(1u<<7))); /* Mystic Knight + Black Mage */
-    CHECK(cmk_owner_mask(53)==(1u<<3));CHECK(!cmk_can_equip(2,53)); /* strict researched Monk */
+    CHECK(cmk_owner_mask(53)==((1u<<1)|(1u<<3)));CHECK(!cmk_can_equip(2,53)); /* Paladin + White Mage; strict researched Monk */
     /* AP must not influence permissions. */
     CHECK(cmk_allowed(0x98765431)==1);CHECK(cmk_allowed(0x98765435)==0);
     U32(0xDD163C)=0;U32(0xDD1374)=7;U32(0xDD1364)=1;
     INV[8]=0x12345635;
     CHECK(((int (__cdecl *)(void))0x70DC14)()==0);
     INV[8]=0x12345631;CHECK(((int (__cdecl *)(void))0x70DC14)()==1);
-    U32(0xDD163C)=1;INV[8]=0x1234560B;CHECK(((int (__cdecl *)(void))0x70DC14)()==1);
+    U32(0xDD163C)=1;INV[8]=0x12345610;CHECK(((int (__cdecl *)(void))0x70DC14)()==1); /* Paladin Cover */
     INV[8]=0x12345631;CHECK(((int (__cdecl *)(void))0x70DC14)()==0);
     U32(0xDD163C)=0;U32(0xDD1374)=200;CHECK(cmk_normal_allowed()==0);
     reset_data();CLOUD[0]=0x12345631;INV[0]=0x65432135;
@@ -269,7 +269,7 @@ int main(int argc,char **argv) {
     CHECK(call_exchange(&other,INV+2)==1);CHECK(other==0x77889949);
     uint32_t *barret=(uint32_t *)(0xDBFDCC+0x84);barret[0]=0x12345635;INV[3]=0x65432131;
     CHECK(call_exchange(barret,INV+3)==0);CHECK(barret[0]==0x12345635);CHECK(INV[3]==0x65432131);
-    INV[3]=0x6543210B;CHECK(call_exchange(barret,INV+3)==1);CHECK(barret[0]==0x6543210B);
+    INV[3]=0x65432110;CHECK(call_exchange(barret,INV+3)==1);CHECK(barret[0]==0x65432110);
     uint8_t mask[8]={1,1,1,1,1,1,1,1}, holes[8]={1,0,1,1,1,1,1,1};
     for(unsigned i=0;i<8;++i){CLOUD[i]=0x12345631;INV[i]=0x65432132;}
     INV[7]=0xABCDEF35;

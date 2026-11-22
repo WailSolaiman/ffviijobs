@@ -72,8 +72,8 @@
     <Name>Barret</Name>
     <ID>job_v070_barret</ID>
     <Type>List</Type>
-    <Default>10</Default>
-    <Description>Choose Barret's class. Default: Gunner. Details below follow your selection. Classes can be shared; changes apply next launch.</Description>
+    <Default>18</Default>
+    <Description>Choose Barret's class. Default: Paladin. Details below follow your selection. Classes can be shared; changes apply next launch.</Description>
     <Option Value="0" Name="White Mage" PreviewFile="previews\classes\white_mage.png" />
     <Option Value="1" Name="Black Mage" PreviewFile="previews\classes\black_mage.png" />
     <Option Value="2" Name="Red Mage" PreviewFile="previews\classes\red_mage.png" />

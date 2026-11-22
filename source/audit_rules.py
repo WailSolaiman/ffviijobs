@@ -17,7 +17,7 @@ def audit(root):
   assert len(set(j['materia']))==len(j['materia'])
   assert set(j['materia'])<=r['materia_ids'].keys()
  assert {m for j in r['classes'] for m in j['materia']}==r['materia_ids'].keys()
- defaults=['Mystic Knight','Gunner','Monk','White Mage','Blue Mage','Thief','Summoner','Black Mage','Dragoon']
+ defaults=['Mystic Knight','Paladin','Monk','White Mage','Blue Mage','Thief','Summoner','Black Mage','Dragoon']
  names={j['key']:j['name'] for j in r['classes']}
  assert [names[c['default_class']] for c in r['characters']]==defaults
  assert [c['game_character_id'] for c in r['characters']]==list(range(9))

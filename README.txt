@@ -18,7 +18,8 @@ INSTALL / CONFIGURE
 Every character can choose any of the same 25 classes. Characters can share
 a class. Upgrading from 0.7.0 preserves class choices because all nine setting
 IDs and their values are unchanged. Earlier fixed-class versions use the new
-documented defaults.
+documented defaults. Barret defaults to Paladin. Existing saved class choices
+are retained; select Paladin in Configure Mod to change a saved choice.
 
 ACCESSORY INFORMATION
 The class-based accessory assignments are INFORMATION ONLY in this release.
