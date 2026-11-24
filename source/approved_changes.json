@@ -54,6 +54,15 @@
     "Dark Knight": [
       "Deathblow",
       "Poison"
+    ],
+    "Mystic / Oracle": [
+      "Seal",
+      "Transform",
+      "Destruct",
+      "Poison",
+      "Added Effect",
+      "HP Absorb",
+      "MP Absorb"
     ]
   },
   "unowned_materia": "visible, no icons, unusable",

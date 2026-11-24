@@ -24,9 +24,10 @@ PASS 1,729 installed Configure Mod view-model checks: 225 class selections,
 32 accessory references and 57 decoded guide images.
 
 PASS approved 25-class/83-Materia pools, nine defaults and original 32
-accessory permissions. Ten class pools have the approved playability additions:
+accessory permissions. Eleven class pools have the approved playability additions:
 Scholar, Knight, Gambler, Chemist/Alchemist, Beastmaster, Mime, Monk, Gunner,
-Dragoon and Dark Knight. The other 15 pools and accessory permissions are retained.
+Dragoon, Dark Knight and Mystic/Oracle. The other 14 pools and accessory
+permissions are retained.
 Barret defaults to Paladin and Cait Sith to Gambler. Other defaults, class
 setting IDs, option values and saved class selections are preserved.
 PASS installed game kernel Materia/accessory IDs, character IDs, all sixteen

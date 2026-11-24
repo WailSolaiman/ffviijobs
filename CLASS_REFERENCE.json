@@ -163,7 +163,14 @@
   ],
   "Mystic / Oracle": [
     "Mystify",
+    "Seal",
+    "Transform",
+    "Destruct",
+    "Poison",
     "All",
+    "Added Effect",
+    "HP Absorb",
+    "MP Absorb",
     "MP Plus",
     "Magic Plus"
   ],

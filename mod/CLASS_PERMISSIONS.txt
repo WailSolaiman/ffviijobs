@@ -97,8 +97,8 @@ Chemist / Alchemist
   Accessory suggestions (not active): Poison Ring, Star Pendant, Fairy Ring, White Cape, Ribbon, Cat's Bell
 
 Mystic / Oracle
-  Role: Disrupts enemies with Mystify and supports status-magic strategies.
-  Materia: Mystify, All, MP Plus, Magic Plus
+  Role: A curse and drain specialist who disables enemies, removes protections, and sustains battle through HP and MP absorption.
+  Materia: Mystify, Seal, Transform, Destruct, Poison, All, Added Effect, HP Absorb, MP Absorb, MP Plus, Magic Plus
   Accessory suggestions (not active): Earring, Talisman, Poison Ring, Circlet, Headband, Peace Ring
 
 Sage
