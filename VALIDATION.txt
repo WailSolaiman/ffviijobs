@@ -1,66 +1,33 @@
-FFVII Job System 1.0.0 - private verification, 24 November 2026
+FFVII Job System 1.0.0 - supported DLL loading, 24 November 2026
 
-No FF7 launch, mod import/activation, profile or mod-order changes performed.
-No installed mods or profiles were edited.
-The author must test this build in-game before public release.
+No FF7 launch, mod import/activation, profile edit or mod-order change performed.
+The corrected build still requires an in-game test.
 
-PASS 176,663 native x86 fixture checks executing the actual relocated flat
-runtime and HEXT entry. Covers all classes/characters, equip restrictions,
-AP preservation, full inventory, icons, stock/ESUI layouts and accessory rules.
-PASS four conflict modes, 40 checks each, retaining all sixteen hook guards.
-PASS missing, corrupt and truncated runtime cases, 39 checks each. Entry call
-is restored and gameplay hooks remain unchanged on these startup failures.
-PASS 176,677 checks with the exact installed ESUI startup routine in a private
-fixture. Its guarded execute-permission repair runs before font setup.
+PASS 176,669 compiled native x86 fixture checks for class rules, equip/menu
+hooks, inventory/AP preservation, compact icons and full long-name fitting.
+PASS four conflict modes, 33 checks each; all sixteen gameplay guards retained.
+PASS 176,683 checks with the exact installed ESUI routine in a private fixture.
+The guarded font-permission repair remains active during DLL initialization.
 
-PASS 2,927 installed-7H integration checks: actual ModInfo/IrosArc, HEXT
-discovery/application, exact patch bytes and executable page permissions,
-51 class configurations and 510 reads through actual virtual file handlers,
-including the renamed ffvii-jobs-v100.bin runtime.
-LoadLibraries/LoadPlugins/LoadAssemblies/LoadPrograms are all empty. These are
-the four collections checked by installed CheckAllowedActivate before its
-warning dialog. The IRO contains no DLL or EXE payload.
-PASS 1,729 installed Configure Mod view-model checks: 225 class selections,
-32 accessory references and 57 decoded guide images.
+PASS 148,314 production-DLL integration checks using private copies of the
+actual installed 7H assemblies: IRO parsing, GetLoadLibraries extraction,
+Windows LoadLibrary, DllMain defaults, deferred settings, configuration
+evaluation, all 25 classes on every character and 477 virtual marker reads.
+The test's DLL import substitutions exist only in the private test process.
 
-PASS approved 25-class/83-Materia pools, nine defaults and original 32
-accessory permissions. Eleven class pools have the approved playability additions:
-Scholar, Knight, Gambler, Chemist/Alchemist, Beastmaster, Mime, Monk, Gunner,
-Dragoon, Dark Knight and Mystic/Oracle. The other 14 pools and accessory
-permissions are retained.
-Barret defaults to Paladin and Cait Sith to Gambler. Other defaults, class
-setting IDs, option values and saved class selections are preserved.
-PASS installed game kernel Materia/accessory IDs, character IDs, all sixteen
-guard signatures, 18 original weapon-renderer cases and 192 accessory paths.
-PASS installed ESUI 2.968 full startup fingerprint and isolated execution.
-PASS 6,571 static HEXT write ranges across other installed mods, with no
-overlap with the new early entry or executable padding; no unresolved lines.
-PASS actual English executable early-call bytes and zero-filled executable
-padding. This is specific to the tested executable, not other languages.
+The package declares exactly one LoadLibrary: FFVIIJobs.dll. 7th Heaven's
+existing code-consent predicate therefore takes its normal warning path.
+No HEXT patch, custom startup bridge, executable-padding payload, flat runtime,
+custom relocation loader or jobs_hext_entry export is distributed.
+The production DLL is a normal x86 PE image with Windows system dependencies.
 
-Package and metadata checks: byte-for-byte IRO round trip; stable mod GUID,
-author/support links, 1.00 package/catalogue version, Steam/EN target and
-download size in KB. Public release downloads were SHA-256 verified.
-The catalogue entry passed the upstream validator and is submitted for review.
+All 25 class pools, nine defaults, 83 Materia IDs, original 32 accessory rules,
+configuration IDs/values, guides, weapon icon layout and poster are retained.
+Barret defaults to Paladin; Cait Sith defaults to Gambler.
+The main mod description remains byte-for-byte identical; no release notes.
+Package/release version remains 1.0.0 (1.00 in 7th Heaven).
 
-PASS normal-size MP Plus icons for five selected eligible casters in stock/ESUI,
-normal/Exchange and high/low resolution menus. All Materia use normal icons
-for 1-5 owners and compact icons for 6-9, including wider menu rows.
-PASS exact tighter spacing and non-overlap for 1-9 owners in stock/ESUI,
-normal/Exchange and both resolutions. Accessory icons share the tighter gap.
-PASS complete long names fit before icons for every owner count, including
-the five/six size transition, in all four Materia list variants.
-Package version is 1.0.0 (1.00); package and catalogue contain no release notes.
-The main mod description is identical to the previous version.
-
-PASS all class guide metadata matches the current role and Materia pool.
-PASS new preview inspected visually: all 25 class representatives are human,
-including Black Mage; Paladin grips her sword handle beneath its crossguard.
-All class labels, title, subtitle and author credit are present. The preview
-was edited with built-in image generation; PREVIEW_EDIT_PROMPT.txt contains
-the exact final edit prompt. The IRO embeds the new preview and runtime.
-
-PUBLICATION
-Release: https://github.com/WailSolaiman/ffviijobs/releases/tag/v1.0.0
-Catalogue submission: https://github.com/tsunamods-codes/7th-Heaven-Catalogs/pull/525
-The official entry/link validator and full Qhimm/Sega catalogue validation passed.
+The 7H code-consent warning is intentionally retained; no application security
+setting or warning logic was modified. Source history preserves the previous
+HEXT implementation for review. Published hashes and the catalogue submission
+will identify this corrected DLL build.

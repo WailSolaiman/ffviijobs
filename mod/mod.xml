@@ -11,6 +11,7 @@
   <Link>https://github.com/WailSolaiman/ffviijobs</Link>
   <DonationLink>https://ko-fi.com/ffviijobs</DonationLink>
   <PreviewFile>preview.png</PreviewFile>
+  <LoadLibrary>FFVIIJobs.dll</LoadLibrary>
   <ConfigOption>
     <Name>Cloud</Name>
     <ID>job_v070_cloud</ID>
@@ -563,5 +564,4 @@
     <Option Value="30" Name="Sneak Glove" PreviewFile="previews\accessories\accessory_30.png" />
     <Option Value="31" Name="HypnoCrown" PreviewFile="previews\accessories\accessory_31.png" />
   </ConfigOption>
-  <ModFolder Folder="runtime" />
 </ModInfo>

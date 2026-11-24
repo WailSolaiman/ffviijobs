@@ -21,11 +21,12 @@ See [the installation guide](README.txt) and [the complete class permissions](CL
 Tested with the English Steam FF7 PC 1.02 executable, 7th Heaven 4.6.1, FFNx 1.25.2.0 and Enhanced Stock UI 2.968. Other languages and gameplay overhauls that change Materia IDs or the same executable hooks are unverified.
 
 The current source release is **1.0.0**, displayed as **1.00** in 7th Heaven.
-It uses HEXT patches and a freestanding runtime, with no DLL/plugin/program
-declarations and no native-library activation prompt in 7th Heaven 4.6.1.
-7th Heaven's security settings are unchanged. This build has passed private
-native and installed-7H integration checks and **awaits an in-game test before
-a public packaged release**. Saved class selections are preserved. New
+It uses 7th Heaven's supported **LoadLibrary** mechanism for `FFVIIJobs.dll`.
+The normal executable-code warning appears when activating the mod. There is
+no HEXT bootstrap or separately loaded executable `.bin` payload. 7th Heaven's
+security settings and consent mechanism are unchanged. Private native and
+installed-7H integration checks pass; in-game testing is still required.
+Saved class selections are preserved. New
 configurations default Barret to Paladin and Cait Sith to Gambler. Current
 Materia permissions are listed in [the complete class permissions](CLASS_PERMISSIONS.txt).
 
@@ -39,7 +40,7 @@ py source/build.py --zig C:/path/to/zig.exe
 py source/package.py
 ```
 
-The build creates the HEXT entry, flat runtime and configuration previews. Packaging creates the IRO and a source ZIP. Intermediate compiler DLLs and archives are excluded from Git; the generated HEXT and runtime payload are included for review. Packaged downloads belong in Releases. See [runtime format](source/HEXT_RUNTIME.md).
+The build creates the standard x86 DLL and configuration previews. Packaging creates the IRO and a source ZIP. Compiled binaries and archives are excluded from Git; the DLL is included in the packaged download. See [DLL loading](source/DLL_LOADING.md).
 
 Validation details are in [VALIDATION.txt](VALIDATION.txt). The `source` folder also contains private native, loader, configuration and metadata verification tools, which do not require launching FF7.
 

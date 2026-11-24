@@ -1,5 +1,8 @@
-// Private x86 integration host: installed 7H parser, option evaluator,
-// IRO mapping, virtual files and HEXT discovery. Never opens FF7 or saves profiles.
+// Private x86 integration host: actual installed 7H parser, option evaluator,
+// IRO mapper, virtual file handlers and native DLL. Never starts/opens FF7.
+// Only this test process's DLL import table is redirected to the real 7H APIs.
+// Pass private copies of installed 7H assemblies so library extraction also
+// stays inside the fixture's work directory.
 using System;
 using System.IO;
 using System.Collections;
@@ -9,38 +12,58 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Xml;
 class LoaderTest {
- [DllImport("kernel32")] static extern IntPtr VirtualAlloc(IntPtr p,UIntPtr size,uint allocation,uint protection);
- [DllImport("kernel32")] static extern bool VirtualFree(IntPtr p,UIntPtr size,uint mode);
- [DllImport("kernel32")] static extern UIntPtr VirtualQuery(IntPtr p,IntPtr info,UIntPtr size);
+ [DllImport("kernel32",CharSet=CharSet.Unicode,SetLastError=true)] static extern IntPtr LoadLibraryW(string p);
+ [DllImport("kernel32",CharSet=CharSet.Ansi,ExactSpelling=true)] static extern IntPtr GetProcAddress(IntPtr h,string p);
+ [DllImport("kernel32")] static extern bool VirtualProtect(IntPtr p,UIntPtr length,uint protection,out uint old);
+ [DllImport("kernel32",EntryPoint="CreateFileW",CharSet=CharSet.Unicode,SetLastError=true)] static extern IntPtr RealCreate(string p,uint access,uint share,IntPtr security,uint creation,uint flags,IntPtr template);
+ [DllImport("kernel32",EntryPoint="ReadFile",SetLastError=true)] static extern int RealRead(IntPtr h,IntPtr bytes,uint length,IntPtr read,IntPtr overlapped);
+ [DllImport("kernel32",EntryPoint="CloseHandle")] static extern int RealClose(IntPtr h);
+ [UnmanagedFunctionPointer(CallingConvention.Cdecl)] delegate int Selected(uint c);
+ [UnmanagedFunctionPointer(CallingConvention.Cdecl)] delegate IntPtr ClassName(uint c);
+ [UnmanagedFunctionPointer(CallingConvention.Cdecl)] delegate uint Owners(uint id);
+ [UnmanagedFunctionPointer(CallingConvention.Cdecl)] delegate int CanEquip(uint c,uint id);
+ [UnmanagedFunctionPointer(CallingConvention.Cdecl,CharSet=CharSet.Unicode)] delegate int ReadSettings([MarshalAs(UnmanagedType.LPWStr)]string p);
+ [UnmanagedFunctionPointer(CallingConvention.Winapi,CharSet=CharSet.Unicode)] delegate IntPtr CreateHook([MarshalAs(UnmanagedType.LPWStr)]string p,uint a,uint s,IntPtr security,uint creation,uint flags,IntPtr template);
+ [UnmanagedFunctionPointer(CallingConvention.Winapi)] delegate int ReadHook(IntPtr h,IntPtr b,uint n,IntPtr read,IntPtr overlapped);
+ [UnmanagedFunctionPointer(CallingConvention.Winapi)] delegate int CloseHook(IntPtr h);
+ [UnmanagedFunctionPointer(CallingConvention.Winapi)] delegate uint ModuleHook(IntPtr module,IntPtr buffer,uint size);
+ static CreateHook createHook=ForwardCreate;static ReadHook readHook=ForwardRead;static CloseHook closeHook=ForwardClose;
+ static ModuleHook moduleHook=FixtureExecutable;
  static string program,fixture;static int count,virtualOpens,virtualReads;
  static Type wrap;static MethodInfo hCreate,hRead,hClose;static object info,archive,profileItem;
  static MethodInfo isConfigActive;static PropertyInfo settingsProperty;static Type settingType;
- static XmlNodeList options;
- static void CheckHext(Assembly wrapper){
-  byte[] bytes=(byte[])archive.GetType().GetMethod("GetBytes").Invoke(archive,new object[]{"hext\\FFVIIJobs.txt"});
-  string[] lines=System.Text.Encoding.UTF8.GetString(bytes).Split('\n');
-  IntPtr area=VirtualAlloc(IntPtr.Zero,(UIntPtr)0x3000,0x3000,4),mbi=Marshal.AllocHGlobal(28);Check(area!=IntPtr.Zero,"private HEXT allocation");
-  try{
-   var expected=new Dictionary<int,byte>();
-   for(int i=1;i<lines.Length;i++){
-    string line=lines[i].Trim();if(line.Length==0)continue;
-    int split=line.IndexOf('=');bool write=split>=0;if(!write)split=line.IndexOf(':');
-    long original=Convert.ToInt64(line.Substring(0,split).Trim(),16);int offset=original==0x67DB38?0:0x1000+(int)(original-0x7B5800);
-    Check(offset>=0 && offset<0x3000,"only expected HEXT ranges");
-    if(write){string spec=line.Substring(split+1).Trim();if(spec.Contains(":")){string[] pair=spec.Split(':');int length=Convert.ToInt32(pair[1],16);for(int j=0;j<length;j++)expected[offset+j]=Convert.ToByte(pair[0],16);}else{string[] parts=spec.Split(new[]{' '},StringSplitOptions.RemoveEmptyEntries);for(int j=0;j<parts.Length;j++)expected[offset+j]=Convert.ToByte(parts[j],16);}}
-    lines[i]=(area.ToInt64()+offset).ToString("X")+line.Substring(split);
-   }
-   var patch=wrapper.GetType("AppWrapper.HexPatch").GetMethod("Apply",BindingFlags.Static|BindingFlags.Public,null,new[]{typeof(Stream)},null);
-   using(var input=new MemoryStream(System.Text.Encoding.UTF8.GetBytes(string.Join("\n",lines))))patch.Invoke(null,new object[]{input});
-   foreach(var pair in expected)Check(Marshal.ReadByte(area,pair.Key)==pair.Value,"installed parser applied exact HEXT bytes");
-   foreach(int offset in new[]{0,0x1000}){Check(VirtualQuery(IntPtr.Add(area,offset),mbi,(UIntPtr)28)!=UIntPtr.Zero,"query patched page");Check((Marshal.ReadInt32(mbi,20)&0xF0)!=0,"entry and bootstrap pages executable after all writes");}
-  }finally{Marshal.FreeHGlobal(mbi);VirtualFree(area,UIntPtr.Zero,0x8000);}
- }
+ static XmlNodeList options;static Selected selected;static ClassName className;static Owners owners;static CanEquip equip;
  static void Check(bool pass,string label){++count;if(!pass)throw new Exception(label);}
  static object Field(object v,string n){var t=v.GetType();var p=t.GetProperty(n);return p!=null?p.GetValue(v,null):t.GetField(n).GetValue(v);}
  static void Set(object v,string n,object value){v.GetType().GetProperty(n).SetValue(v,value,null);}
  static int Length(object v){int n=0;foreach(object o in (IEnumerable)v)++n;return n;}
  static object Construct(Type t,string path){var ctor=t.GetConstructors()[0];var pars=ctor.GetParameters();object[] vals=new object[pars.Length];for(int i=0;i<vals.Length;++i)vals[i]=i==0?(object)path:pars[i].HasDefaultValue?pars[i].DefaultValue:pars[i].ParameterType==typeof(bool)?(object)false:null;return ctor.Invoke(vals);}
+ static Delegate Export(IntPtr dll,string name,Type type){IntPtr p=GetProcAddress(dll,name);Check(p!=IntPtr.Zero,"missing export "+name);return Marshal.GetDelegateForFunctionPointer(p,type);}
+ static object EnumArg(ParameterInfo[] p,int i,uint value){return Enum.ToObject(p[i].ParameterType,value);}
+ static IntPtr ForwardCreate(string p,uint a,uint s,IntPtr security,uint creation,uint flags,IntPtr template){
+  var pars=hCreate.GetParameters();IntPtr h=(IntPtr)hCreate.Invoke(null,new object[]{p,EnumArg(pars,1,a),EnumArg(pars,2,s),security,EnumArg(pars,4,creation),EnumArg(pars,5,flags),template});
+  if(h!=IntPtr.Zero){++virtualOpens;return h;}return RealCreate(p,a,s,security,creation,flags,template);
+ }
+ static int ForwardRead(IntPtr h,IntPtr b,uint n,IntPtr read,IntPtr overlapped){int v=(int)hRead.Invoke(null,new object[]{h,b,n,read,overlapped});if(v!=0){++virtualReads;return v;}return RealRead(h,b,n,read,overlapped);}
+ static int ForwardClose(IntPtr h){hClose.Invoke(null,new object[]{h});return RealClose(h);}
+ static uint FixtureExecutable(IntPtr module,IntPtr buffer,uint size){
+  Check(module==IntPtr.Zero,"only the test executable path is substituted");
+  string path=Path.Combine(fixture,"ff7_en.exe");Check(path.Length+1<size,"test module path fits");
+  char[] chars=(path+"\0").ToCharArray();Marshal.Copy(chars,0,buffer,chars.Length);return (uint)path.Length;
+ }
+ static void PatchImport(IntPtr dll,string name,Delegate hook){
+  int pe=Marshal.ReadInt32(dll,0x3c),rva=Marshal.ReadInt32(dll,pe+24+104);
+  for(IntPtr d=IntPtr.Add(dll,rva);Marshal.ReadInt32(d,12)!=0;d=IntPtr.Add(d,20)){
+   int original=Marshal.ReadInt32(d),first=Marshal.ReadInt32(d,16);
+   for(int i=0;Marshal.ReadInt32(dll,original+i*4)!=0;++i){
+    int thunk=Marshal.ReadInt32(dll,original+i*4);if(thunk<0)continue;
+    if(Marshal.PtrToStringAnsi(IntPtr.Add(dll,thunk+2))!=name)continue;
+    IntPtr at=IntPtr.Add(dll,first+i*4);uint old,ignored;
+    Check(VirtualProtect(at,(UIntPtr)4,0x40,out old),"test-only IAT protect");
+    Marshal.WriteIntPtr(at,Marshal.GetFunctionPointerForDelegate(hook));VirtualProtect(at,(UIntPtr)4,old,out ignored);return;
+   }
+  }throw new Exception("import not found "+name);
+ }
  static void MapSelection(int[] choices){
   IList settings=(IList)Activator.CreateInstance(settingsProperty.PropertyType);
   for(int c=0;c<9;++c){object setting=Activator.CreateInstance(settingType);Set(setting,"ID",options[c].SelectSingleNode("ID").InnerText);Set(setting,"Value",choices[c]);settings.Add(setting);}
@@ -52,44 +75,73 @@ class LoaderTest {
    object aw=Field(folder,"ActiveWhen");
    Func<string,bool> test=delegate(string spec){return (bool)isConfigActive.Invoke(profileItem,new object[]{spec});};
    Func<string,bool> no=delegate(string s){return false;};
-   var evaluate=aw==null?null:aw.GetType().GetMethod("IsActive");
-   bool enabled=aw==null || (bool)evaluate.Invoke(aw,evaluate.GetParameters().Length==2?new object[]{test,no}:new object[]{test,no,no});
+   var evaluate=aw.GetType().GetMethod("IsActive");
+   bool enabled=(bool)evaluate.Invoke(aw,evaluate.GetParameters().Length==2?new object[]{test,no}:new object[]{test,no,no});
    if(enabled){++active;wrap.GetMethod("AddIROFilesToMappedFiles",BindingFlags.Static|BindingFlags.NonPublic).Invoke(null,new object[]{Field(folder,"Folder"),null,archive});}
   }
-  Check(active==10,"exactly one active folder per character");
-  Check(((IDictionary)mapped.GetValue(null)).Count==10,"nine markers and runtime mapped");
+  Check(active==9,"exactly one active folder per character");
+  Check(((IDictionary)mapped.GetValue(null)).Count==9,"nine isolated virtual filenames");
  }
-
- static byte[] ReadVirtual(string path){
-  var pars=hCreate.GetParameters();
-  IntPtr h=(IntPtr)hCreate.Invoke(null,new object[]{Path.Combine(fixture,path),Enum.ToObject(pars[1].ParameterType,0x80000000u),Enum.ToObject(pars[2].ParameterType,3),IntPtr.Zero,Enum.ToObject(pars[4].ParameterType,3),Enum.ToObject(pars[5].ParameterType,0x80),IntPtr.Zero});
-  Check(h!=IntPtr.Zero,"virtual file open "+path);++virtualOpens;
-  IntPtr b=Marshal.AllocHGlobal(100000),n=Marshal.AllocHGlobal(4);
-  try{Marshal.WriteInt32(n,0);Check((int)hRead.Invoke(null,new object[]{h,b,(uint)100000,n,IntPtr.Zero})!=0,"virtual read");++virtualReads;byte[] data=new byte[Marshal.ReadInt32(n)];Marshal.Copy(b,data,0,data.Length);return data;}
-  finally{hClose.Invoke(null,new object[]{h});Marshal.FreeHGlobal(b);Marshal.FreeHGlobal(n);}
+ static void Verify(int[] choices,ReadSettings read){
+  MapSelection(choices);int before=virtualOpens;Check(read(fixture)==1,"read selected jobs through 7H virtual archive");
+  Check(virtualOpens-before==9,"all nine markers read virtually");
+  for(uint c=0;c<9;++c){Check(selected(c)==choices[c],"native selection matches Configure Mod");Check(Marshal.PtrToStringAnsi(className(c))==options[(int)c].SelectNodes("Option")[choices[c]].Attributes["Name"].Value,"native/UI class names agree");}
+  for(uint id=0;id<256;++id){uint mask=owners(id);Check((mask&~511u)==0,"valid nine-character owner mask");Check(owners(0xABCDEF00u|id)==mask,"AP independence");
+   for(uint c=0;c<9;++c)Check(equip(c,0xABCDEF00u|id)==((id==255 || (mask&(1u<<(int)c))!=0)?1:0),"dynamic icons/equip agreement");}
+  Check(((IDictionary)wrap.GetField("_varchives",BindingFlags.Static|BindingFlags.NonPublic).GetValue(null)).Count==0,"virtual handles cleaned up");
  }
- static void Verify(int[] choices){
-  MapSelection(choices);
-  for(int c=0;c<9;++c){string id=options[c].SelectSingleNode("ID").InnerText.Substring("job_v070_".Length);string value=System.Text.Encoding.UTF8.GetString(ReadVirtual("ffvii-job-system-v070\\"+id+".class")).Trim();Check(value==options[c].SelectNodes("Option")[choices[c]].Attributes["Name"].Value.ToLowerInvariant().Replace(" / ","_").Replace(" ","_"),"class marker matches selection");}
-  byte[] core=ReadVirtual("ffvii-jobs-v100.bin");Check(core.Length>32 && BitConverter.ToUInt32(core,0)==0x31584A46,"flat runtime mapped");
-  Check(((IDictionary)wrap.GetField("_varchives",BindingFlags.Static|BindingFlags.NonPublic).GetValue(null)).Count==0,"virtual handles closed");
- }
- [STAThread]static int Main(string[] args){try{
-  program=Path.GetFullPath(args[0]);string iro=Path.GetFullPath(args[1]),manifest=Path.GetFullPath(args[2]);fixture=Path.GetFullPath(args[3]);Directory.CreateDirectory(fixture);Directory.SetCurrentDirectory(fixture);
+ static int Main(string[] args){try{
+  program=args[0];string iro=Path.GetFullPath(args[1]),manifest=Path.GetFullPath(args[2]);fixture=Path.GetFullPath(args[3]);
+  Directory.CreateDirectory(fixture);Directory.SetCurrentDirectory(fixture);
   AppDomain.CurrentDomain.AssemblyResolve+=delegate(object s,ResolveEventArgs e){string p=Path.Combine(program,new AssemblyName(e.Name).Name+".dll");return File.Exists(p)?Assembly.LoadFrom(p):null;};
-  Assembly wrapper=Assembly.LoadFrom(Path.Combine(program,"AppWrapper.dll"));archive=Construct(wrapper.GetType("AppWrapper.IrosArc"),iro);info=Construct(wrapper.GetType("AppWrapper.ModInfo"),manifest);
-  CheckHext(wrapper);
-  Check(Length(Field(info,"Options"))==10,"configuration count");Check(Length(Field(info,"ModFolders"))==226,"class folders plus runtime");
-  foreach(string name in new[]{"LoadLibraries","LoadPlugins","LoadAssemblies","LoadPrograms"})Check(Length(Field(info,name))==0,"no activation-warning declaration: "+name);
-  foreach(string name in (IEnumerable)archive.GetType().GetMethod("AllFileNames").Invoke(archive,null))Check(!name.EndsWith(".dll",StringComparison.OrdinalIgnoreCase) && !name.EndsWith(".exe",StringComparison.OrdinalIgnoreCase),"no DLL or EXE payload");
+  Assembly wrapper=Assembly.LoadFrom(Path.Combine(program,"AppWrapper.dll"));Type rt=wrapper.GetType("AppWrapper.RuntimeMod");
+  archive=Construct(wrapper.GetType("AppWrapper.IrosArc"),iro);info=Construct(wrapper.GetType("AppWrapper.ModInfo"),manifest);
+  Check(Length(Field(info,"Options"))==10,"nine character dropdowns and an accessory reference");Check(Length(Field(info,"ModFolders"))==225,"225 class-choice folders");Check(Length(Field(info,"LoadAssemblies"))==0,"no managed bridge");
+  Check(Length(Field(info,"LoadLibraries"))==1,"declared native library triggers the standard code-consent warning");
+  Check(Length(Field(info,"LoadPlugins"))==0 && Length(Field(info,"LoadPrograms"))==0,"no separate plugin or program");
+  foreach(string file in (IEnumerable)archive.GetType().GetMethod("AllFileNames").Invoke(archive,null))Check(!file.EndsWith(".bin",StringComparison.OrdinalIgnoreCase) && !file.Replace('/','\\').StartsWith("hext\\",StringComparison.OrdinalIgnoreCase),"no binary payload or HEXT loader");
   var doc=new XmlDocument();doc.Load(manifest);options=doc.SelectNodes("/ModInfo/ConfigOption");
-  var rt=wrapper.GetType("AppWrapper.RuntimeMod");object mod=Activator.CreateInstance(rt,new object[]{iro,Activator.CreateInstance(typeof(List<>).MakeGenericType(wrapper.GetType("AppWrapper.ConditionalFolder"))),new List<string>(),info});rt.GetField("_archive",BindingFlags.NonPublic|BindingFlags.Instance).SetValue(mod,archive);
-  int patches=0;foreach(string name in (IEnumerable)rt.GetMethod("GetPathOverrideNames").Invoke(mod,new object[]{"hext"})){Check(name=="FFVIIJobs.txt","HEXT entry discovered");foreach(object entry in (IEnumerable)rt.GetMethod("GetOverrides").Invoke(mod,new object[]{"hext\\"+name})){++patches;Check((int)Field(entry,"Size")>100,"HEXT patch has content");}}Check(patches==1,"one HEXT startup patch");
-  Assembly coreAssembly=Assembly.LoadFrom(Path.Combine(program,"AppCore.dll"));Type pi=coreAssembly.GetType("Iros.Workshop.ProfileItem");profileItem=Activator.CreateInstance(pi);settingsProperty=pi.GetProperty("Settings");settingType=settingsProperty.PropertyType.GetGenericArguments()[0];isConfigActive=pi.GetMethod("IsConfigActive",BindingFlags.Instance|BindingFlags.NonPublic);
-  wrap=wrapper.GetType("AppWrapper.Wrap");hCreate=wrap.GetMethod("HCreateFileW");hRead=wrap.GetMethod("HReadFile");hClose=wrap.GetMethod("HCloseHandle");object profile=Activator.CreateInstance(wrapper.GetType("AppWrapper.RuntimeProfile"));Set(profile,"FF7Path",fixture);Set(profile,"MonitorPaths",new List<string>());Set(profile,"gameFiles",new string[0]);wrap.GetField("_profile",BindingFlags.Static|BindingFlags.NonPublic).SetValue(null,profile);wrap.GetField("_process",BindingFlags.Static|BindingFlags.NonPublic).SetValue(null,Process.GetCurrentProcess());
-  int[] defaults=new int[9];for(int c=0;c<9;++c)defaults[c]=int.Parse(options[c].SelectSingleNode("Default").InnerText);Verify(defaults);
-  for(int j=0;j<25;++j){int[] same=new int[9],mixed=new int[9];for(int c=0;c<9;++c){same[c]=j;mixed[c]=(j+c*3)%25;}Verify(same);Verify(mixed);}
-  Check(virtualOpens==510 && virtualReads==510,"all 51 configurations and runtime reads");
-  Console.WriteLine("PASS "+count+" installed-7H HEXT/configuration/virtual-file checks; "+virtualReads+" virtual reads; warning declarations empty.");return 0;
+  int[] defaults=new int[9];string[] expected={"Mystic Knight","Paladin","Monk","White Mage","Blue Mage","Thief","Gambler","Black Mage","Dragoon"};
+  for(int c=0;c<9;++c){
+   defaults[c]=int.Parse(options[c].SelectSingleNode("Default").InnerText);
+   Check(options[c].SelectNodes("Option").Count==25,"25 classes available to each character");
+   Check(options[c].SelectNodes("Option")[defaults[c]].Attributes["Name"].Value==expected[c],"documented default");
+   Check(options[c].SelectSingleNode("ID").InnerText.StartsWith("job_v070_"),"stable IDs preserve saved class selections");
+  }
+  // Actual RuntimeMod extraction path used by 7H for native LoadLibrary.
+  object mod=Activator.CreateInstance(rt,new object[]{iro,Activator.CreateInstance(typeof(List<>).MakeGenericType(wrapper.GetType("AppWrapper.ConditionalFolder"))),new List<string>(),info});
+  rt.GetField("_archive",BindingFlags.NonPublic|BindingFlags.Instance).SetValue(mod,archive);
+  IntPtr native=IntPtr.Zero;foreach(string path in (IEnumerable)rt.GetMethod("GetLoadLibraries").Invoke(mod,null)){native=LoadLibraryW(path);Check(native!=IntPtr.Zero,"native loader failure "+Marshal.GetLastWin32Error());}
+  selected=(Selected)Export(native,"jobs_selected",typeof(Selected));className=(ClassName)Export(native,"jobs_class_name",typeof(ClassName));
+  owners=(Owners)Export(native,"cmk_owner_mask",typeof(Owners));equip=(CanEquip)Export(native,"cmk_can_equip",typeof(CanEquip));
+  ReadSettings read=(ReadSettings)Export(native,"jobs_read_settings",typeof(ReadSettings));
+  for(uint c=0;c<9;++c)Check(selected(c)==defaults[c],"native startup defaults");
+  // Evaluate ActiveWhen with the installed AppCore's private option evaluator.
+  Assembly core=Assembly.LoadFrom(Path.Combine(program,"AppCore.dll"));
+  Type pi=core.GetType("Iros.Workshop.ProfileItem");profileItem=Activator.CreateInstance(pi);
+  settingsProperty=pi.GetProperty("Settings");settingType=settingsProperty.PropertyType.GetGenericArguments()[0];
+  isConfigActive=pi.GetMethod("IsConfigActive",BindingFlags.Instance|BindingFlags.NonPublic);
+  wrap=wrapper.GetType("AppWrapper.Wrap");hCreate=wrap.GetMethod("HCreateFileW");hRead=wrap.GetMethod("HReadFile");hClose=wrap.GetMethod("HCloseHandle");
+  Type rp=wrapper.GetType("AppWrapper.RuntimeProfile");object profile=Activator.CreateInstance(rp);
+  Set(profile,"FF7Path",fixture);Set(profile,"MonitorPaths",new List<string>());Set(profile,"gameFiles",new string[0]);
+  wrap.GetField("_profile",BindingFlags.Static|BindingFlags.NonPublic).SetValue(null,profile);
+  wrap.GetField("_process",BindingFlags.Static|BindingFlags.NonPublic).SetValue(null,Process.GetCurrentProcess());
+  PatchImport(native,"CreateFileW",createHook);PatchImport(native,"ReadFile",readHook);PatchImport(native,"CloseHandle",closeHook);
+  PatchImport(native,"GetModuleFileNameW",moduleHook);
+  // Real DllMain loaded with defaults before file hooks were installed above.
+  // Its first permission query must now read current virtual class selections.
+  int[] initial=(int[])defaults.Clone();initial[0]=0;initial[7]=7;
+  MapSelection(initial);Check(owners(49)==0,"first permission query defers settings until 7H file hooks are ready");
+  for(uint c=0;c<9;++c)Check(selected(c)==initial[c],"deferred startup uses Configure Mod selections");
+  Verify(defaults,read);
+  for(int j=0;j<25;++j){int[] all=new int[9];for(int c=0;c<9;++c)all[c]=j;Verify(all,read);}
+  for(int j=0;j<25;++j){int[] mixed=new int[9];for(int c=0;c<9;++c)mixed[c]=(j+c*3)%25;Verify(mixed,read);}
+  int[] monks=new int[9];for(int c=0;c<9;++c)monks[c]=7;Verify(monks,read);
+  Check(owners(49)==0,"Fire unowned when no eligible class selected");for(uint c=0;c<9;++c)Check(equip(c,49)==0,"unowned Fire unusable by every character");
+  Check(owners(13)==511,"all nine Monk Counter Attack icons");
+  var accessoryOwners=(Owners)Export(native,"jobs_accessory_owners",typeof(Owners));var accessoryEquip=(CanEquip)Export(native,"jobs_accessory_allowed",typeof(CanEquip));
+  for(uint id=0;id<32;++id){uint mask=accessoryOwners(id);Check(mask!=0 && (mask&~511u)==0,"accessory owner mask");for(uint c=0;c<9;++c)Check(accessoryEquip(c,id)==((mask&(1u<<(int)c))!=0?1:0),"accessory icons/equip unchanged");}
+  Check(virtualReads==virtualOpens && virtualOpens==53*9,"every marker was read through actual 7H IRO handlers");
+  Console.WriteLine("PASS "+count+" installed-7th-Heaven parser/configuration/virtual-file/native checks; "+virtualReads+" virtual marker reads.");return 0;
  }catch(Exception e){Console.WriteLine(e);return 1;}}
 }

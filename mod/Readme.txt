@@ -45,22 +45,21 @@ in their slots but inactive during stat/command calculations until space is
 available. Empty slots and the flashback guest retain their normal behavior.
 
 COMPATIBILITY
-This version uses 7th Heaven HEXT patches and a freestanding runtime instead
-of LoadLibrary. It contains no DLL, EXE, plugin, assembly or external program
-declaration, so it does not trigger the native-library activation prompt in
-7th Heaven 4.6.1. The mod still executes gameplay patches through HEXT; 7th
-Heaven's security settings and warning logic are unchanged.
+This version declares FFVIIJobs.dll through 7th Heaven's supported
+LoadLibrary mechanism. 7th Heaven displays its normal executable-code warning
+when the mod is activated. Only approve the mod if you trust its author.
+There is no HEXT bootstrap or separately loaded executable binary payload.
+7th Heaven's security settings and consent mechanism are unchanged.
 
 The supported target is the original English Steam FF7 PC 1.02 executable.
 Private checks use installed 7th Heaven 4.6.1 and Enhanced Stock UI 2.968.
-This build needs an in-game test before a public release.
-The 25 class names, compact icon layout, accessory rules and configuration
-IDs are retained. The class pools follow CLASS_PERMISSIONS.txt.
-The early entry runs after 7H file overrides are ready and before font setup.
-Other gameplay overhauls that change Materia IDs or executable hook sites
-need their own compatibility review. All sixteen gameplay hook signatures
-must match before installation. The entry additionally uses the supported
-executable's WinMain call and verified unused executable padding.
+All class pools, defaults, weapon icons, accessory rules and saved class
+setting IDs are retained. Current permissions are in CLASS_PERMISSIONS.txt.
+Class selections load after virtual file handlers are ready; the guarded ESUI
+font-permission repair runs during DLL initialization before font setup.
+Other gameplay overhauls that change Materia IDs or the same executable hooks
+need their own compatibility review. All sixteen hook signatures must match
+before installation. This corrected build still needs an in-game test.
 
 No import, activation, mod-order change or game launch was performed.
 
@@ -76,18 +75,19 @@ Build requires Python 3, Pillow, pefile, Windows Segoe UI fonts and Zig 0.17.1:
   py -m pip install Pillow pefile
   py source/build.py --zig C:/path/to/zig.exe
   py source/package.py
-To reuse the existing runtime while regenerating configuration guides:
-  py source/build.py --skip-runtime
+To reuse the existing DLL while regenerating configuration guides:
+  py source/build.py --skip-native
 To build and run the private native fixture:
   py source/build.py --zig C:/path/to/zig.exe --test-output work/jobs-tests
 
-source/build_hext.py produces the flat runtime and HEXT entry; intermediate
-compiler DLLs remain in the private build directory and are not packaged.
-source/test_loader.cs exercises the installed 7H HEXT parser, memory page
-permissions, configuration evaluator, IRO mapping and virtual file reads.
+source/ffvii_jobs.c builds a standard x86 Windows DLL. The compiled DLL is
+distributed inside the IRO; intermediate PDB/LIB files are not packaged.
+source/test_loader.cs exercises the installed 7H library extraction and
+virtual files with the actual production DLL. Run against private copies of
+installed 7H assemblies to keep LoadLibTemp inside the test work directory.
 source/test_configure.cs exercises the installed Configure Mod view model.
-Both run in private x86 .NET 10 hosts. Runtime configuration examples are
-included. No tests import a mod, save a profile or launch FF7.
+Both run in private x86 .NET 10 hosts. No test imports a mod, saves a profile
+or launches FF7. source/audit_package.py checks the standard loading contract.
 
-See VALIDATION.txt for results and source/HEXT_RUNTIME.md for the format.
+See VALIDATION.txt for results and source/DLL_LOADING.md for the load path.
 See PUBLISHING.txt for the separate public catalogue submission process.

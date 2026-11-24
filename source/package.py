@@ -3,9 +3,8 @@ from pathlib import Path
 import struct,xml.etree.ElementTree as ET,zipfile
 root=Path(__file__).resolve().parent.parent;mod=root/'mod'
 manifest=ET.parse(mod/'mod.xml')
-paths=[mod/'mod.xml',mod/'Readme.txt',mod/'CLASS_PERMISSIONS.txt',mod/'preview.png']
+paths=[mod/'mod.xml',mod/'Readme.txt',mod/'CLASS_PERMISSIONS.txt',mod/'preview.png',mod/'FFVIIJobs.dll']
 paths.extend(sorted((mod/'previews').rglob('*.png')))
-paths.extend(sorted((mod/'hext').rglob('*.txt')))
 for folder in manifest.findall('ModFolder'):
  paths.extend(sorted(p for p in (mod/folder.attrib['Folder'].replace('\\','/')).rglob('*') if p.is_file()))
 files=[(str(p.relative_to(mod)).replace('/','\\'),p.read_bytes()) for p in paths]
