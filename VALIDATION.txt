@@ -40,7 +40,8 @@ padding. This is specific to the tested executable, not other languages.
 
 Package and metadata checks: byte-for-byte IRO round trip; stable mod GUID,
 author/support links, 1.00 package/catalogue version, Steam/EN target and
-download size in KB. Catalogue URLs are staged, not published or live-verified.
+download size in KB. Public release downloads were SHA-256 verified.
+The catalogue entry passed the upstream validator and is submitted for review.
 
 PASS normal-size MP Plus icons for five selected eligible casters in stock/ESUI,
 normal/Exchange and high/low resolution menus. All Materia use normal icons
@@ -58,3 +59,8 @@ including Black Mage; Paladin grips her sword handle beneath its crossguard.
 All class labels, title, subtitle and author credit are present. The preview
 was edited with built-in image generation; PREVIEW_EDIT_PROMPT.txt contains
 the exact final edit prompt. The IRO embeds the new preview and runtime.
+
+PUBLICATION
+Release: https://github.com/WailSolaiman/ffviijobs/releases/tag/v1.0.0
+Catalogue submission: https://github.com/tsunamods-codes/7th-Heaven-Catalogs/pull/525
+The official entry/link validator and full Qhimm/Sega catalogue validation passed.

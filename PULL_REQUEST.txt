@@ -1,19 +1,23 @@
-Suggested title: Add FFVII Job System by Willard82
+Submitted: https://github.com/tsunamods-codes/7th-Heaven-Catalogs/pull/525
 
-Adds FFVII Job System, a free Gameplay mod for English Steam FF7.
-All nine characters can select any of 25 classes before launch. Materia
-permissions and character weapon icons follow those class selections.
-Configure Mod includes class descriptions and an accessory reference.
-Accessory class assignments are currently informational.
+Adds FFVII Job System 1.0.0 by Willard82 for the original English Steam edition of FFVII. Each of the nine characters can choose any of 25 Final Fantasy classes before launch. Materia permissions and character weapon icons follow the selected classes. Configure Mod includes class descriptions, Materia lists and an accessory reference; class-based accessory suggestions are informational.
 
-Author: Willard82
-Version: 1.00 (release tag v1.0.0)
-Project: https://github.com/WailSolaiman/ffviijobs
-Optional support: https://ko-fi.com/ffviijobs
+The mod uses HEXT patches and a freestanding runtime. It contains no DLL/plugin/program load declarations. Source for the runtime and build is public in the project repository.
 
-Validation: private native/configuration/archive checks; tested locally with
-7th Heaven 4.6.1, FFNx 1.25.2.0 and Enhanced Stock UI 2.968. Uses HEXT patches and a freestanding runtime; no DLL declaration.
-The 1.0.0 class pools still need an in-game test before submission.
+- Project: https://github.com/WailSolaiman/ffviijobs
+- Release: https://github.com/WailSolaiman/ffviijobs/releases/tag/v1.0.0
+- Author: Willard82
+- Catalogue version: 1.00
+- Mod ID: 2a737e43-7bcd-4da4-962d-3c87631fca5e
 
-Before submitting: upload the release assets and run the included public
-asset verification. Add the successful download-check result here.
+Validation:
+
+- Downloaded the published IRO and preview anonymously and verified their SHA-256 hashes against the local release files.
+- The IRO SHA-256 is `1b1ec90bc55e7482e575f365bdd852b74a025b7ef715a88757581f12ac8b6545`.
+- Private x86 fixture: 176,663 checks for gameplay hooks, permissions, inventory/AP preservation, icon layouts and class selections; 176,677 with the installed ESUI routine.
+- Installed 7th Heaven integration: 2,927 HEXT/virtual-file checks and 1,729 Configure Mod view-model checks.
+- Ran the current upstream CatalogValidator against this entry with `--validate-links`; completed successfully with no link warning/error files.
+- Ran the catalogue repository's `validate-all.ps1`; both generated Qhimm and Sega catalogues validated successfully.
+- The entry preserves the existing mod description and has no release notes.
+
+Only the new catalogue entry is included in this pull request. The IRO and preview are hosted as public GitHub release assets.

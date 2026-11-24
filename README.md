@@ -10,7 +10,7 @@ Configure Mod includes class descriptions, complete Materia lists and a referenc
 
 ## Download and install
 
-Download the `.iro` from [Releases](https://github.com/WailSolaiman/ffviijobs/releases) when a packaged release is available. Import it into 7th Heaven, activate **FFVII Job System**, and open **Configure Mod** to choose your classes. Changes apply on the next launch.
+Download **[FFVII Job System 1.0.0](https://github.com/WailSolaiman/ffviijobs/releases/download/v1.0.0/FFVIIJobSystem-1.0.0.iro)** from the [public release](https://github.com/WailSolaiman/ffviijobs/releases/tag/v1.0.0). Import it into 7th Heaven, activate **FFVII Job System**, and open **Configure Mod** to choose your classes. Changes apply on the next launch.
 
 Materia with no eligible selected character remain visible, without weapon icons, and cannot be equipped. Previously equipped forbidden Materia return to inventory with their AP. If inventory is full, they are preserved but inactive during stat and command calculations until space is available.
 
@@ -45,7 +45,7 @@ Validation details are in [VALIDATION.txt](VALIDATION.txt). The `source` folder 
 
 ## Publishing
 
-[PUBLISHING.txt](PUBLISHING.txt) describes the prepared `v1.0.0` GitHub release and catalogue submission. The files under `catalog-submission` are staged metadata; their download links become usable after the corresponding release assets are uploaded. This repository alone does not add the mod to 7th Heaven's community catalogue.
+The **[1.0.0 release](https://github.com/WailSolaiman/ffviijobs/releases/tag/v1.0.0)** is public and its downloads have been verified. The **[community catalogue submission](https://github.com/tsunamods-codes/7th-Heaven-Catalogs/pull/525)** is awaiting maintainer review and merge. Once accepted into the catalogue, users can discover and install it through 7th Heaven. See [publication status](PUBLISHING.txt).
 
 ## Feedback and support
 
