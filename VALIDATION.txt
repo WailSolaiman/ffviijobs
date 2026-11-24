@@ -29,5 +29,18 @@ Package/release version remains 1.0.0 (1.00 in 7th Heaven).
 
 The 7H code-consent warning is intentionally retained; no application security
 setting or warning logic was modified. Source history preserves the previous
-HEXT implementation for review. Published hashes and the catalogue submission
-will identify this corrected DLL build.
+HEXT implementation for review. Published hashes and the updated catalogue submission identify this
+corrected DLL build.
+
+PASS 1,729 installed Configure Mod view-model checks with all 57 guide images.
+PASS 15 installed-7H package/catalogue metadata checks.
+PASS packaged loading-contract audit, including an independently downloaded
+public IRO: exactly one declared x86 DLL, Windows system CRT dependencies,
+225 class folders, no HEXT files, no executable .bin, no custom-loader export.
+PASS unchanged complete rules.json, nine class defaults, ten configuration
+options, 225 class markers, 57 guide images and human-roster poster hashes.
+PASS installed library, settings and profile hashes match the pre-work state.
+PASS official entry/link validation and full Qhimm/Sega catalogue validation.
+The corrected public IRO, preview and checksum file match local release hashes.
+Release tag v1.0.0 points to corrected source commit:
+681dfc43ece7ce5625fcd8a572b736ee187c1a82

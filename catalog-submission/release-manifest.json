@@ -1,5 +1,5 @@
 {
-  "status": "Staged; upload release assets before submitting this entry.",
+  "status": "Corrected standard DLL release published and downloaded/hash-verified; existing catalogue PR updated for maintainer review.",
   "repository": "https://github.com/WailSolaiman/ffviijobs",
   "tag": "v1.0.0",
   "iro_url": "https://github.com/WailSolaiman/ffviijobs/releases/download/v1.0.0/FFVIIJobSystem-1.0.0.iro",
@@ -7,5 +7,11 @@
   "mod_id": "2a737e43-7bcd-4da4-962d-3c87631fca5e",
   "version": "1.00",
   "download_size_kb": 7526,
-  "sha256": "3fc8e63a6023e21eafc6c34e91b3d531fcdaffcd459abc21d4c4450826754e8d"
+  "sha256": "3fc8e63a6023e21eafc6c34e91b3d531fcdaffcd459abc21d4c4450826754e8d",
+  "release_url": "https://github.com/WailSolaiman/ffviijobs/releases/tag/v1.0.0",
+  "source_commit": "681dfc43ece7ce5625fcd8a572b736ee187c1a82",
+  "previous_hext_source_commit": "1b8176fe4276f9d3505804590e86d9c9f1352a00",
+  "loading": "LoadLibrary: FFVIIJobs.dll; standard 7H code-consent warning retained",
+  "catalogue_pull_request": "https://github.com/tsunamods-codes/7th-Heaven-Catalogs/pull/525",
+  "public_assets_verified": true
 }

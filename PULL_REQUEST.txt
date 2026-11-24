@@ -2,7 +2,7 @@ Submitted: https://github.com/tsunamods-codes/7th-Heaven-Catalogs/pull/525
 
 Adds FFVII Job System 1.0.0 by Willard82 for the original English Steam edition of FFVII. Each of the nine characters can choose any of 25 Final Fantasy classes before launch. Materia permissions and character weapon icons follow the selected classes. Configure Mod includes class descriptions, Materia lists and an accessory reference; class-based accessory suggestions are informational.
 
-The mod uses HEXT patches and a freestanding runtime. It contains no DLL/plugin/program load declarations. Source for the runtime and build is public in the project repository.
+The mod now uses 7th Heaven's supported `<LoadLibrary>FFVIIJobs.dll</LoadLibrary>` mechanism. The normal executable-code activation warning is retained. There is no HEXT bootstrap, external executable `.bin` payload, custom relocation loader or executable-padding startup patch. Source for the DLL and build is public in the project repository.
 
 - Project: https://github.com/WailSolaiman/ffviijobs
 - Release: https://github.com/WailSolaiman/ffviijobs/releases/tag/v1.0.0
@@ -13,11 +13,14 @@ The mod uses HEXT patches and a freestanding runtime. It contains no DLL/plugin/
 Validation:
 
 - Downloaded the published IRO and preview anonymously and verified their SHA-256 hashes against the local release files.
-- The IRO SHA-256 is `1b1ec90bc55e7482e575f365bdd852b74a025b7ef715a88757581f12ac8b6545`.
-- Private x86 fixture: 176,663 checks for gameplay hooks, permissions, inventory/AP preservation, icon layouts and class selections; 176,677 with the installed ESUI routine.
-- Installed 7th Heaven integration: 2,927 HEXT/virtual-file checks and 1,729 Configure Mod view-model checks.
+- The IRO SHA-256 is `3fc8e63a6023e21eafc6c34e91b3d531fcdaffcd459abc21d4c4450826754e8d`.
+- Compiled native x86 fixture: 176,669 checks for gameplay hooks, permissions, inventory/AP preservation, icon layouts and class selections; 176,683 with the installed ESUI routine.
+- Production-DLL integration: 148,314 checks through the actual installed 7H library extraction, Windows LoadLibrary, deferred class reads and virtual file APIs; 1,729 Configure Mod view-model checks. All test extraction runs used private copies of the 7H assemblies.
 - Ran the current upstream CatalogValidator against this entry with `--validate-links`; completed successfully with no link warning/error files.
 - Ran the catalogue repository's `validate-all.ps1`; both generated Qhimm and Sega catalogues validated successfully.
 - The entry preserves the existing mod description and has no release notes.
 
 Only the new catalogue entry is included in this pull request. The IRO and preview are hosted as public GitHub release assets.
+
+
+The corrected 1.0.0 release tag points to source commit `681dfc43ece7ce5625fcd8a572b736ee187c1a82`. The previous HEXT implementation remains in ordinary Git history at `1b8176fe4276f9d3505804590e86d9c9f1352a00` for review. The existing release IRO and checksums were replaced and downloaded again without authentication to verify them. Version 1.0.0 and the empty release body are unchanged.

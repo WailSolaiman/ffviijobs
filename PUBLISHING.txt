@@ -1,23 +1,31 @@
-FFVII JOB SYSTEM v1.0.0 - PUBLICATION STATUS
+FFVII JOB SYSTEM v1.0.0 - CORRECTED DLL PUBLICATION
 
 Public release:
 https://github.com/WailSolaiman/ffviijobs/releases/tag/v1.0.0
 
-Published assets: FFVIIJobSystem-1.0.0.iro, preview.png, SHA256SUMS.txt.
-The release body is empty. The mod description is unchanged.
-The published IRO and preview were downloaded without authentication and their
-SHA-256 hashes matched the local files.
+The IRO now declares FFVIIJobs.dll through 7th Heaven's supported LoadLibrary
+mechanism. Its standard activation warning is intentionally retained. There
+is no HEXT bootstrap, external executable binary payload or custom loader.
+Gameplay data, configuration, icons, art and main description are unchanged.
+The release body is empty and no release notes are included.
 
-Community catalogue submission:
+Corrected source commit: 681dfc43ece7ce5625fcd8a572b736ee187c1a82
+The v1.0.0 release tag points to that corrected source. The previous HEXT
+implementation remains in ordinary Git history at:
+1b8176fe4276f9d3505804590e86d9c9f1352a00
+
+The IRO and checksums were replaced under the existing 1.0.0 release. The new
+IRO, checksums and unchanged preview were downloaded without authentication
+and verified. The downloaded IRO also passed source/audit_package.py.
+
+Existing catalogue submission:
 https://github.com/tsunamods-codes/7th-Heaven-Catalogs/pull/525
 
-The entry was formatted with the catalogue repository's formatter and passed
-the current upstream CatalogValidator, including download-link validation.
-The full Qhimm and Sega catalogues also passed validate-all.ps1 locally.
-Only the new FFVII Job System entry was submitted.
+The entry's download size and PR description identify the corrected DLL build.
+The upstream CatalogValidator with --validate-links and full Qhimm/Sega
+catalogue validation passed locally. Maintainer review and merge are pending.
 
-Status: submitted; awaiting maintainer review and merge. Publishing the release
-does not itself add the mod to 7th Heaven's community catalogue.
-
-Catalogue submission instructions:
-https://github.com/tsunamods-codes/7th-Heaven-Catalogs#how-to-submit-your-mod
+For local testing, 7th Heaven rejects same-version imports. Remove the old
+1.0.0 copy, import the corrected IRO and restart 7th Heaven if its configuration
+is cached. The normal code-consent warning is expected. No application mod
+setup was changed automatically.
