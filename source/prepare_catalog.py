@@ -7,8 +7,8 @@ import argparse,hashlib,math,copy,xml.etree.ElementTree as ET,urllib.request
 root=Path(__file__).resolve().parent.parent
 p=argparse.ArgumentParser();p.add_argument('--verify',action='store_true');a=p.parse_args()
 info=ET.parse(root/'mod/mod.xml').getroot()
-iro=root/'FFVIIJobSystem-0.8.0.iro';preview=root/'preview.png'
-base='https://github.com/WailSolaiman/ffviijobs/releases/download/v0.8.0/'
+iro=root/'FFVIIJobSystem-1.0.0.iro';preview=root/'preview.png'
+base='https://github.com/WailSolaiman/ffviijobs/releases/download/v1.0.0/'
 download=base+iro.name;image=base+preview.name
 entry=ET.Element('Mod')
 for key in ['ID','Name','Author','Category','Description','Link','DonationLink','GameLanguage']:
@@ -25,7 +25,7 @@ ET.indent(entry,space='  ');ET.ElementTree(entry).write(target,encoding='utf-8',
 catalog=ET.Element('Catalog',Name='Willard82 - FFVII Job System');ET.SubElement(catalog,'Mods').append(copy.deepcopy(entry))
 ET.indent(catalog,space='  ');ET.ElementTree(catalog).write(out/'ffviijobs-catalog.xml',encoding='utf-8',xml_declaration=True)
 manifest={'status':'Staged; upload release assets before submitting this entry.','repository':info.findtext('Link'),
- 'tag':'v0.8.0','iro_url':download,'preview_url':image,'mod_id':info.findtext('ID'),'version':info.findtext('Version'),
+ 'tag':'v1.0.0','iro_url':download,'preview_url':image,'mod_id':info.findtext('ID'),'version':info.findtext('Version'),
  'download_size_kb':math.ceil(iro.stat().st_size/1024),'sha256':hashlib.sha256(iro.read_bytes()).hexdigest()}
 import json
 (out/'release-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')

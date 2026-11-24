@@ -1,5 +1,5 @@
 FFVII Job System preview - visual references
-2026-11-22
+2026-11-24
 
 The preview was created with built-in image generation using these internet
 images as costume and silhouette references. The 25-character poster is a new
@@ -22,3 +22,8 @@ https://cdn.staticneo.com/ca/final_fantasy_tactics_a2_conceptart_NsIuy.jpg
 
 Final Fantasy characters and original job designs belong to their respective
 rights holders. Mod author credit: Willard82.
+
+The 1.0.0 preview was refreshed with built-in image generation, using the
+previous poster as the edit target. All 25 class representatives are human,
+including Black Mage; Paladin grips the sword handle beneath its crossguard.
+The exact final edit prompt is in PREVIEW_EDIT_PROMPT.txt.

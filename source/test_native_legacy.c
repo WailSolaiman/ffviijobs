@@ -249,7 +249,7 @@ int main(int argc,char **argv) {
     CHECK(cmk_owner_mask(65)==0);CHECK(cmk_owner_mask(61)==0); /* no Time Mage selected */
     CHECK(cmk_owner_mask(44)==(1u<<4)); /* Blue Mage Red XIII */
     CHECK(cmk_owner_mask(49)==((1u<<0)|(1u<<7))); /* Mystic Knight + Black Mage */
-    CHECK(cmk_owner_mask(53)==((1u<<1)|(1u<<3)));CHECK(!cmk_can_equip(2,53)); /* Paladin + White Mage; strict researched Monk */
+    CHECK(cmk_owner_mask(53)==((1u<<1)|(1u<<2)|(1u<<3)));CHECK(cmk_can_equip(2,53)); /* Paladin, Monk recovery and White Mage */
     /* AP must not influence permissions. */
     CHECK(cmk_allowed(0x98765431)==1);CHECK(cmk_allowed(0x98765435)==0);
     U32(0xDD163C)=0;U32(0xDD1374)=7;U32(0xDD1364)=1;
@@ -399,10 +399,10 @@ int main(int argc,char **argv) {
     void jobs_render_name(const uint8_t *,const NameArgs *,int,int);
     uint8_t frame_space[160]={0},*frame=frame_space+128;
     *(int *)(frame-8)=2;*(int *)(frame-12)=15;*(int *)(frame-20)=15;
-    /* Regression: MP Plus has five owners with the defaults, but all five
-       normal icons fit. Check actual rendered sizes in every list/layout. */
+    /* Regression: five eligible casters use normal-size MP Plus icons.
+       Cait Sith selects Summoner here; his new default is Gambler. */
     const uint8_t mp_plus_name[]={0x2D,0x30,0,0x30,0x4C,0x55,0x53,255};
-    memcpy(options,DEFAULT_JOBS,sizeof(options));CHECK(jobs_configure(options));
+    memcpy(options,DEFAULT_JOBS,sizeof(options));options[6]=find_class("Summoner");CHECK(jobs_configure(options));
     CHECK(cmk_owner_mask(0)==((1u<<0)|(1u<<3)|(1u<<4)|(1u<<6)|(1u<<7)));
     for(unsigned layout=0;layout<2;++layout){
       *(uint16_t *)0x70C84D=*(uint16_t *)0x70F3C5=layout?623:618;

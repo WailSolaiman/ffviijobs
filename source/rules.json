@@ -1,5 +1,5 @@
 {
-  "version": "0.8.0",
+  "version": "1.0.0",
   "materia_ids": {
     "MP Plus": 0,
     "HP Plus": 1,
@@ -215,7 +215,7 @@
         "Ribbon"
       ],
       "game_character_id": 6,
-      "default_class": "summoner"
+      "default_class": "gambler"
     },
     {
       "name": "Vincent",
@@ -379,7 +379,9 @@
         "Deathblow",
         "Double Cut",
         "Counter Attack",
-        "HP Plus"
+        "HP Plus",
+        "Restore",
+        "Heal"
       ]
     },
     {
@@ -387,7 +389,10 @@
       "name": "Gambler",
       "materia": [
         "Gil Plus",
-        "Luck Plus"
+        "Luck Plus",
+        "Deathblow",
+        "Throw",
+        "EXP Plus"
       ]
     },
     {
@@ -406,7 +411,8 @@
         "Long Range",
         "Slash-All",
         "EXP Plus",
-        "Sense"
+        "Sense",
+        "Double Cut"
       ]
     },
     {
@@ -415,14 +421,27 @@
       "materia": [
         "Manipulate",
         "Chocobo Lure",
-        "Enemy Lure"
+        "Enemy Lure",
+        "Sense",
+        "Choco/Mog",
+        "HP Plus"
       ]
     },
     {
       "key": "scholar",
       "name": "Scholar",
       "materia": [
-        "Sense"
+        "Sense",
+        "Fire",
+        "Ice",
+        "Lightning",
+        "Elemental",
+        "Restore",
+        "Heal",
+        "Barrier",
+        "All",
+        "MP Plus",
+        "Magic Plus"
       ]
     },
     {
@@ -431,7 +450,10 @@
       "materia": [
         "Mime",
         "Master Command",
-        "Counter"
+        "Counter",
+        "Sense",
+        "Deathblow",
+        "HP Plus"
       ]
     },
     {
@@ -439,7 +461,12 @@
       "name": "Chemist / Alchemist",
       "materia": [
         "W-Item",
-        "Morph"
+        "Morph",
+        "Restore",
+        "Heal",
+        "Revive",
+        "Poison",
+        "All"
       ]
     },
     {
@@ -492,7 +519,10 @@
       "name": "Knight",
       "materia": [
         "Cover",
-        "HP Plus"
+        "HP Plus",
+        "Counter Attack",
+        "Deathblow",
+        "Added Cut"
       ]
     },
     {
@@ -561,7 +591,8 @@
         "Long Range",
         "HP Absorb",
         "MP Absorb",
-        "HP Plus"
+        "HP Plus",
+        "Deathblow"
       ]
     },
     {
@@ -571,7 +602,9 @@
         "Destruct",
         "HP Absorb",
         "MP Absorb",
-        "HP Plus"
+        "HP Plus",
+        "Deathblow",
+        "Poison"
       ]
     }
   ]

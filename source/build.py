@@ -22,7 +22,7 @@ header+='static const unsigned short ACCESSORY_OWNERS[32]={'+','.join(map(str,ow
 (src/'rules.generated.h').write_text(header,encoding='utf-8')
 info=ET.Element('ModInfo')
 for key,val in {'ID':'2a737e43-7bcd-4da4-962d-3c87631fca5e','Name':'FFVII Job System','Author':'Willard82',
- 'Version':'0.80','ReleaseDate':'2026-11-22','Category':'Gameplay','GameLanguage':'EN',
+ 'Version':'1.00','ReleaseDate':'2026-11-24','Category':'Gameplay','GameLanguage':'EN',
  'Description':'Choose one of 25 Final Fantasy jobs for each character. Your choices decide which Materia they can equip, with weapon icons showing eligible characters. Configure Mod includes class and accessory guides. For original English FF7 PC.',
  'Link':'https://github.com/WailSolaiman/ffviijobs',
  'DonationLink':'https://ko-fi.com/ffviijobs','PreviewFile':'preview.png'}.items():ET.SubElement(info,key).text=val
@@ -43,7 +43,7 @@ for a in sorted(proposal['accessories'],key=lambda a:aids[a['name']]):
  ET.SubElement(reference,'Option',Value=str(aids[a['name']]),Name=a['name'],PreviewFile='previews\\accessories\\'+accessory_key(r,a['name'])+'.png')
 ET.SubElement(info,'ModFolder',Folder='runtime')
 ET.indent(info,space='  ');ET.ElementTree(info).write(mod/'mod.xml',encoding='utf-8',xml_declaration=True)
-details=['FFVII JOB SYSTEM 0.8.0 - CLASSES AND PERMISSIONS','',
+details=['FFVII JOB SYSTEM 1.0.0 - CLASSES AND PERMISSIONS','',
  'Choose one of the same 25 classes for each character in Configure Mod before launching.',
  'Characters can share classes. Icons show exactly which characters can equip a Materia under your current selections.',
  'A Materia with no eligible character remains visible, without icons, and cannot be equipped.',
@@ -67,7 +67,7 @@ for a in sorted(proposal['accessories'],key=lambda a:aids[a['name']]):
 (mod/'CLASS_PERMISSIONS.txt').write_bytes((root/'CLASS_PERMISSIONS.txt').read_bytes())
 from build_hext import build as build_runtime,test as test_runtime
 if args.skip_runtime:
- assert (mod/'runtime/ffvii-jobs-v080.bin').is_file() and (mod/'hext/FFVIIJobs.txt').is_file()
+ assert (mod/'runtime/ffvii-jobs-v100.bin').is_file() and (mod/'hext/FFVIIJobs.txt').is_file()
 else:
  build_runtime(root,args.zig,args.runtime_work,args.python_tools)
 print('Built DLL-free HEXT package with nine class dropdowns, accessory reference and 57 guide previews.')

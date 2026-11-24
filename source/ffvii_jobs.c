@@ -1,4 +1,4 @@
-/* FFVII Job System 0.8.0 - English FF7 PC 1.02, freestanding 7th Heaven HEXT runtime.
+/* FFVII Job System 1.0.0 - English FF7 PC 1.02, freestanding 7th Heaven HEXT runtime.
  * Original implementation. No Square Enix executable or assets are distributed.
  * Fixed addresses were verified against the user's English Steam executable.
  */
@@ -537,7 +537,7 @@ API int cmk_install(void) {
     for(unsigned i=PATCH_COUNT;i>0;--i) {DWORD ignored; VirtualProtect((void *)patches[i-1].address,patches[i-1].size,patches[i-1].old_protect,&ignored);}
     FlushInstructionCache(GetCurrentProcess(),NULL,0); installed=1;
     jobs_esui_compat();
-    log_line("ACTIVE: FFVII Job System 0.8.0; sixteen verified hooks installed; 25 selectable classes.\r\n");
+    log_line("ACTIVE: FFVII Job System 1.0.0; sixteen verified hooks installed; 25 selectable classes.\r\n");
     return 1;
 }
 API int jobs_hext_entry(void){

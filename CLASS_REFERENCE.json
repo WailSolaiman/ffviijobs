@@ -100,11 +100,16 @@
     "Deathblow",
     "Double Cut",
     "Counter Attack",
-    "HP Plus"
+    "HP Plus",
+    "Restore",
+    "Heal"
   ],
   "Gambler": [
     "Gil Plus",
-    "Luck Plus"
+    "Luck Plus",
+    "Deathblow",
+    "Throw",
+    "EXP Plus"
   ],
   "Ranger": [
     "Long Range",
@@ -115,24 +120,46 @@
     "Long Range",
     "Slash-All",
     "EXP Plus",
-    "Sense"
+    "Sense",
+    "Double Cut"
   ],
   "Beastmaster": [
     "Manipulate",
     "Chocobo Lure",
-    "Enemy Lure"
+    "Enemy Lure",
+    "Sense",
+    "Choco/Mog",
+    "HP Plus"
   ],
   "Scholar": [
-    "Sense"
+    "Sense",
+    "Fire",
+    "Ice",
+    "Lightning",
+    "Elemental",
+    "Restore",
+    "Heal",
+    "Barrier",
+    "All",
+    "MP Plus",
+    "Magic Plus"
   ],
   "Mime": [
     "Mime",
     "Master Command",
-    "Counter"
+    "Counter",
+    "Sense",
+    "Deathblow",
+    "HP Plus"
   ],
   "Chemist / Alchemist": [
     "W-Item",
-    "Morph"
+    "Morph",
+    "Restore",
+    "Heal",
+    "Revive",
+    "Poison",
+    "All"
   ],
   "Mystic / Oracle": [
     "Mystify",
@@ -173,7 +200,10 @@
   ],
   "Knight": [
     "Cover",
-    "HP Plus"
+    "HP Plus",
+    "Counter Attack",
+    "Deathblow",
+    "Added Cut"
   ],
   "Paladin": [
     "Cover",
@@ -218,12 +248,15 @@
     "Long Range",
     "HP Absorb",
     "MP Absorb",
-    "HP Plus"
+    "HP Plus",
+    "Deathblow"
   ],
   "Dark Knight": [
     "Destruct",
     "HP Absorb",
     "MP Absorb",
-    "HP Plus"
+    "HP Plus",
+    "Deathblow",
+    "Poison"
   ]
 }

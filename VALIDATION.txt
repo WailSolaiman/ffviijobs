@@ -1,8 +1,8 @@
-FFVII Job System 0.8.0 - private verification, 22 November 2026
+FFVII Job System 1.0.0 - private verification, 24 November 2026
 
 No FF7 launch, mod import/activation, profile or mod-order changes performed.
 No installed mods or profiles were edited.
-The author must test this new startup backend in-game before public release.
+The author must test this build in-game before public release.
 
 PASS 176,663 native x86 fixture checks executing the actual relocated flat
 runtime and HEXT entry. Covers all classes/characters, equip restrictions,
@@ -15,7 +15,8 @@ fixture. Its guarded execute-permission repair runs before font setup.
 
 PASS 2,927 installed-7H integration checks: actual ModInfo/IrosArc, HEXT
 discovery/application, exact patch bytes and executable page permissions,
-51 class configurations and 510 reads through actual virtual file handlers.
+51 class configurations and 510 reads through actual virtual file handlers,
+including the renamed ffvii-jobs-v100.bin runtime.
 LoadLibraries/LoadPlugins/LoadAssemblies/LoadPrograms are all empty. These are
 the four collections checked by installed CheckAllowedActivate before its
 warning dialog. The IRO contains no DLL or EXE payload.
@@ -23,8 +24,11 @@ PASS 1,729 installed Configure Mod view-model checks: 225 class selections,
 32 accessory references and 57 decoded guide images.
 
 PASS approved 25-class/83-Materia pools, nine defaults and original 32
-accessory permissions. Class pools and accessory permissions are unchanged;
-Barret now defaults to Paladin. All other character defaults are retained.
+accessory permissions. Ten class pools have the approved playability additions:
+Scholar, Knight, Gambler, Chemist/Alchemist, Beastmaster, Mime, Monk, Gunner,
+Dragoon and Dark Knight. The other 15 pools and accessory permissions are retained.
+Barret defaults to Paladin and Cait Sith to Gambler. Other defaults, class
+setting IDs, option values and saved class selections are preserved.
 PASS installed game kernel Materia/accessory IDs, character IDs, all sixteen
 guard signatures, 18 original weapon-renderer cases and 192 accessory paths.
 PASS installed ESUI 2.968 full startup fingerprint and isolated execution.
@@ -34,14 +38,22 @@ PASS actual English executable early-call bytes and zero-filled executable
 padding. This is specific to the tested executable, not other languages.
 
 Package and metadata checks: byte-for-byte IRO round trip; stable mod GUID,
-author/support links, 0.80 package/catalogue version, Steam/EN target and
+author/support links, 1.00 package/catalogue version, Steam/EN target and
 download size in KB. Catalogue URLs are staged, not published or live-verified.
 
-PASS normal-size MP Plus icons for all five default owners in stock/ESUI,
+PASS normal-size MP Plus icons for five selected eligible casters in stock/ESUI,
 normal/Exchange and high/low resolution menus. All Materia use normal icons
 for 1-5 owners and compact icons for 6-9, including wider menu rows.
 PASS exact tighter spacing and non-overlap for 1-9 owners in stock/ESUI,
 normal/Exchange and both resolutions. Accessory icons share the tighter gap.
 PASS complete long names fit before icons for every owner count, including
 the five/six size transition, in all four Materia list variants.
-Version remains 0.8.0 (0.80); package and catalogue contain no release notes.
+Package version is 1.0.0 (1.00); package and catalogue contain no release notes.
+The main mod description is identical to the previous version.
+
+PASS all class guide metadata matches the current role and Materia pool.
+PASS new preview inspected visually: all 25 class representatives are human,
+including Black Mage; Paladin grips her sword handle beneath its crossguard.
+All class labels, title, subtitle and author credit are present. The preview
+was edited with built-in image generation; PREVIEW_EDIT_PROMPT.txt contains
+the exact final edit prompt. The IRO embeds the new preview and runtime.

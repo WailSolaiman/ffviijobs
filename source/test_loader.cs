@@ -71,7 +71,7 @@ class LoaderTest {
  static void Verify(int[] choices){
   MapSelection(choices);
   for(int c=0;c<9;++c){string id=options[c].SelectSingleNode("ID").InnerText.Substring("job_v070_".Length);string value=System.Text.Encoding.UTF8.GetString(ReadVirtual("ffvii-job-system-v070\\"+id+".class")).Trim();Check(value==options[c].SelectNodes("Option")[choices[c]].Attributes["Name"].Value.ToLowerInvariant().Replace(" / ","_").Replace(" ","_"),"class marker matches selection");}
-  byte[] core=ReadVirtual("ffvii-jobs-v080.bin");Check(core.Length>32 && BitConverter.ToUInt32(core,0)==0x31584A46,"flat runtime mapped");
+  byte[] core=ReadVirtual("ffvii-jobs-v100.bin");Check(core.Length>32 && BitConverter.ToUInt32(core,0)==0x31584A46,"flat runtime mapped");
   Check(((IDictionary)wrap.GetField("_varchives",BindingFlags.Static|BindingFlags.NonPublic).GetValue(null)).Count==0,"virtual handles closed");
  }
  [STAThread]static int Main(string[] args){try{

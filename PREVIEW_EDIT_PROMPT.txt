@@ -1,3 +1,17 @@
-Built-in image generation, precise single-character edit. Final preview.png replaces the moogle Gunner with a human.
+Built-in image generation. Edit target: the 0.8.0 preview poster.
 
-Precise single-character edit of this FFVII Job System roster poster. Change ONLY the Gunner character in row 3, column 1 (the leftmost portrait in the middle row, directly below Summoner and above Mystic / Oracle). Replace the moogle with an unmistakably HUMAN adult gunner, matching the same charming detailed JRPG illustration style and approximately the same portrait scale as the neighboring Beastmaster. The human gunner should wear an orange/brown brimmed hat, a blue scarf and practical fantasy adventurer clothing, holding a clearly recognizable fantasy pistol or compact rifle. Normal human face, human ears and human proportions; absolutely no moogle pom-pom, antenna or animal ears. Keep the exact 'Gunner' label, cell position and surrounding space. Preserve all other 24 characters exactly, every other label, title, subtitle, author credit, background, palette, spacing, canvas dimensions and composition. Do not redesign the poster, move any portraits, introduce new text or change any other class. All the other characters should remain exactly as they are.
+Use case: precise-object-edit. Asset type: illustrated preview poster for FFVII Job System, a free 7th Heaven mod. The supplied poster is the edit target and the composition/style reference. Generate a refreshed finished poster, preserving its polished JRPG illustration style, dark teal Midgar-inspired background, 5 by 5 grid, all 25 class labels, title, subtitle and author credit exactly. Every class representative must be unmistakably HUMAN, including Black Mage: replace the black void face and glowing yellow eyes with a clearly visible natural human face, normal eyes and skin, still wearing the iconic yellow pointed hat and blue mage outfit. All remaining people remain human; Beastmaster's wolf is only a companion, not the class representative.
+
+Fix the Paladin woman (row 4 column 4): she wears silver/white and gold armor, holding her shield with her left arm. Her right hand must visibly and naturally wrap around the sword's HANDLE below the crossguard, never gripping the blade. Draw a simple clean readable sword angled outward/downward away from her body, with a straight continuous blade, coherent crossguard and pommel, correct wrist and hand anatomy. No broken sword geometry, no blade through her palm, no extra fingers or floating weapons. Keep the human Gunner and all other class identities.
+
+Exact text, grid in row order:
+Title: "FFVII JOB SYSTEM"
+Subtitle: "25 classes. 9 characters. Your party."
+Row 1: "White Mage", "Black Mage", "Red Mage", "Blue Mage", "Time Mage"
+Row 2: "Summoner", "Mystic Knight", "Monk", "Gambler", "Ranger"
+Row 3: "Gunner", "Beastmaster", "Scholar", "Mime", "Chemist / Alchemist"
+Row 4: "Mystic / Oracle", "Sage", "Knight", "Paladin", "Warrior"
+Row 5: "Samurai", "Thief", "Ninja", "Dragoon", "Dark Knight"
+Footer: "by Willard82 | Free mod for 7th Heaven"
+
+Keep the landscape aspect ratio, readable typography, clean spacing and balanced character scales. No version number and no release notes.

@@ -20,13 +20,14 @@ See [the installation guide](README.txt) and [the complete class permissions](CL
 
 Tested with the English Steam FF7 PC 1.02 executable, 7th Heaven 4.6.1, FFNx 1.25.2.0 and Enhanced Stock UI 2.968. Other languages and gameplay overhauls that change Materia IDs or the same executable hooks are unverified.
 
-The current source release is **0.8.0**, displayed as **0.80** in 7th Heaven.
+The current source release is **1.0.0**, displayed as **1.00** in 7th Heaven.
 It uses HEXT patches and a freestanding runtime, with no DLL/plugin/program
 declarations and no native-library activation prompt in 7th Heaven 4.6.1.
-7th Heaven's security settings are unchanged. The new loading backend has
-passed private native and installed-7H integration checks and **awaits an
-in-game test before a public packaged release**. Class permissions and saved
-configuration selections are unchanged from 0.7.2.
+7th Heaven's security settings are unchanged. This build has passed private
+native and installed-7H integration checks and **awaits an in-game test before
+a public packaged release**. Saved class selections are preserved. New
+configurations default Barret to Paladin and Cait Sith to Gambler. Current
+Materia permissions are listed in [the complete class permissions](CLASS_PERMISSIONS.txt).
 
 ## Build from source
 
@@ -44,7 +45,7 @@ Validation details are in [VALIDATION.txt](VALIDATION.txt). The `source` folder 
 
 ## Publishing
 
-[PUBLISHING.txt](PUBLISHING.txt) describes the prepared `v0.8.0` GitHub release and catalogue submission. The files under `catalog-submission` are staged metadata; their download links become usable after the corresponding release assets are uploaded. This repository alone does not add the mod to 7th Heaven's community catalogue.
+[PUBLISHING.txt](PUBLISHING.txt) describes the prepared `v1.0.0` GitHub release and catalogue submission. The files under `catalog-submission` are staged metadata; their download links become usable after the corresponding release assets are uploaded. This repository alone does not add the mod to 7th Heaven's community catalogue.
 
 ## Feedback and support
 

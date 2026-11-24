@@ -1,4 +1,4 @@
-FFVII JOB SYSTEM 0.8.0 - CLASSES AND PERMISSIONS
+FFVII JOB SYSTEM 1.0.0 - CLASSES AND PERMISSIONS
 
 Choose one of the same 25 classes for each character in Configure Mod before launching.
 Characters can share classes. Icons show exactly which characters can equip a Materia under your current selections.
@@ -15,7 +15,7 @@ DEFAULTS
   Aerith: White Mage
   Red XIII: Blue Mage
   Yuffie: Thief
-  Cait Sith: Summoner
+  Cait Sith: Gambler
   Vincent: Black Mage
   Cid: Dragoon
 
@@ -57,13 +57,13 @@ Mystic Knight
   Accessory suggestions (not active): Power Wrist, Protect Vest, Earring, Talisman, Circlet, Silver Glasses, Fire Ring, Ice Ring, Bolt Ring, Tetra Elemental, Protect Ring, Reflect Ring
 
 Monk
-  Role: A martial fighter focused on powerful physical strikes, counterattacks and endurance.
-  Materia: Deathblow, Double Cut, Counter Attack, HP Plus
+  Role: A martial fighter combining powerful strikes, counterattacks and endurance with healing and ailment recovery.
+  Materia: Deathblow, Double Cut, Counter Attack, HP Plus, Restore, Heal
   Accessory suggestions (not active): Power Wrist, Talisman, Champion Belt, Star Pendant, Silver Glasses, Headband, Fairy Ring, White Cape, Peace Ring, Cat's Bell
 
 Gambler
-  Role: A luck-and-rewards specialist represented by Luck Plus and Gil Plus.
-  Materia: Gil Plus, Luck Plus
+  Role: A luck-and-rewards specialist using risky critical strikes, Throw and Coin, with extra gil and experience rewards.
+  Materia: Gil Plus, Luck Plus, Deathblow, Throw, EXP Plus
   Accessory suggestions (not active): Amulet, Curse Ring
 
 Ranger
@@ -72,28 +72,28 @@ Ranger
   Accessory suggestions (not active): Power Wrist, Choco Feather, Star Pendant, Silver Glasses, Headband, Fairy Ring, Sprint Shoes, Cat's Bell
 
 Gunner
-  Role: A ranged attacker focused on reach, sweeping attacks, enemy analysis and experience rewards.
-  Materia: Long Range, Slash-All, EXP Plus, Sense
+  Role: A ranged attacker using reach, sweeping and rapid-fire attacks, enemy analysis and experience rewards.
+  Materia: Long Range, Slash-All, EXP Plus, Sense, Double Cut
   Accessory suggestions (not active): Power Wrist, Choco Feather, Silver Glasses, Headband, Sprint Shoes
 
 Beastmaster
-  Role: Controls enemies with Manipulate and influences encounters with lure Materia.
-  Materia: Manipulate, Chocobo Lure, Enemy Lure
+  Role: Studies and controls enemies, influences encounters with lure Materia, and calls Choco/Mog as a creature companion.
+  Materia: Manipulate, Chocobo Lure, Enemy Lure, Sense, Choco/Mog, HP Plus
   Accessory suggestions (not active): Power Wrist, Choco Feather, Star Pendant, Silver Glasses, Fairy Ring, Cat's Bell, HypnoCrown
 
 Scholar
-  Role: An enemy analyst whose current Materia specialty is Sense.
-  Materia: Sense
+  Role: A tactical mage who studies enemies, exploits elemental weaknesses, and supports allies with healing and protective magic.
+  Materia: Sense, Fire, Ice, Lightning, Elemental, Restore, Heal, Barrier, All, MP Plus, Magic Plus
   Accessory suggestions (not active): Talisman, Headband, White Cape, Peace Ring, Ribbon, Safety Bit
 
 Mime
-  Role: Repeats allies' actions and gains broad command access through Master Command.
-  Materia: Mime, Master Command, Counter
+  Role: Repeats allies' actions, uses Sense and Deathblow before Master Command is available, and improves survival with HP Plus.
+  Materia: Mime, Master Command, Counter, Sense, Deathblow, HP Plus
   Accessory suggestions (not active): Headband, Sneak Glove, HypnoCrown
 
 Chemist / Alchemist
-  Role: An item specialist using W-Item and Morph for supplies and battlefield utility.
-  Materia: W-Item, Morph
+  Role: An item and recovery specialist using W-Item, Morph, healing, revival and poison for battlefield support.
+  Materia: W-Item, Morph, Restore, Heal, Revive, Poison, All
   Accessory suggestions (not active): Poison Ring, Star Pendant, Fairy Ring, White Cape, Ribbon, Cat's Bell
 
 Mystic / Oracle
@@ -107,8 +107,8 @@ Sage
   Accessory suggestions (not active): Earring, Talisman, Poison Ring, Circlet, White Cape, Ribbon, Fire Ring, Ice Ring, Bolt Ring, Tetra Elemental, Safety Bit, Protect Ring, Reflect Ring
 
 Knight
-  Role: Protects allies with Cover and reinforces survival with HP Plus.
-  Materia: Cover, HP Plus
+  Role: A physical protector who covers allies, retaliates with Counter Attack, and combines Deathblow with Added Cut.
+  Materia: Cover, HP Plus, Counter Attack, Deathblow, Added Cut
   Accessory suggestions (not active): Power Wrist, Protect Vest, Tough Ring, Silver Glasses, Jem Ring, Protect Ring
 
 Paladin
@@ -137,13 +137,13 @@ Ninja
   Accessory suggestions (not active): Power Wrist, Choco Feather, Poison Ring, Silver Glasses, Headband, Sprint Shoes, Water Ring
 
 Dragoon
-  Role: A fighter represented here by long reach, HP and MP absorption, and endurance.
-  Materia: Long Range, HP Absorb, MP Absorb, HP Plus
+  Role: A durable long-reach fighter whose Deathblow can be paired with HP Absorb or MP Absorb for draining strikes.
+  Materia: Long Range, HP Absorb, MP Absorb, HP Plus, Deathblow
   Accessory suggestions (not active): Power Wrist, Protect Vest, Silver Glasses, Jem Ring
 
 Dark Knight
-  Role: A dark fighter combining Destruct with HP and MP absorption and extra HP.
-  Materia: Destruct, HP Absorb, MP Absorb, HP Plus
+  Role: A dark fighter using Deathblow, Poison and Destruct, supported by HP and MP absorption and extra HP.
+  Materia: Destruct, HP Absorb, MP Absorb, HP Plus, Deathblow, Poison
   Accessory suggestions (not active): Power Wrist, Protect Vest, Tough Ring, Silver Glasses, Jem Ring, Safety Bit, Curse Ring
 
 ACCESSORIES (existing character permissions, independent of selected class)

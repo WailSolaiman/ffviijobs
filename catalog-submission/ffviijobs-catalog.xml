@@ -19,12 +19,12 @@
         <string>Willard82</string>
       </Tags>
       <LatestVersion>
-        <Link>iros://Url/https$github.com/WailSolaiman/ffviijobs/releases/download/v0.8.0/FFVIIJobSystem-0.8.0.iro</Link>
-        <Version>0.80</Version>
-        <ReleaseDate>2026-11-22</ReleaseDate>
+        <Link>iros://Url/https$github.com/WailSolaiman/ffviijobs/releases/download/v1.0.0/FFVIIJobSystem-1.0.0.iro</Link>
+        <Version>1.00</Version>
+        <ReleaseDate>2026-11-24</ReleaseDate>
         <CompatibleGameVersions>Steam</CompatibleGameVersions>
-        <PreviewImage>https://github.com/WailSolaiman/ffviijobs/releases/download/v0.8.0/preview.png</PreviewImage>
-        <DownloadSize>7070</DownloadSize>
+        <PreviewImage>https://github.com/WailSolaiman/ffviijobs/releases/download/v1.0.0/preview.png</PreviewImage>
+        <DownloadSize>7265</DownloadSize>
       </LatestVersion>
     </Mod>
   </Mods>

@@ -1,7 +1,65 @@
 {
-  "version": "0.8.0",
-  "basis": "User-approved researched 25-class catalogue in CLASS_REFERENCE.json replaces all previous character Materia lists.",
+  "version": "1.0.0",
+  "basis": "User-approved 25-class catalogue with the playable-role additions approved on 24 November 2026. These are FF7 adaptations of Final Fantasy job identities.",
+  "added_materia": {
+    "Scholar": [
+      "Fire",
+      "Ice",
+      "Lightning",
+      "Elemental",
+      "Restore",
+      "Heal",
+      "Barrier",
+      "All",
+      "MP Plus",
+      "Magic Plus"
+    ],
+    "Knight": [
+      "Counter Attack",
+      "Deathblow",
+      "Added Cut"
+    ],
+    "Gambler": [
+      "Deathblow",
+      "Throw",
+      "EXP Plus"
+    ],
+    "Chemist / Alchemist": [
+      "Restore",
+      "Heal",
+      "Revive",
+      "Poison",
+      "All"
+    ],
+    "Beastmaster": [
+      "Sense",
+      "Choco/Mog",
+      "HP Plus"
+    ],
+    "Mime": [
+      "Sense",
+      "Deathblow",
+      "HP Plus"
+    ],
+    "Monk": [
+      "Restore",
+      "Heal"
+    ],
+    "Gunner": [
+      "Double Cut"
+    ],
+    "Dragoon": [
+      "Deathblow"
+    ],
+    "Dark Knight": [
+      "Deathblow",
+      "Poison"
+    ]
+  },
   "unowned_materia": "visible, no icons, unusable",
-  "accessories": "Original character permissions unchanged.",
-  "default_classes": {"Barret": "Paladin"}
+  "accessories": "Original character permissions unchanged; class accessory suggestions remain informational.",
+  "default_classes": {
+    "Barret": "Paladin",
+    "Cait Sith": "Gambler"
+  }
 }

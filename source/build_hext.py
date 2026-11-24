@@ -35,12 +35,12 @@ def build(root,zig,work,python_tools=None):
  # A 32-byte header keeps the relocated image base 16-byte aligned for SSE.
  size=32+len(image)+len(relocations)*4
  blob=struct.pack('<8I',0x31584A46,len(image),core.OPTIONAL_HEADER.ImageBase,symbols['jobs_hext_entry'],len(relocations),size,0,0)+image+struct.pack('<'+'I'*len(relocations),*relocations)
- runtime=root/'mod/runtime/ffvii-jobs-v080.bin';runtime.parent.mkdir(parents=True,exist_ok=True);runtime.write_bytes(blob)
+ runtime=root/'mod/runtime/ffvii-jobs-v100.bin';runtime.parent.mkdir(parents=True,exist_ok=True);runtime.write_bytes(blob)
  hash=2166136261
  for value in blob:hash=((hash^value)*16777619)&0xffffffff
  (work/'runtime.generated.h').write_text('#define RUNTIME_SIZE '+str(size)+'u\n#define RUNTIME_HASH 0x%08Xu\n'%hash)
  source=(src/'bootstrap.template.c').read_text(encoding='utf-8')
- for key,var,text,wide in [('KERNEL','kernel','kernel32.dll',False),('MODULE','module','GetModuleFileNameW',False),('CREATE','create','CreateFileW',False),('SUFFIX','suffix','\\ffvii-jobs-v080.bin',True)]:
+ for key,var,text,wide in [('KERNEL','kernel','kernel32.dll',False),('MODULE','module','GetModuleFileNameW',False),('CREATE','create','CreateFileW',False),('SUFFIX','suffix','\\ffvii-jobs-v100.bin',True)]:
   source=source.replace('@'+key+'@',_stores(var,text,wide))
  (work/'bootstrap.c').write_text(source,encoding='utf-8')
  subprocess.run(flags+['-I',str(work),'-Wl,--entry=bootstrap_bridge',str(work/'bootstrap.c'),'-o',str(work/'bootstrap.dll')],check=True)
@@ -49,7 +49,7 @@ def build(root,zig,work,python_tools=None):
  section=next(s for s in boot.sections if s.Name.rstrip(b'\0')==b'.text');code=section.get_data()[:section.Misc_VirtualSize]
  assert len(code)<STATE-CAVE,'Entry code must not overlap its state slots'
  bridge=next(e.address for e in boot.DIRECTORY_ENTRY_EXPORT.symbols if e.name==b'bootstrap_bridge')-section.VirtualAddress
- lines=['FFVII Job System 0.8.0 - early HEXT runtime entry','%X:800'%CAVE]
+ lines=['FFVII Job System 1.0.0 - early HEXT runtime entry','%X:800'%CAVE]
  for offset in range(0,len(code),32):lines.append('%X = '%(CAVE+offset)+code[offset:offset+32].hex(' '))
  lines+=['%X = 00:8'%STATE,'%X = '%BOOT_SITE+(b'\xE9'+struct.pack('<i',CAVE+bridge-BOOT_SITE-5)).hex(' '),
          '%X:800'%CAVE,'%X:5'%BOOT_SITE]
@@ -95,7 +95,7 @@ def test(root,zig,work,output):
  (output/'test_hext.c').write_text(s,encoding='utf-8')
  shutil.copy2(work/'bootstrap.generated.h',output/'bootstrap.generated.h')
  shutil.copy2(root/'source/rules.generated.h',output/'rules.generated.h')
- blobpath=output/'ffvii-jobs-v080.bin';blob=(root/'mod/runtime/ffvii-jobs-v080.bin').read_bytes();blobpath.write_bytes(blob)
+ blobpath=output/'ffvii-jobs-v100.bin';blob=(root/'mod/runtime/ffvii-jobs-v100.bin').read_bytes();blobpath.write_bytes(blob)
  exe=output/'test_hext.exe'
  subprocess.run([zig,'cc','-target','x86-windows-gnu','-mstackrealign','-O2','-Wall','-Wextra','-Wl,--image-base=0x400000','-Wl,--stack=1048576',str(output/'test_hext.c'),str(output/'api_wrappers.S'),'-o',str(exe)],check=True)
  image=bytearray(exe.read_bytes());off=struct.unpack_from('<I',image,0x3c)[0]+24+70;struct.pack_into('<H',image,off,struct.unpack_from('<H',image,off)[0]&~0x40);exe.write_bytes(image)

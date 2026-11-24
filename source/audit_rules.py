@@ -5,7 +5,7 @@ import json,re
 def audit(root):
  r=json.loads((root/'source/rules.json').read_text(encoding='utf-8'))
  reference=json.loads((root/'CLASS_REFERENCE.json').read_text(encoding='utf-8'))
- assert r['version']=='0.8.0'
+ assert r['version']=='1.0.0'
  assert len(r['classes'])==25 and len(r['characters'])==9
  assert len(r['materia_ids'])==83 and len(set(r['materia_ids'].values()))==83
  assert len(r['accessory_ids'])==32 and list(r['accessory_ids'].values())==list(range(32))
@@ -17,7 +17,7 @@ def audit(root):
   assert len(set(j['materia']))==len(j['materia'])
   assert set(j['materia'])<=r['materia_ids'].keys()
  assert {m for j in r['classes'] for m in j['materia']}==r['materia_ids'].keys()
- defaults=['Mystic Knight','Paladin','Monk','White Mage','Blue Mage','Thief','Summoner','Black Mage','Dragoon']
+ defaults=['Mystic Knight','Paladin','Monk','White Mage','Blue Mage','Thief','Gambler','Black Mage','Dragoon']
  names={j['key']:j['name'] for j in r['classes']}
  assert [names[c['default_class']] for c in r['characters']]==defaults
  assert [c['game_character_id'] for c in r['characters']]==list(range(9))

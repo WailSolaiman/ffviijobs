@@ -1,7 +1,7 @@
 # HEXT runtime
 
 The build emits `mod/hext/FFVIIJobs.txt` and
-`mod/runtime/ffvii-jobs-v080.bin`. The unconditional runtime ModFolder maps
+`mod/runtime/ffvii-jobs-v100.bin`. The unconditional runtime ModFolder maps
 the binary into the game directory through 7H's virtual file handlers;
 the nine selected class-marker folders use their existing paths and IDs.
 

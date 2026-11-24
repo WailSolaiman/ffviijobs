@@ -1,4 +1,4 @@
-FFVII JOB SYSTEM 0.8.0 (shown as 0.80 in 7th Heaven)
+FFVII JOB SYSTEM 1.0.0 (shown as 1.00 in 7th Heaven)
 Author: Willard82
 Project: https://github.com/WailSolaiman/ffviijobs
 Optional tips: https://ko-fi.com/ffviijobs
@@ -8,7 +8,7 @@ which Materia they can equip, with weapon icons showing eligible characters.
 Configure Mod includes class and accessory guides. For original English FF7 PC.
 
 INSTALL / CONFIGURE
-1. Import FFVIIJobSystem-0.8.0.iro as the update to FFVII Job System.
+1. Import FFVIIJobSystem-1.0.0.iro as the update to FFVII Job System.
 2. Open Configure Mod. Choose one class for each of the nine characters.
 3. The selected class shows its role, full Materia list and accessory suggestions.
 4. Select Accessory reference to browse all 32 items, their effects, suggested
@@ -18,8 +18,8 @@ INSTALL / CONFIGURE
 Every character can choose any of the same 25 classes. Characters can share
 a class. Upgrading from 0.7.0 preserves class choices because all nine setting
 IDs and their values are unchanged. Earlier fixed-class versions use the new
-documented defaults. Barret defaults to Paladin. Existing saved class choices
-are retained; select Paladin in Configure Mod to change a saved choice.
+documented defaults. Barret defaults to Paladin and Cait Sith to Gambler.
+Existing saved class choices are retained; use Configure Mod to change them.
 
 ACCESSORY INFORMATION
 The class-based accessory assignments are INFORMATION ONLY in this release.
@@ -53,8 +53,9 @@ Heaven's security settings and warning logic are unchanged.
 
 The supported target is the original English Steam FF7 PC 1.02 executable.
 Private checks use installed 7th Heaven 4.6.1 and Enhanced Stock UI 2.968.
-The new startup backend needs an in-game test before a public release.
-Class permissions, icons, accessory rules and configuration IDs are retained.
+This build needs an in-game test before a public release.
+The 25 class names, compact icon layout, accessory rules and configuration
+IDs are retained. The class pools follow CLASS_PERMISSIONS.txt.
 The early entry runs after 7H file overrides are ready and before font setup.
 Other gameplay overhauls that change Materia IDs or executable hook sites
 need their own compatibility review. All sixteen gameplay hook signatures
@@ -67,7 +68,8 @@ SOURCE / REBUILD
 source/rules.json contains active shared Materia classes and character defaults.
 source/class_descriptions.json contains the 25 class explanations.
 ACCESSORY_PROPOSAL.json contains informational class assignments and effects.
-CLASS_REFERENCE.json records the exact approved research Materia pools.
+CLASS_REFERENCE.json records the approved Materia pools, including the
+playability adaptations in source/approved_changes.json.
 REFERENCE.md retains the original character accessory rules.
 
 Build requires Python 3, Pillow, pefile, Windows Segoe UI fonts and Zig 0.17.1:
